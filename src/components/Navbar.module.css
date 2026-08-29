@@ -1,0 +1,30 @@
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 56px;
+  background-color: var(--color-nav-transparent);
+  box-shadow: var(--drop-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.navbar .text-wrapper {
+  color: var(--color-text);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
+  font-weight: 400;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
