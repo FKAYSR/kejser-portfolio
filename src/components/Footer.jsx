@@ -29,7 +29,7 @@ export default function Footer() {
 
         <a
           className={styles.socialLink}
-          href="https://github.com/FKAYSR/portfolio-freja-kejser"
+          href="https://github.com/FKAYSR"
           rel="noopener noreferrer"
           target="_blank"
         >
