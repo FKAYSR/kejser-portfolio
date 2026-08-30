@@ -1,7 +1,27 @@
+import styles from "../components/Navbar.module.css";
+import { NavLink, Link } from "react-router";
+
 export default function Navbar() {
   return (
-    <div>
-      <h1>nav</h1>
-    </div>
+    <nav className={styles.navbar}>
+      <Link to="/" className="FREJA-KEJSER">
+        <img src="/fulde-navn.svg" alt="Freja Kejser" />
+      </Link>
+
+      <div className={styles.links}>
+        <NavLink to="/" className={styles.textWrapper} alt="Home">
+          Home
+        </NavLink>
+        <NavLink to="/overview" className={styles.textWrapper} alt="Project overview">
+          Projects
+        </NavLink>
+        <NavLink to="/about" className={styles.textWrapper} alt="About me">
+          About me
+        </NavLink>
+        <NavLink to="/contact" className={styles.textWrapper} alt="Contact">
+          Contact
+        </NavLink>
+      </div>
+    </nav>
   );
-}
+};
