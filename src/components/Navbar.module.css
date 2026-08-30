@@ -12,19 +12,37 @@
   z-index: 100;
 }
 
-.navbar .links {
+.links {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 1rem;
 }
 
-.navbar .text-wrapper {
+.textWrapper {
   color: var(--color-text);
   text-decoration: none;
   font-family: var(--font-body);
-  font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
-  font-weight: 400;
-  text-decoration: none;
+  font-size: clamp(0.9rem, 0.5vw + 0.8rem, 1rem);
+  font-weight: 500;
   white-space: nowrap;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
 }
 
+.textWrapper:hover {
+  background-color: var(--color-path);
+  color: var(--color-accent);
+  cursor: pointer;
+}
+
+.textWrapper:global(.active) {
+  background-color: var(--color-accent);
+  color: var(--color-bg); 
+  font-weight: 600;
+}
+
+.textWrapper:global(.active):hover {
+  background-color: var(--color-accent-hover);
+}

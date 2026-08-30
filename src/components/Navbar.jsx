@@ -1,5 +1,5 @@
 import styles from "../components/Navbar.module.css";
-import { Link } from "react-router";
+import { NavLink, Link } from "react-router";
 
 export default function Navbar() {
   return (
@@ -9,18 +9,18 @@ export default function Navbar() {
       </Link>
 
       <div className={styles.links}>
-        <Link to="/" className="text-wrapper">
+        <NavLink to="/" className={styles.textWrapper} alt="Home">
           Home
-        </Link>
-        <Link to="/overview" className="text-wrapper">
+        </NavLink>
+        <NavLink to="/overview" className={styles.textWrapper} alt="Project overview">
           Projects
-        </Link>
-        <Link to="/about" className="text-wrapper">
+        </NavLink>
+        <NavLink to="/about" className={styles.textWrapper} alt="About me">
           About me
-        </Link>
-        <Link to="/contact" className="text-wrapper">
+        </NavLink>
+        <NavLink to="/contact" className={styles.textWrapper} alt="Contact">
           Contact
-        </Link>
+        </NavLink>
       </div>
     </nav>
   );
