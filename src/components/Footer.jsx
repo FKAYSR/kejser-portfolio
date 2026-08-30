@@ -1,7 +1,7 @@
 import logoSmall from "../assets/icons/logo-small.svg";
-import github from "../assets/icons/github-contact.png";
-import linkedin from "../assets/icons/linkedin-icon.png";
-import mail from "../assets/icons/mail-icon.png";
+import github from "../assets/icons/github-contact.svg";
+import linkedin from "../assets/icons/linkedin-contact.svg";
+import mail from "../assets/icons/mail-contact.svg";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -29,7 +29,7 @@ export default function Footer() {
 
         <a
           className={styles.socialLink}
-          href="https://github.com/FKAYSR/portfolio-freja-kejser"
+          href="https://github.com/FKAYSR"
           rel="noopener noreferrer"
           target="_blank"
         >
