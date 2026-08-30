@@ -1,0 +1,59 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 24px 56px;
+  background-color: var(--color-accent);
+}
+
+.brandGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  height: 48px;
+  width: auto;
+}
+
+.copyright {
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.contactGroup {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.mailLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-bg);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease;
+}
+
+.mailLink:hover,
+.socialLink:hover {
+  opacity: 0.7;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
