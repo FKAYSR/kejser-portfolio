@@ -1,11 +1,12 @@
 import styles from "../components/Navbar.module.css";
 import { NavLink, Link } from "react-router";
+import name from "../assets/images/full-name.svg";
 
 export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <Link to="/" className="FREJA-KEJSER">
-        <img src="/fulde-navn.svg" alt="Freja Kejser" />
+        <img src={name} alt="Freja Kejser" />
       </Link>
 
       <div className={styles.links}>
