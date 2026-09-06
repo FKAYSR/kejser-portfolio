@@ -17,7 +17,7 @@ export default function Hero({
         alt={imageAlt}
       />
       <div className={styles.frame}>
-        {title}
+        <h1 className={styles.title}>{title}</h1>
         {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         {ctaLabel && (
           <button className={styles.CTA} onClick={onCtaClick} type="button">
