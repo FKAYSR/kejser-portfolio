@@ -15,7 +15,8 @@ const projects = [
 
     // Short descriptions
     homeDescription: "",
-    overviewDescription: "",
+    overviewDescription:
+      "A web application for finding affordable recipes, comparing ingredient prices and planning grocery shopping.",
 
     // Project detail page
     detail: {
