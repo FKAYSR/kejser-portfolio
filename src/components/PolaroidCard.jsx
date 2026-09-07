@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import styles from "./PolaroidCard.module.css";
+import arrow from "../assets/icons/arrow-accent-middle.svg";
 
 function PolaroidCard({
   project,
@@ -60,7 +61,7 @@ function PolaroidCard({
       {(polaroidTitle || polaroidDescription) && (
         <div className={styles.polaroidContent}>
           {polaroidTitle && (
-            <h3 className={styles.polaroidTitle}>{polaroidTitle}</h3>
+            <h3 className={`${styles.polaroidTitle} text-style-h3`}>{polaroidTitle}</h3>
           )}
 
           {polaroidDescription && (
@@ -93,7 +94,7 @@ function PolaroidCard({
             onClick={previousImage}
             aria-label="Previous image"
           >
-            ←
+            <img src={arrow} alt="" />
           </button>
 
           <button
@@ -102,7 +103,7 @@ function PolaroidCard({
             onClick={nextImage}
             aria-label="Next image"
           >
-            →
+            <img src={arrow} alt="" />
           </button>
         </div>
       )}
