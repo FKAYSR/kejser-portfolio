@@ -18,7 +18,7 @@ export default function Hero({
       />
       <div className={styles.frame}>
         <h1 className={styles.title}>{title}</h1>
-        {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
+        {subtitle && <h3 className={styles.subtitle}>{subtitle}</h3>}
         {ctaLabel && (
           <button className={styles.CTA} onClick={onCtaClick} type="button">
             <span className={styles[`text-wrapper`]}>{ctaLabel}</span>

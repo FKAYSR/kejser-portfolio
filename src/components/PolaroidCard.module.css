@@ -8,7 +8,6 @@
 
   background: var(--color-polaroid);
   color: inherit;
-
   box-shadow: var(--drop-shadow);
 
   transition:
@@ -49,7 +48,7 @@
 }
 
 /* =========================
-   LINK
+   LINK & IMAGE
 ========================= */
 
 .polaroidLink {
@@ -58,15 +57,10 @@
   text-decoration: none;
 }
 
-
-/* =========================
-   IMAGE
-========================= */
-
 .polaroidImageContainer {
   width: 100%;
   overflow: hidden;
-  background-color: #eeee;
+  background-color: white;
 }
 
 .polaroidImage {
@@ -105,33 +99,45 @@
   top: 50%;
   display: flex;
   justify-content: space-between;
-  transform: translateY(-50%);
+
   pointer-events: none;
+  width: calc(100% + 6rem);
+  margin-left: -2.5rem;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease;
 }
 
 .polaroidArrow {
   pointer-events: auto;
-  border: none;
-  background: rgba(255, 255, 255, 0.8);
   cursor: pointer;
-  width: 2.25rem;
-  height: 2.25rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+
+  background: transparent;
+  border: none;
+
+  transition: transform 0.2s ease;
+}
+
+.polaroidArrow img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.polaroidArrowPrevious img {
+  transform: scaleX(-1);
 }
 
 .polaroidArrow:hover {
-  background: white;
-}
-
-.polaroidArrowPrevious {
-  margin-left: 0.5rem;
-}
-
-.polaroidArrowNext {
-  margin-right: 0.5rem;
+  transform: scale(1.15);
 }
 
 
@@ -149,4 +155,12 @@
 
 .polaroid--tilt-2 {
   transform: rotate(-1.5deg);
+}
+
+.polaroid--tilt-1 .polaroidNavigation {
+  transform: translateY(-50%) rotate(-1.5deg);
+}
+
+.polaroid--tilt-2 .polaroidNavigation {
+  transform: translateY(-50%) rotate(1.5deg);
 }
