@@ -1,0 +1,152 @@
+/* =========================
+   POLAROID
+========================= */
+
+.polaroid {
+  position: relative;
+  width: 100%;
+
+  background: var(--color-polaroid);
+  color: inherit;
+
+  box-shadow: var(--drop-shadow);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================
+   SIZES
+========================= */
+
+.polaroid--small {
+  max-width: 13.75rem;
+  padding: 0.875rem 0.75rem 2.25rem;
+}
+
+.polaroid--small .polaroidImageContainer {
+  aspect-ratio: 3 / 4; 
+}
+
+.polaroid--medium {
+  max-width: 21.875rem;
+  padding: 1rem 1rem 3rem;
+}
+
+.polaroid--medium .polaroidImageContainer {
+  aspect-ratio: 1 / 1; 
+}
+
+.polaroid--large {
+  max-width: 31.25rem;
+  padding: 1.25rem 1.25rem 4rem;
+}
+
+.polaroid--large .polaroidImageContainer {
+  aspect-ratio: 1 / 1; 
+}
+
+/* =========================
+   LINK
+========================= */
+
+.polaroidLink {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.polaroidImageContainer {
+  width: 100%;
+  overflow: hidden;
+  background-color: #eeee;
+}
+
+.polaroidImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.polaroidContent {
+  padding-top: 0.75rem;
+}
+
+.polaroidTitle {
+  margin: 0 0 0.5rem;
+}
+
+.polaroidDescription {
+  margin: 0;
+}
+
+
+/* =========================
+   IMAGE NAVIGATION
+========================= */
+
+.polaroidNavigation {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.polaroidArrow {
+  pointer-events: auto;
+  border: none;
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.polaroidArrow:hover {
+  background: white;
+}
+
+.polaroidArrowPrevious {
+  margin-left: 0.5rem;
+}
+
+.polaroidArrowNext {
+  margin-right: 0.5rem;
+}
+
+
+/* =========================
+   POLAROID TILT
+========================= */
+
+.polaroid--tilt-0 {
+  transform: rotate(0deg);
+}
+
+.polaroid--tilt-1 {
+  transform: rotate(1.5deg);
+}
+
+.polaroid--tilt-2 {
+  transform: rotate(-1.5deg);
+}

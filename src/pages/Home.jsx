@@ -2,8 +2,14 @@ import Hero from "../components/Hero.jsx";
 import name from "../assets/images/full-name.svg";
 import heroImage from "../assets/images/hero-img.jpg";
 import heroStyles from "../components/Hero.module.css";
+import projects from "../data/projects.js";
+import PolaroidCard from "../components/PolaroidCard.jsx";
 
 export default function Home() {
+    const featuredProjects = projects
+      .filter((project) => project.showOnHome)
+      .sort((a, b) => a.homeOrder - b.homeOrder);
+
   return (
     <>
       <header>
@@ -24,6 +30,16 @@ export default function Home() {
           ctaLabel="Explore my work"
         />
       </header>
+
+      <section className="projects">
+      {featuredProjects.map((project) => (
+        <PolaroidCard
+          key={project.id}
+          project={project}
+          size="large"
+        />
+      ))}
+    </section>
     </>
   );
 }
