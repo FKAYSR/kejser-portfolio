@@ -6,6 +6,7 @@ import arrow from "../assets/icons/arrow-accent-middle.svg";
 function PolaroidCard({
   project,
   images,
+  imageAlt,
   title,
   description,
   size = "medium",
@@ -19,6 +20,7 @@ function PolaroidCard({
 
   const polaroidTitle = title ?? project?.title;
   const polaroidDescription = description ?? project?.homeDescription;
+  const polaroidImageAlt = imageAlt ?? project?.thumbnailAlt ?? polaroidTitle ?? "";
 
   // Keep track of which image is currently shown
   const [currentImage, setCurrentImage] = useState(0);
@@ -52,7 +54,7 @@ function PolaroidCard({
         {polaroidImages.length > 0 && (
           <img
             src={polaroidImages[currentImage]}
-            alt={polaroidTitle || ""}
+            alt={polaroidImageAlt}
             className={styles.polaroidImage}
           />
         )}
