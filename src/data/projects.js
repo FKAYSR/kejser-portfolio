@@ -1,11 +1,12 @@
 // Images
-
+import merEndToastThumb from "../assets/projects/mer-end-toast/images/fav-icon.png";
 
 const projects = [
   {
     id: "mer-end-toast",
     title: "Mer' end Toast",
-    thumbnail: "",
+    thumbnail: merEndToastThumb,
+    thumbnailAlt: "Screenshot of the Mer' end Toast recipe planning app",
     tags: ["UX/UI Design", "React", "Supabase", "Design System"],
 
     // Visibility
@@ -21,6 +22,7 @@ const projects = [
     // Project detail page
     detail: {
       heroImage: "",
+      heroImageAlt: "Mer' end Toast recipe planning app",
       links: {
         live: "",
         repository: "",
@@ -90,6 +92,7 @@ NEW PROJECT TEMPLATE
   id: "",
   title: "",
   thumbnail: "",
+  thumbnailAlt: "",
   tags: [],
 
   // Visibility
@@ -104,6 +107,7 @@ NEW PROJECT TEMPLATE
   // Project detail page
   detail: {
     heroImage: "",
+    heroImageAlt: "",
     links: {
     live: "",
     repository: "",

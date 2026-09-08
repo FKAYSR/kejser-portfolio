@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import Polaroid from "./PolaroidCard.jsx";
 import styles from "./OverviewCard.module.css";
 
@@ -19,16 +20,17 @@ export default function OverviewCard({ project }) {
 
         <p className={styles.description}>{project.overviewDescription}</p>
 
-        <button className={styles.viewButton} disabled>
+        <Link to={`/project/${project.id}`} className={styles.viewButton}>
           View project <span> → </span>
-        </button>
+        </Link>
       </div>
 
       {/* Right column - polaroid component */}
       <div className={styles.polaroidWrapper}>
         <Polaroid
-          images={project.images}
-          title={project.polaroidTitle}
+          images={project.thumbnail ? [project.thumbnail] : []}
+          imageAlt={project.thumbnailAlt}
+          title={project.title}
           size="medium"
           tilt={project.tiltClass}
         />
