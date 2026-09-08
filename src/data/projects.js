@@ -1,6 +1,20 @@
 // Images
+// Mer' end Toast
 import merEndToastThumb from "../assets/projects/mer-end-toast/images/fav-icon.png";
 import merEndToastHero from "../assets/projects/mer-end-toast/images/expo.jpg";
+import toastDefault from "../assets/projects/mer-end-toast/images/mockup-default-page.png";
+import toastList from "../assets/projects/mer-end-toast/images/mockup-list-flow.png";
+import toastSearch from "../assets/projects/mer-end-toast/images/mockup-search-flow.png";
+import toastOn1 from "../assets/projects/mer-end-toast/images/onboarding1.png";
+import toastOn2 from "../assets/projects/mer-end-toast/images/onboarding2.png";
+import toastOn3 from "../assets/projects/mer-end-toast/images/onboarding3.png";
+import toastVariables from "../assets/projects/mer-end-toast/images/variables-figma.png";
+import toastFunctionsRated from "../assets/projects/mer-end-toast/images/functions-rated.png";
+
+// Mellemrum
+
+// Story Hangers
+
 
 const projects = [
   // Mer end Toast
@@ -9,7 +23,13 @@ const projects = [
     title: "Mer' end Toast",
     thumbnail: merEndToastThumb,
     thumbnailAlt: "Screenshot of the Mer' end Toast recipe planning app",
-    tags: ["UX/UI Design", "React", "Supabase", "Design System"],
+    tags: [
+      "Web application",
+      "UX/UI Design",
+      "React",
+      "Supabase",
+      "Design System",
+    ],
 
     // Visibility
     showOnHome: true,
@@ -20,6 +40,7 @@ const projects = [
     homeDescription: "A webapp to save money and time on making food",
     overviewDescription:
       "A web application for finding affordable recipes, comparing ingredient prices and planning grocery shopping",
+
     // Project detail page
     detail: {
       heroImage: merEndToastHero,
@@ -39,7 +60,10 @@ const projects = [
         description:
           "Mer' end Toast is a web application designed to make everyday cooking more affordable and manageable. The concept combines recipe inspiration, ingredient search, price comparison and shopping lists into one platform.",
         description2:
-          "The project was developed as a group project taking the concept from initial ideation and research to a functional React prototype. The process included UX research, user flows, UI design, creation of a variable-based design system in Figma and frontend development with React and data management through Supabase as a Backend-as-a-Service.",
+          "The project was developed as a 2-people group project taking the concept from initial ideation and research to a functional React prototype. The process included UX research, user flows, UI design, creation of a variable-based design system in Figma and frontend development with React and data management through Supabase as a Backend-as-a-Service.",
+        detailImage1: toastDefault,
+        detailImage2: toastFunctionsRated,
+        detailImage3: "",
       },
 
       assignment: {
@@ -66,13 +90,23 @@ const projects = [
           "Better overview of food expenses",
           "Less cognitive load during the daily cooking process",
         ],
+        solutionImage1: toastList,
+        solutionImage2: toastSearch,
+        solutionImage3: "",
       },
 
       myRole: [
         {
+          title: "Onboarding",
+          text: "Designed and built the onboarding flow, featuring custom Jitter micro-animations integrated directly into the React prototype",
+          bigImage: toastOn1,
+          image2: toastOn2,
+          image3: toastOn3,
+        },
+        {
           title: "Figma Design System",
           text: "Set up a variable-based design system with semantic variables connected to the Mapped collection",
-          bigImage: "",
+          bigImage: toastVariables,
           image2: "",
           image3: "",
         },
@@ -146,6 +180,9 @@ const projects = [
           "The webapp Mellemrum was developed to provide citizens of Aarhus with a simple way to discover and sign up for local cultural events.",
         description2:
           "It was an individual school project about product optimization with focus on refactoring an existing React-prototype. The process began by making a technical audit and henceforth optimizing  the app accordingly. With basis in the audit I optimized the accessibility, usability, UI-consistency and performance.",
+        detailImage1: "",
+        detailImage2: "",
+        detailImage3: "",
       },
 
       assignment: {
@@ -273,6 +310,9 @@ const projects = [
           "Story Hangers is a webshop designed to sell premium secondhand clothes. With the webshop we hope to portray a reliable, inclusive and inspiring picture, so the users can shop secondhand without any worries.",
         description2:
           "The project was developed as a group project taking the concept from initial ideation and research to a functional React prototype. During the process we came across UX research, UI design, Brand design, creation of a variable-based design system in Figma and Frontend Development with React.",
+        detailImage1: "",
+        detailImage2: "",
+        detailImage3: "",
       },
 
       assignment: {
@@ -345,7 +385,7 @@ const projects = [
 
 export default projects;
 
-/* 
+/* Template
 ========================================
 NEW PROJECT TEMPLATE
 ========================================
