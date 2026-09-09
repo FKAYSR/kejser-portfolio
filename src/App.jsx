@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from "react-router";
+import { useEffect } from "react";
 import Home from "../src/pages/Home.jsx";
 import About from "../src/pages/About.jsx";
 import Contact from "../src/pages/Contact.jsx";
@@ -8,6 +9,16 @@ import NotFound from "../src/pages/NotFound.jsx";
 import Navbar from "../src/components/Navbar.jsx";
 import Footer from "../src/components/Footer.jsx";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
@@ -15,6 +26,7 @@ function App() {
     return (
       <>
         <Navbar />
+        <ScrollToTop />
 
         <Routes>
           <Route path="/" element={<Home />} />
