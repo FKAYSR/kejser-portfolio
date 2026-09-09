@@ -12,6 +12,13 @@ import toastVariables from "../assets/projects/mer-end-toast/images/variables-fi
 import toastFunctionsRated from "../assets/projects/mer-end-toast/images/functions-rated.png";
 
 // Mellemrum
+import hangerHero from "../assets/projects/story-hangers/images/hanger-hero-section.png";
+import hangerLogo from "../assets/projects/story-hangers/images/hanger-logo.png";
+import hangerAffinityMap from "../assets/projects/story-hangers/images/hanger-affinity-mapping.png";
+import hangerFilter from "../assets/projects/story-hangers/images/hanger-filter-page.png";
+import hangerFooter from "../assets/projects/story-hangers/images/hanger-footer.png";
+import hangerRoot from "../assets/projects/story-hangers/images/hanger-root.png";
+import hangerVariables from "../assets/projects/story-hangers/images/hanger-variables.png";
 
 // Story Hangers
 
@@ -271,8 +278,8 @@ const projects = [
   {
     id: "story-hangers",
     title: "Story Hangers",
-    thumbnail: "",
-    thumbnailAlt: "",
+    thumbnail: hangerHero,
+    thumbnailAlt: "Hero section of webshop Story Hangers",
     tags: [
       "Customer Experience",
       "Webshop",
@@ -292,8 +299,8 @@ const projects = [
 
     // Project detail page
     detail: {
-      heroImage: "",
-      heroImageAlt: "",
+      heroImage: hangerHero,
+      heroImageAlt: "Hero section of webshop Story Hangers",
       links: {
         live: "https://juliewboecher.github.io/customer-experience-exam/",
         repository: "https://github.com/juliewboecher/customer-experience-exam",
@@ -310,8 +317,8 @@ const projects = [
           "Story Hangers is a webshop designed to sell premium secondhand clothes. With the webshop we hope to portray a reliable, inclusive and inspiring picture, so the users can shop secondhand without any worries.",
         description2:
           "The project was developed as a group project taking the concept from initial ideation and research to a functional React prototype. During the process we came across UX research, UI design, Brand design, creation of a variable-based design system in Figma and Frontend Development with React.",
-        detailImage1: "",
-        detailImage2: "",
+        detailImage1: hangerLogo,
+        detailImage2: hangerAffinityMap,
         detailImage3: "",
       },
 
@@ -343,21 +350,21 @@ const projects = [
         {
           title: "Figma variables",
           text: "Set up the spacing, sizing, radius and stroke variables across the Brand, Alias and Mapped collections in Figma",
-          bigImage: "",
-          image2: "",
+          bigImage: hangerRoot,
+          image2: hangerVariables,
           image3: "",
         },
         {
           title: "Frontend development",
           text: "Developed the filtering logic for the product catalogue",
-          bigImage: "",
+          bigImage: hangerFilter,
           image2: "",
           image3: "",
         },
         {
           title: "UI and interaction",
           text: "Designed and implemented the interactive newsletter footer in Figma and React with email validation and success feedback",
-          bigImage: "",
+          bigImage: hangerFooter,
           image2: "",
           image3: "",
         },
