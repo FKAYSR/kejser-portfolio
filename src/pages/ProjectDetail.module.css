@@ -9,9 +9,28 @@
 ========================= */
 
 .section {
+  position: relative;
+  isolation: isolate;
   display: grid;
-  gap: clamp(2rem, 6vw, 1rem);
+  gap: clamp(2rem, 4vw, 5rem);
   padding: clamp(4rem, 9vw, 5rem) 0;
+}
+
+.section::before,
+.nextProject::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  background: var(--color-bg);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.projectDetail > section:nth-of-type(even)::before {
+  background: var(--color-surface);
 }
 
 .overviewSection {
@@ -248,6 +267,8 @@
 ========================= */
 
 .nextProject {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: 1fr;
   justify-items: flex-end;
