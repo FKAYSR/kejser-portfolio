@@ -30,7 +30,8 @@
 }
 
 .sectionLabel h2,
-.solutionText > h2 {
+.solutionText > h2,
+.learnedColumn > h2 {
   color: var(--color-text);
   font-size: clamp(1.45rem, 2.5vw, 2.35rem);
   line-height: 1.05;
@@ -201,22 +202,30 @@
 }
 
 /* =========================
-   NUMBER LIST
+   WHAT I LEARNED AND IF I DID IT AGAIN LIST
 ========================= */
 
-.numberList {
-  display: grid;
-  gap: 2rem;
-
-  max-width: 900px;
-
-  padding-left: 1.5rem;
+.learnedSection {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 6vw, 4rem);
+  align-items: start;
 }
 
-.numberList li::marker {
-  color: var(--color-accent);
+.learnedColumn {
+  min-width: 0;
+}
 
-  font-family: var(--font-heading);
+.learnedColumn + .learnedColumn {
+  border-left: 1px solid var(--color-border);
+  padding-left: clamp(2rem, 6vw, 4rem);
+}
+
+.pointList {
+  display: grid;
+  gap: 1rem;
+  max-width: 900px;
+  margin-top: 1.5rem;
+  padding-left: 1.25rem;
 }
 
 /* =========================
@@ -237,16 +246,13 @@
   display: grid;
   grid-template-columns: 1fr auto;
   gap: clamp(3rem, 7vw, 8rem);
-
   align-items: center;
-
   padding: clamp(6rem, 12vw, 12rem) 0;
 }
 
 .nextProjectContent {
   display: grid;
   gap: 1.5rem;
-
   max-width: 650px;
 }
 
@@ -256,7 +262,6 @@
 
 .nextProjectLink {
   color: var(--color-accent);
-
   text-decoration: none;
 }
 
@@ -277,6 +282,7 @@
   .assignmentLayout,
   .solutionLists,
   .solutionLayout,
+  .learnedSection,
   .overviewLayout,
   .roleLayout,
   .nextProject {
@@ -296,6 +302,13 @@
 
   .sectionLabel {
     padding-top: 0;
+  }
+
+  .learnedColumn + .learnedColumn {
+    border-left: 0;
+    border-top: 1px solid var(--color-border);
+    padding-left: 0;
+    padding-top: 2rem;
   }
 
   .toolsList {

@@ -178,7 +178,7 @@ export default function ProjectDetail() {
         </section>
 
         {/* OUR SOLUTION */}
-        <section className={`${styles.section} ${styles.solutionSection}`}>
+        <section className={styles.section}>
           <div className={styles.solutionLayout}>
             <div className={styles.solutionText}>
               <h2 className="text-style-h2">OUR SOLUTION</h2>
@@ -234,7 +234,6 @@ export default function ProjectDetail() {
         </section>
 
         {/* TOOLS */}
-
         {detail.toolsUsed?.length > 0 && (
           <section className={styles.section}>
             <div className={styles.sectionLabel}>
@@ -252,7 +251,6 @@ export default function ProjectDetail() {
         )}
 
         {/* MY ROLE */}
-
         {roles.length > 0 && currentRoleData && (
           <section className={styles.section}>
             <div className={styles.sectionLabel}>
@@ -311,43 +309,36 @@ export default function ProjectDetail() {
           </section>
         )}
 
-        {/* WHAT I LEARNED */}
+        {/* WHAT I LEARNED / IF I DID IT AGAIN */}
+        {(detail.whatILearned?.length > 0 || detail.ifIDidItAgain?.length > 0) && (
+          <section className={`${styles.section} ${styles.learnedSection}`}>
+            {detail.whatILearned?.length > 0 && (
+              <div className={styles.learnedColumn}>
+                <h2 className="text-style-h2">WHAT I LEARNED</h2>
 
-        {detail.whatILearned?.length > 0 && (
-          <section className={styles.section}>
-            <div className={styles.sectionLabel}>
-              <h2 className="text-style-h2">WHAT I LEARNED</h2>
-            </div>
+                <ul className={styles.pointList}>
+                  {detail.whatILearned.map((item) => (
+                    <li key={item}>
+                      <p className="text-style-body-text">{item}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-            <div className={styles.sectionContent}>
-              <ol className={styles.numberList}>
-                {detail.whatILearned.map((item) => (
-                  <li key={item}>
-                    <p className="text-style-body-text">{item}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </section>
-        )}
+            {detail.ifIDidItAgain?.length > 0 && (
+              <div className={styles.learnedColumn}>
+                <h2 className="text-style-h2">IF I DID IT AGAIN</h2>
 
-        {/* IF I DID IT AGAIN */}
-
-        {detail.ifIDidItAgain?.length > 0 && (
-          <section className={styles.section}>
-            <div className={styles.sectionLabel}>
-              <h2 className="text-style-h2">IF I DID IT AGAIN</h2>
-            </div>
-
-            <div className={styles.sectionContent}>
-              <ol className={styles.numberList}>
-                {detail.ifIDidItAgain.map((item) => (
-                  <li key={item}>
-                    <p className="text-style-body-text">{item}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
+                <ul className={styles.pointList}>
+                  {detail.ifIDidItAgain.map((item) => (
+                    <li key={item}>
+                      <p className="text-style-body-text">{item}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </section>
         )}
 
