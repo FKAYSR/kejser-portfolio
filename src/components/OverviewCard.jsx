@@ -1,5 +1,5 @@
-import { Link } from "react-router";
 import Polaroid from "./PolaroidCard.jsx";
+import LinkBtn from "./LinkBtn.jsx";
 import styles from "./OverviewCard.module.css";
 
 export default function OverviewCard({ project }) {
@@ -20,9 +20,9 @@ export default function OverviewCard({ project }) {
 
         <p className={styles.description}>{project.overviewDescription}</p>
 
-        <Link to={`/project/${project.id}`} className={styles.viewButton}>
-          View project <span> → </span>
-        </Link>
+        <LinkBtn to={`/project/${project.id}`} variant="internal">
+          View project
+        </LinkBtn>
       </div>
 
       {/* Right column - polaroid component */}

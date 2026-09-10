@@ -28,10 +28,11 @@ export default function Home() {
           }
           subtitle="Digital Designer & Frontend Developer"
           ctaLabel="Explore my work"
+          ctaHref="#projects"
         />
       </header>
 
-      <section className="projects">
+      <section id="projects" className="projects">
       {featuredProjects.map((project) => (
         <PolaroidCard
           key={project.id}

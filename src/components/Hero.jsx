@@ -1,4 +1,5 @@
 import styles from "./Hero.module.css";
+import LinkBtn from "./LinkBtn.jsx";
 
 export default function Hero({
   image,
@@ -6,6 +7,7 @@ export default function Hero({
   title,
   subtitle,
   ctaLabel,
+  ctaHref,
   onCtaClick,
   imageFit = "cover",
 }) {
@@ -20,9 +22,15 @@ export default function Hero({
         <h1 className={styles.title}>{title}</h1>
         {subtitle && <h3 className={styles.subtitle}>{subtitle}</h3>}
         {ctaLabel && (
-          <button className={styles.CTA} onClick={onCtaClick} type="button">
-            <span className={styles[`text-wrapper`]}>{ctaLabel}</span>
-          </button>
+          ctaHref ? (
+            <LinkBtn href={ctaHref} variant="internal">
+              {ctaLabel}
+            </LinkBtn>
+          ) : (
+            <button className={styles.CTA} onClick={onCtaClick} type="button">
+              <span className={styles[`text-wrapper`]}>{ctaLabel}</span>
+            </button>
+          )
         )}
       </div>
     </section>
