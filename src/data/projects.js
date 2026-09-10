@@ -133,7 +133,7 @@ const projects = [
         },
       ],
 
-      toolsUsed: ["Design", "Development", "Data", "Deployment", "Animation"],
+      toolsUsed: ["Figma", "GitHub", "Supabase", "React", "Lottie"],
 
       whatILearned: [
         "Testing about onboarding requires neutral test participants who don't know anything about the app beforehand.",

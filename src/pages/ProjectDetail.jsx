@@ -3,10 +3,12 @@ import { Link, useParams } from "react-router";
 import Hero from "../components/Hero.jsx";
 import LinkBtn from "../components/LinkBtn.jsx";
 import PolaroidCard from "../components/PolaroidCard.jsx";
+import ToolItem from "../components/ToolItem.jsx";
 import figmaLinkIcon from "../assets/icons/figma-link.svg?raw";
 import githubLinkIcon from "../assets/icons/github-link.svg?raw";
-import reportIcon from "../assets/icons/report-link.svg?raw"
+import reportIcon from "../assets/icons/report-link.svg?raw";
 import projects from "../data/projects.js";
+import toolIcons from "../data/toolIcons.js";
 import styles from "./ProjectDetail.module.css";
 
 export default function ProjectDetail() {
@@ -241,14 +243,8 @@ export default function ProjectDetail() {
 
             <div className={styles.sectionContent}>
               <div className={styles.toolsList}>
-                {detail.toolsUsed.map((tool, index) => (
-                  <div key={tool} className={styles.toolItem}>
-                    <span className={styles.toolNumber}>
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-
-                    <span className="text-style-h4">{tool}</span>
-                  </div>
+                {detail.toolsUsed.map((tool) => (
+                  <ToolItem key={tool} name={tool} icon={toolIcons[tool]} />
                 ))}
               </div>
             </div>

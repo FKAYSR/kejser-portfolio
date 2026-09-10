@@ -149,20 +149,8 @@
 
 .toolsList {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-}
-
-.toolItem {
-  display: grid;
-  gap: 0.75rem;
-
-  padding: 0.75rem 0;
-}
-
-.toolNumber {
-  color: var(--color-muted);
-  font-size: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: clamp(1rem, 3vw, 2.5rem);
 }
 
 /* =========================
@@ -296,7 +284,7 @@
   }
 
   .toolsList {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
