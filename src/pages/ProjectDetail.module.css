@@ -1,0 +1,310 @@
+.projectDetail {
+  width: min(80vw, 100%);
+  margin: 0 auto;
+  padding: 0 var(--padding-horizontal) 8rem;
+}
+
+/* =========================
+   GENERAL
+========================= */
+
+.section {
+  display: grid;
+  gap: clamp(2rem, 6vw, 1rem);
+  padding: clamp(4rem, 9vw, 5rem) 0;
+}
+
+.overviewSection {
+  padding-top: 3rem;
+}
+
+.overviewTitle {
+  margin-bottom: 2rem;
+  color: var(--color-accent);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.sectionLabel {
+  align-self: start;
+  padding-top: 0.25rem;
+}
+
+.sectionLabel h2 {
+  color: var(--color-accent);
+  font-size: clamp(1.45rem, 2.5vw, 2.35rem);
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+}
+
+.sectionContent {
+  min-width: 0;
+}
+
+/* =========================
+   TAGS
+========================= */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+
+  margin-bottom: 2rem;
+
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.tags span:not(:last-child)::after {
+  content: "·";
+  margin-left: 0.75rem;
+}
+
+/* =========================
+   OVERVIEW
+========================= */
+
+.overviewLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+  gap: clamp(2rem, 6vw, 5rem);
+
+  align-items: center;
+}
+
+.overviewText {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.overviewPolaroids {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+/* =========================
+   ASSIGNMENT
+========================= */
+
+.assignmentLayout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+.infoBlock {
+  display: grid;
+  gap: 1rem;
+}
+
+/* =========================
+   SOLUTION
+========================= */
+
+.solutionIntro {
+  display: grid;
+  gap: 1.5rem;
+
+  max-width: 800px;
+
+  margin-bottom: 3.5rem;
+}
+
+.solutionLists {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(3rem, 7vw, 8rem);
+
+  margin-bottom: 4rem;
+}
+
+.listBlock {
+  display: grid;
+  gap: 1rem;
+}
+
+.listBlock ul {
+  display: grid;
+  gap: 0.75rem;
+
+  padding-left: 1.25rem;
+}
+
+.solutionPolaroids {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* =========================
+   TOOLS
+========================= */
+
+.toolsList {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.toolItem {
+  display: grid;
+  gap: 0.75rem;
+
+  padding: 0.75rem 0;
+}
+
+.toolNumber {
+  color: var(--color-muted);
+  font-size: 0.75rem;
+}
+
+/* =========================
+   MY ROLE
+========================= */
+
+.roleLayout {
+  display: grid;
+  grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(3rem, 7vw, 8rem);
+
+  align-items: center;
+}
+
+.roleContent {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.roleNumber {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.rolePolaroids {
+  display: flex;
+  justify-content: center;
+}
+
+.roleNavigation {
+  display: flex;
+  gap: 1rem;
+
+  margin-top: 1rem;
+}
+
+.arrowButton {
+  width: 48px;
+  height: 48px;
+
+  border: none;
+  background: transparent;
+
+  color: var(--color-accent);
+
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* =========================
+   NUMBER LIST
+========================= */
+
+.numberList {
+  display: grid;
+  gap: 2rem;
+
+  max-width: 900px;
+
+  padding-left: 1.5rem;
+}
+
+.numberList li::marker {
+  color: var(--color-accent);
+
+  font-family: var(--font-heading);
+}
+
+/* =========================
+   PROJECT LINKS
+========================= */
+
+.projectLinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13.75rem, 1fr));
+  gap: 1rem;
+}
+
+/* =========================
+   NEXT PROJECT
+========================= */
+
+.nextProject {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(3rem, 7vw, 8rem);
+
+  align-items: center;
+
+  padding: clamp(6rem, 12vw, 12rem) 0;
+}
+
+.nextProjectContent {
+  display: grid;
+  gap: 1.5rem;
+
+  max-width: 650px;
+}
+
+.nextProjectContent > span {
+  color: var(--color-muted);
+}
+
+.nextProjectLink {
+  color: var(--color-accent);
+
+  text-decoration: none;
+}
+
+/* =========================
+   NOT FOUND
+========================= */
+
+.notFound {
+  padding: 6rem var(--padding-horizontal);
+  text-align: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .assignmentLayout,
+  .solutionLists,
+  .overviewLayout,
+  .roleLayout,
+  .nextProject {
+    grid-template-columns: 1fr;
+  }
+
+  .toolsList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .section {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .sectionLabel {
+    padding-top: 0;
+  }
+
+  .toolsList {
+    grid-template-columns: 1fr;
+  }
+}
