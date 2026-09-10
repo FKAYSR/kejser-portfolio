@@ -1,10 +1,12 @@
 .linkButton {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  width: fit-content;
-  min-width: 12rem;
+  justify-content: center;
+  gap: 0.75rem;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 4.5rem;
   padding: 0.9rem 1.25rem;
   border: 2px solid var(--color-accent-hover);
   border-radius: 0.55rem;
@@ -13,20 +15,25 @@
   color: var(--color-bg);
   font-family: var(--font-body);
   font-size: 1.25rem;
-  line-height: 1;
+  line-height: 1.15;
   text-decoration: none;
+  box-sizing: border-box;
   transition:
     background-color 0.2s ease,
     transform 0.2s ease;
 }
 
 .linkButton--external {
-  min-width: 20rem;
   border: 3px solid var(--color-accent);
   background-color: var(--color-surface);
   color: var(--color-accent);
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
   font-weight: 400;
+}
+
+.linkButton > span:not(.icon):not(.arrow) {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .linkButton:hover {
@@ -94,6 +101,7 @@
   height: 3.5rem;
   flex: 0 0 3.5rem;
   display: block;
+  max-width: 25%;
 }
 
 .icon svg {

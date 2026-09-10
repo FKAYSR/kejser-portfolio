@@ -3,10 +3,12 @@ import { Link, useParams } from "react-router";
 import Hero from "../components/Hero.jsx";
 import LinkBtn from "../components/LinkBtn.jsx";
 import PolaroidCard from "../components/PolaroidCard.jsx";
+import ToolItem from "../components/ToolItem.jsx";
 import figmaLinkIcon from "../assets/icons/figma-link.svg?raw";
 import githubLinkIcon from "../assets/icons/github-link.svg?raw";
-import reportIcon from "../assets/icons/report-link.svg?raw"
+import reportIcon from "../assets/icons/report-link.svg?raw";
 import projects from "../data/projects.js";
+import toolIcons from "../data/toolIcons.js";
 import styles from "./ProjectDetail.module.css";
 
 export default function ProjectDetail() {
@@ -91,7 +93,6 @@ export default function ProjectDetail() {
 
       <main className={styles.projectDetail}>
         {/* OVERVIEW */}
-
         <section className={`${styles.section} ${styles.overviewSection}`}>
           <div className={styles.overviewLayout}>
             <div className={styles.overviewText}>
@@ -143,28 +144,21 @@ export default function ProjectDetail() {
         </section>
 
         {/* THE ASSIGNMENT */}
-
         <section className={styles.section}>
           <div className={styles.sectionLabel}>
             <h2 className="text-style-h2">THE ASSIGNMENT</h2>
+            {detail.assignment?.type && (
+              <article className={styles.infoBlock}>
+                <p className="text-style-body-text">{detail.assignment.type}</p>
+              </article>
+            )}
           </div>
 
           <div className={styles.sectionContent}>
             <div className={styles.assignmentLayout}>
-              {detail.assignment?.type && (
-                <article className={styles.infoBlock}>
-                  <h2 className="text-style-h3">Type</h2>
-
-                  <p className="text-style-body-text">
-                    {detail.assignment.type}
-                  </p>
-                </article>
-              )}
-
               {detail.assignment?.problem && (
                 <article className={styles.infoBlock}>
-                  <h2 className="text-style-h3">Problem</h2>
-
+                  <h3 className="text-style-h3">Problem</h3>
                   <p className="text-style-body-text">
                     {detail.assignment.problem}
                   </p>
@@ -173,8 +167,7 @@ export default function ProjectDetail() {
 
               {detail.assignment?.targetAudience && (
                 <article className={styles.infoBlock}>
-                  <h2 className="text-style-h3">Target audience</h2>
-
+                  <h3 className="text-style-h3">Target audience</h3>
                   <p className="text-style-body-text">
                     {detail.assignment.targetAudience}
                   </p>
@@ -185,68 +178,62 @@ export default function ProjectDetail() {
         </section>
 
         {/* OUR SOLUTION */}
-
         <section className={styles.section}>
-          <div className={styles.sectionLabel}>
-            <h2 className="text-style-h2">OUR SOLUTION</h2>
-          </div>
+          <div className={styles.solutionLayout}>
+            <div className={styles.solutionText}>
+              <h2 className="text-style-h2">OUR SOLUTION</h2>
+              <div className={styles.solutionIntro}>
+                {detail.solution?.created && (
+                  <p className="text-style-body-text">
+                    {detail.solution.created}
+                  </p>
+                )}
+              </div>
 
-          <div className={styles.sectionContent}>
-            <div className={styles.solutionIntro}>
-              {detail.solution?.created && (
-                <p className="text-style-body-text">
-                  {detail.solution.created}
-                </p>
-              )}
-            </div>
+              <div className={styles.solutionLists}>
+                {detail.solution?.keyFeatures?.length > 0 && (
+                  <div className={styles.listBlock}>
+                    <h3 className="text-style-h3">Key features</h3>
 
-            <div className={styles.solutionLists}>
-              {detail.solution?.keyFeatures?.length > 0 && (
-                <div className={styles.listBlock}>
-                  <h3 className="text-style-h3">Key features</h3>
+                    <ul>
+                      {detail.solution.keyFeatures.map((feature) => (
+                        <li key={feature} className="text-style-body-text">
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
-                  <ul>
-                    {detail.solution.keyFeatures.map((feature) => (
-                      <li key={feature} className="text-style-body-text">
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+                {detail.solution?.valueCreation?.length > 0 && (
+                  <div className={styles.listBlock}>
+                    <h3 className="text-style-h3">Value creation</h3>
 
-              {detail.solution?.valueCreation?.length > 0 && (
-                <div className={styles.listBlock}>
-                  <h3 className="text-style-h3">Value creation</h3>
-
-                  <ul>
-                    {detail.solution.valueCreation.map((value) => (
-                      <li key={value} className="text-style-body-text">
-                        {value}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+                    <ul>
+                      {detail.solution.valueCreation.map((value) => (
+                        <li key={value} className="text-style-body-text">
+                          {value}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
 
             {solutionImages.length > 0 && (
               <div className={styles.solutionPolaroids}>
-                {solutionImages.map((image, index) => (
-                  <PolaroidCard
-                    key={image}
-                    images={[image]}
-                    imageAlt={`${project.title} solution ${index + 1}`}
-                    size={index === 0 ? "large" : "medium"}
-                  />
-                ))}
+                <PolaroidCard
+                  images={solutionImages}
+                  imageAlt={`${project.title} solution`}
+                  size="large"
+                />
               </div>
             )}
           </div>
         </section>
 
         {/* TOOLS */}
-
         {detail.toolsUsed?.length > 0 && (
           <section className={styles.section}>
             <div className={styles.sectionLabel}>
@@ -255,14 +242,8 @@ export default function ProjectDetail() {
 
             <div className={styles.sectionContent}>
               <div className={styles.toolsList}>
-                {detail.toolsUsed.map((tool, index) => (
-                  <div key={tool} className={styles.toolItem}>
-                    <span className={styles.toolNumber}>
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-
-                    <span className="text-style-h4">{tool}</span>
-                  </div>
+                {detail.toolsUsed.map((tool) => (
+                  <ToolItem key={tool} name={tool} icon={toolIcons[tool]} />
                 ))}
               </div>
             </div>
@@ -270,8 +251,7 @@ export default function ProjectDetail() {
         )}
 
         {/* MY ROLE */}
-
-        {roles.length > 0 && currentRoleData && (
+        {/* {roles.length > 0 && currentRoleData && (
           <section className={styles.section}>
             <div className={styles.sectionLabel}>
               <h2 className="text-style-h2">MY ROLE</h2>
@@ -327,45 +307,39 @@ export default function ProjectDetail() {
               </div>
             </div>
           </section>
-        )}
+        )} */}
 
-        {/* WHAT I LEARNED */}
+        {/* WHAT I LEARNED / IF I DID IT AGAIN */}
+        {(detail.whatILearned?.length > 0 ||
+          detail.ifIDidItAgain?.length > 0) && (
+          <section className={`${styles.section} ${styles.learnedSection}`}>
+            {detail.whatILearned?.length > 0 && (
+              <div className={styles.learnedColumn}>
+                <h2 className="text-style-h2">WHAT I LEARNED</h2>
 
-        {detail.whatILearned?.length > 0 && (
-          <section className={styles.section}>
-            <div className={styles.sectionLabel}>
-              <h2 className="text-style-h2">WHAT I LEARNED</h2>
-            </div>
+                <ul className={styles.pointList}>
+                  {detail.whatILearned.map((item) => (
+                    <li key={item}>
+                      <p className="text-style-body-text">{item}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
-            <div className={styles.sectionContent}>
-              <ol className={styles.numberList}>
-                {detail.whatILearned.map((item) => (
-                  <li key={item}>
-                    <p className="text-style-body-text">{item}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </section>
-        )}
+            {detail.ifIDidItAgain?.length > 0 && (
+              <div className={styles.learnedColumn}>
+                <h2 className="text-style-h2">IF I DID IT AGAIN</h2>
 
-        {/* IF I DID IT AGAIN */}
-
-        {detail.ifIDidItAgain?.length > 0 && (
-          <section className={styles.section}>
-            <div className={styles.sectionLabel}>
-              <h2 className="text-style-h2">IF I DID IT AGAIN</h2>
-            </div>
-
-            <div className={styles.sectionContent}>
-              <ol className={styles.numberList}>
-                {detail.ifIDidItAgain.map((item) => (
-                  <li key={item}>
-                    <p className="text-style-body-text">{item}</p>
-                  </li>
-                ))}
-              </ol>
-            </div>
+                <ul className={styles.pointList}>
+                  {detail.ifIDidItAgain.map((item) => (
+                    <li key={item}>
+                      <p className="text-style-body-text">{item}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </section>
         )}
 
@@ -390,9 +364,10 @@ export default function ProjectDetail() {
                           key === "repository"
                             ? githubLinkIcon
                             : key === "figmaPrototype" || key === "designFile"
-                              ? figmaLinkIcon 
-                              : key === "report" ? reportIcon
-                              : undefined
+                              ? figmaLinkIcon
+                              : key === "report"
+                                ? reportIcon
+                                : undefined
                         }
                       >
                         {linkLabels[key] || key}

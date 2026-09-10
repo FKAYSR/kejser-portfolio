@@ -1,4 +1,4 @@
-// Images
+// IMAGES
 // Mer' end Toast
 import merEndToastThumb from "../assets/projects/mer-end-toast/images/fav-icon.png";
 import merEndToastHero from "../assets/projects/mer-end-toast/images/expo.jpg";
@@ -11,7 +11,7 @@ import toastOn3 from "../assets/projects/mer-end-toast/images/onboarding3.png";
 import toastVariables from "../assets/projects/mer-end-toast/images/variables-figma.png";
 import toastFunctionsRated from "../assets/projects/mer-end-toast/images/functions-rated.png";
 
-// Mellemrum
+// Story Hangers
 import hangerHero from "../assets/projects/story-hangers/images/hanger-hero-section.png";
 import hangerLogo from "../assets/projects/story-hangers/images/hanger-logo.png";
 import hangerAffinityMap from "../assets/projects/story-hangers/images/hanger-affinity-mapping.png";
@@ -20,11 +20,8 @@ import hangerFooter from "../assets/projects/story-hangers/images/hanger-footer.
 import hangerRoot from "../assets/projects/story-hangers/images/hanger-root.png";
 import hangerVariables from "../assets/projects/story-hangers/images/hanger-variables.png";
 
-// Story Hangers
-
-
 const projects = [
-  // Mer end Toast
+  // MER' END TOAST
   {
     id: "mer-end-toast",
     title: "Mer' end Toast",
@@ -55,10 +52,11 @@ const projects = [
       links: {
         live: "https://fkaysr.github.io/webapp-mer-end-toast/hjem",
         repository: "https://github.com/FKAYSR/webapp-mer-end-toast",
-        figmaPrototype:
-          "https://www.figma.com/proto/zIaaBLDnY3stpeh7Hi87vU/Design-stuff?node-id=1437-17377&viewport=203%2C135%2C0.05&t=3nsO4dxEGeFafGmU-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1437%3A17377&page-id=233%3A4196",
         designFile:
           "https://www.figma.com/design/zIaaBLDnY3stpeh7Hi87vU/Design-stuff?node-id=233-4203&t=fOH2DkUISm52xc71-1",
+        figmaPrototype:
+          "https://www.figma.com/proto/zIaaBLDnY3stpeh7Hi87vU/Design-stuff?node-id=1437-17377&viewport=203%2C135%2C0.05&t=3nsO4dxEGeFafGmU-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1437%3A17377&page-id=233%3A4196",
+
         report:
           "https://drive.google.com/file/d/1sxeXUF9Pvz1ZFoxMmIPyAgHiy4RwWrud/view?usp=sharing",
       },
@@ -85,11 +83,11 @@ const projects = [
         created:
           "We created an app that combines recipe inspiration, ingredient-based search, show where the cost is lowest and shopping lists. By bringing these functions together, the concept aims to reduce friction in the cooking process and make it easier for users to plan meals and shop within their budget.",
         keyFeatures: [
-          "Discover recipes - Find inspiration based on ingredients and preferences.",
-          "Compare prices - See where ingredients can be bought most affordably.",
-          "Build shopping lists - Add ingredients directly from recipes to a categorised shopping list.",
-          "Personalize - Set preferences and allergies during onboarding.",
-          "Save favorites - Save recipes for later.",
+          "Discover recipes - Find inspiration based on ingredients and preferences",
+          "Compare prices - See where ingredients can be bought most affordably",
+          "Build shopping lists - Add ingredients directly from recipes to a categorised shopping-list",
+          "Personalize - Set preferences and allergies during onboarding",
+          "Save favorites - Save recipes for later",
         ],
         valueCreation: [
           "Less friction in the cooking process",
@@ -133,7 +131,7 @@ const projects = [
         },
       ],
 
-      toolsUsed: ["Design", "Development", "Data", "Deployment", "Animation"],
+      toolsUsed: ["Figma", "GitHub", "Supabase", "React", "Lottie"],
 
       whatILearned: [
         "Testing about onboarding requires neutral test participants who don't know anything about the app beforehand.",
@@ -152,7 +150,7 @@ const projects = [
     },
   },
 
-  // Mellemrum
+  // MELLEMRUM
   {
     id: "mellemrum",
     title: "Mellemrum",
@@ -251,7 +249,7 @@ const projects = [
         "React",
         "Supabase",
         "CSS",
-        "Lottie/Jitter",
+        "Lottie",
         "GitHub",
         "HTML",
         "JavaScript",
@@ -274,7 +272,7 @@ const projects = [
     },
   },
 
-  // Story Hangers
+  // STORY HANGERS
   {
     id: "story-hangers",
     title: "Story Hangers",

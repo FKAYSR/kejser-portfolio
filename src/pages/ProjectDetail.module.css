@@ -9,9 +9,28 @@
 ========================= */
 
 .section {
+  position: relative;
+  isolation: isolate;
   display: grid;
-  gap: clamp(2rem, 6vw, 1rem);
+  gap: clamp(2rem, 4vw, 5rem);
   padding: clamp(4rem, 9vw, 5rem) 0;
+}
+
+.section::before,
+.nextProject::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  background: var(--color-bg);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.projectDetail > section:nth-of-type(even)::before {
+  background: var(--color-surface);
 }
 
 .overviewSection {
@@ -20,7 +39,7 @@
 
 .overviewTitle {
   margin-bottom: 2rem;
-  color: var(--color-accent);
+  color: var(--color-text);
   font-size: clamp(2.5rem, 5vw, 4rem);
 }
 
@@ -29,11 +48,18 @@
   padding-top: 0.25rem;
 }
 
-.sectionLabel h2 {
-  color: var(--color-accent);
+.sectionLabel h2,
+.solutionText > h2,
+.learnedColumn > h2 {
+  color: var(--color-text);
   font-size: clamp(1.45rem, 2.5vw, 2.35rem);
   line-height: 1.05;
   letter-spacing: 0.04em;
+}
+
+.sectionLabel > .infoBlock,
+.solutionIntro {
+  margin-top: 1.5rem;
 }
 
 .sectionContent {
@@ -89,8 +115,9 @@
 
 .assignmentLayout {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: flex-start;
 }
 
 .infoBlock {
@@ -104,19 +131,24 @@
 
 .solutionIntro {
   display: grid;
-  gap: 1.5rem;
-
   max-width: 800px;
+  margin-bottom: 2.5rem;
+}
 
-  margin-bottom: 3.5rem;
+.solutionLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.solutionText {
+  min-width: 0;
 }
 
 .solutionLists {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(3rem, 7vw, 8rem);
-
-  margin-bottom: 4rem;
+  gap: 2rem;
 }
 
 .listBlock {
@@ -127,15 +159,13 @@
 .listBlock ul {
   display: grid;
   gap: 0.75rem;
-
   padding-left: 1.25rem;
 }
 
 .solutionPolaroids {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  min-width: 0;
 }
 
 /* =========================
@@ -144,20 +174,8 @@
 
 .toolsList {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1rem;
-}
-
-.toolItem {
-  display: grid;
-  gap: 0.75rem;
-
-  padding: 0.75rem 0;
-}
-
-.toolNumber {
-  color: var(--color-muted);
-  font-size: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  gap: clamp(1rem, 3vw, 2.5rem);
 }
 
 /* =========================
@@ -208,22 +226,30 @@
 }
 
 /* =========================
-   NUMBER LIST
+   WHAT I LEARNED AND IF I DID IT AGAIN LIST
 ========================= */
 
-.numberList {
-  display: grid;
-  gap: 2rem;
-
-  max-width: 900px;
-
-  padding-left: 1.5rem;
+.learnedSection {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 6vw, 4rem);
+  align-items: start;
 }
 
-.numberList li::marker {
-  color: var(--color-accent);
+.learnedColumn {
+  min-width: 0;
+}
 
-  font-family: var(--font-heading);
+.learnedColumn + .learnedColumn {
+  border-left: 1px solid var(--color-border);
+  padding-left: clamp(2rem, 6vw, 4rem);
+}
+
+.pointList {
+  display: grid;
+  gap: 1rem;
+  max-width: 900px;
+  margin-top: 1.5rem;
+  padding-left: 1.25rem;
 }
 
 /* =========================
@@ -232,7 +258,7 @@
 
 .projectLinks {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(13.75rem, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
 }
 
@@ -241,20 +267,19 @@
 ========================= */
 
 .nextProject {
+  position: relative;
+  isolation: isolate;
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: clamp(3rem, 7vw, 8rem);
-
+  grid-template-columns: 1fr;
+  justify-items: flex-end;
   align-items: center;
-
-  padding: clamp(6rem, 12vw, 12rem) 0;
+  padding: clamp(3rem, 6vw, 4rem) 0;
 }
 
 .nextProjectContent {
   display: grid;
   gap: 1.5rem;
-
-  max-width: 650px;
+  width: min(100%, 42rem);
 }
 
 .nextProjectContent > span {
@@ -263,7 +288,6 @@
 
 .nextProjectLink {
   color: var(--color-accent);
-
   text-decoration: none;
 }
 
@@ -283,6 +307,8 @@
 @media (max-width: 900px) {
   .assignmentLayout,
   .solutionLists,
+  .solutionLayout,
+  .learnedSection,
   .overviewLayout,
   .roleLayout,
   .nextProject {
@@ -290,7 +316,11 @@
   }
 
   .toolsList {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .projectLinks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -304,7 +334,18 @@
     padding-top: 0;
   }
 
+  .learnedColumn + .learnedColumn {
+    border-left: 0;
+    border-top: 1px solid var(--color-border);
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+
   .toolsList {
+    grid-template-columns: 1fr;
+  }
+
+  .projectLinks {
     grid-template-columns: 1fr;
   }
 }
