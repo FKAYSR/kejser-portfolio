@@ -85,11 +85,11 @@ const projects = [
         created:
           "We created an app that combines recipe inspiration, ingredient-based search, show where the cost is lowest and shopping lists. By bringing these functions together, the concept aims to reduce friction in the cooking process and make it easier for users to plan meals and shop within their budget.",
         keyFeatures: [
-          "Discover recipes - Find inspiration based on ingredients and preferences.",
-          "Compare prices - See where ingredients can be bought most affordably.",
-          "Build shopping lists - Add ingredients directly from recipes to a categorised shopping list.",
-          "Personalize - Set preferences and allergies during onboarding.",
-          "Save favorites - Save recipes for later.",
+          "Discover recipes - Find inspiration based on ingredients and preferences",
+          "Compare prices - See where ingredients can be bought most affordably",
+          "Build shopping lists - Add ingredients directly from recipes to a categorised shopping-list",
+          "Personalize - Set preferences and allergies during onboarding",
+          "Save favorites - Save recipes for later",
         ],
         valueCreation: [
           "Less friction in the cooking process",

@@ -91,7 +91,6 @@ export default function ProjectDetail() {
 
       <main className={styles.projectDetail}>
         {/* OVERVIEW */}
-
         <section className={`${styles.section} ${styles.overviewSection}`}>
           <div className={styles.overviewLayout}>
             <div className={styles.overviewText}>
@@ -143,28 +142,21 @@ export default function ProjectDetail() {
         </section>
 
         {/* THE ASSIGNMENT */}
-
         <section className={styles.section}>
           <div className={styles.sectionLabel}>
             <h2 className="text-style-h2">THE ASSIGNMENT</h2>
+            {detail.assignment?.type && (
+              <article className={styles.infoBlock}>
+                <p className="text-style-body-text">{detail.assignment.type}</p>
+              </article>
+            )}
           </div>
 
           <div className={styles.sectionContent}>
             <div className={styles.assignmentLayout}>
-              {detail.assignment?.type && (
-                <article className={styles.infoBlock}>
-                  <h2 className="text-style-h3">Type</h2>
-
-                  <p className="text-style-body-text">
-                    {detail.assignment.type}
-                  </p>
-                </article>
-              )}
-
               {detail.assignment?.problem && (
                 <article className={styles.infoBlock}>
-                  <h2 className="text-style-h3">Problem</h2>
-
+                  <h3 className="text-style-h3">Problem</h3>
                   <p className="text-style-body-text">
                     {detail.assignment.problem}
                   </p>
@@ -173,8 +165,7 @@ export default function ProjectDetail() {
 
               {detail.assignment?.targetAudience && (
                 <article className={styles.infoBlock}>
-                  <h2 className="text-style-h3">Target audience</h2>
-
+                  <h3 className="text-style-h3">Target audience</h3>
                   <p className="text-style-body-text">
                     {detail.assignment.targetAudience}
                   </p>
@@ -185,22 +176,19 @@ export default function ProjectDetail() {
         </section>
 
         {/* OUR SOLUTION */}
+        <section className={`${styles.section} ${styles.solutionSection}`}>
+          <div className={styles.solutionLayout}>
+            <div className={styles.solutionText}>
+              <h2 className="text-style-h2">OUR SOLUTION</h2>
+              <div className={styles.solutionIntro}>
+                {detail.solution?.created && (
+                  <p className="text-style-body-text">
+                    {detail.solution.created}
+                  </p>
+                )}
+              </div>
 
-        <section className={styles.section}>
-          <div className={styles.sectionLabel}>
-            <h2 className="text-style-h2">OUR SOLUTION</h2>
-          </div>
-
-          <div className={styles.sectionContent}>
-            <div className={styles.solutionIntro}>
-              {detail.solution?.created && (
-                <p className="text-style-body-text">
-                  {detail.solution.created}
-                </p>
-              )}
-            </div>
-
-            <div className={styles.solutionLists}>
+              <div className={styles.solutionLists}>
               {detail.solution?.keyFeatures?.length > 0 && (
                 <div className={styles.listBlock}>
                   <h3 className="text-style-h3">Key features</h3>
@@ -228,18 +216,16 @@ export default function ProjectDetail() {
                   </ul>
                 </div>
               )}
+              </div>
             </div>
 
             {solutionImages.length > 0 && (
               <div className={styles.solutionPolaroids}>
-                {solutionImages.map((image, index) => (
-                  <PolaroidCard
-                    key={image}
-                    images={[image]}
-                    imageAlt={`${project.title} solution ${index + 1}`}
-                    size={index === 0 ? "large" : "medium"}
-                  />
-                ))}
+                <PolaroidCard
+                  images={solutionImages}
+                  imageAlt={`${project.title} solution`}
+                  size="large"
+                />
               </div>
             )}
           </div>
@@ -390,9 +376,10 @@ export default function ProjectDetail() {
                           key === "repository"
                             ? githubLinkIcon
                             : key === "figmaPrototype" || key === "designFile"
-                              ? figmaLinkIcon 
-                              : key === "report" ? reportIcon
-                              : undefined
+                              ? figmaLinkIcon
+                              : key === "report"
+                                ? reportIcon
+                                : undefined
                         }
                       >
                         {linkLabels[key] || key}
