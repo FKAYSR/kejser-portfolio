@@ -191,33 +191,33 @@ export default function ProjectDetail() {
               </div>
 
               <div className={styles.solutionLists}>
-              {detail.solution?.keyFeatures?.length > 0 && (
-                <div className={styles.listBlock}>
-                  <h3 className="text-style-h3">Key features</h3>
+                {detail.solution?.keyFeatures?.length > 0 && (
+                  <div className={styles.listBlock}>
+                    <h3 className="text-style-h3">Key features</h3>
 
-                  <ul>
-                    {detail.solution.keyFeatures.map((feature) => (
-                      <li key={feature} className="text-style-body-text">
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+                    <ul>
+                      {detail.solution.keyFeatures.map((feature) => (
+                        <li key={feature} className="text-style-body-text">
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
-              {detail.solution?.valueCreation?.length > 0 && (
-                <div className={styles.listBlock}>
-                  <h3 className="text-style-h3">Value creation</h3>
+                {detail.solution?.valueCreation?.length > 0 && (
+                  <div className={styles.listBlock}>
+                    <h3 className="text-style-h3">Value creation</h3>
 
-                  <ul>
-                    {detail.solution.valueCreation.map((value) => (
-                      <li key={value} className="text-style-body-text">
-                        {value}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+                    <ul>
+                      {detail.solution.valueCreation.map((value) => (
+                        <li key={value} className="text-style-body-text">
+                          {value}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -251,7 +251,7 @@ export default function ProjectDetail() {
         )}
 
         {/* MY ROLE */}
-        {roles.length > 0 && currentRoleData && (
+        {/* {roles.length > 0 && currentRoleData && (
           <section className={styles.section}>
             <div className={styles.sectionLabel}>
               <h2 className="text-style-h2">MY ROLE</h2>
@@ -307,10 +307,11 @@ export default function ProjectDetail() {
               </div>
             </div>
           </section>
-        )}
+        )} */}
 
         {/* WHAT I LEARNED / IF I DID IT AGAIN */}
-        {(detail.whatILearned?.length > 0 || detail.ifIDidItAgain?.length > 0) && (
+        {(detail.whatILearned?.length > 0 ||
+          detail.ifIDidItAgain?.length > 0) && (
           <section className={`${styles.section} ${styles.learnedSection}`}>
             {detail.whatILearned?.length > 0 && (
               <div className={styles.learnedColumn}>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router";
 import Home from "../src/pages/Home.jsx";
 import About from "../src/pages/About.jsx";
@@ -12,22 +13,26 @@ function App() {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
 
-    return (
-      <>
-        <Navbar />
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/overview" element={<Overview />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/project/:slug" element={<ProjectDetail />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+  return (
+    <>
+      <Navbar />
 
-        {!isContactPage && <Footer />}
-      </>
-    );
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/overview" element={<Overview />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/project/:slug" element={<ProjectDetail />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
+      {!isContactPage && <Footer />}
+    </>
+  );
 }
 
 export default App;

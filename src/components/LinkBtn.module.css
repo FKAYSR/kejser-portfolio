@@ -1,10 +1,14 @@
 .linkButton {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  width: fit-content;
+  justify-content: center;
+  gap: 0.75rem;
+
+  width: 100%;
+  flex: 1 1 0;
+  max-width: 16rem;
   min-width: 12rem;
+  
   padding: 0.9rem 1.25rem;
   border: 2px solid var(--color-accent-hover);
   border-radius: 0.55rem;
@@ -15,6 +19,7 @@
   font-size: 1.25rem;
   line-height: 1;
   text-decoration: none;
+  box-sizing: border-box;
   transition:
     background-color 0.2s ease,
     transform 0.2s ease;
