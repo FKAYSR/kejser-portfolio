@@ -1,7 +1,7 @@
 .projectDetail {
   width: min(80vw, 100%);
   margin: 0 auto;
-  padding: 0 var(--padding-horizontal) 1rem;
+  padding-top: var(--navbar-height);
 }
 
 /* =========================
@@ -24,13 +24,13 @@
   left: 50%;
   z-index: -1;
   width: 100vw;
-  background: var(--color-bg);
+  background: var(--color-bg-primary);
   content: "";
   transform: translateX(-50%);
 }
 
 .projectDetail > section:nth-of-type(even)::before {
-  background: var(--color-surface);
+  background: var(--color-bg-secondary);
 }
 
 .overviewSection {

@@ -31,7 +31,7 @@ export default function OverviewCard({ project }) {
           images={project.thumbnail ? [project.thumbnail] : []}
           imageAlt={project.thumbnailAlt}
           title={project.title}
-          size="medium"
+          size="large"
           tilt={project.tiltClass}
         />
       </div>

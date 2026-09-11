@@ -8,6 +8,7 @@
   overflow: hidden;
   padding: 40px 20px;
   background: var(--color-accent);
+  margin-top: calc(-1 * var(--navbar-height));
 }
 
 .contactContainer {
@@ -27,7 +28,6 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: 2px;
-  margin: 0;
 }
 
 .mailLink {
