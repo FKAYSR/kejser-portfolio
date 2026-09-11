@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { Link, useParams } from "react-router";
 import Hero from "../components/Hero.jsx";
 import LinkBtn from "../components/LinkBtn.jsx";
@@ -16,7 +16,7 @@ export default function ProjectDetail() {
 
   const project = projects.find((item) => item.id === slug);
 
-  const [currentRole, setCurrentRole] = useState(0);
+  // const [currentRole, setCurrentRole] = useState(0);
 
   if (!project) {
     return (
@@ -46,28 +46,28 @@ export default function ProjectDetail() {
     detail.solution?.solutionImage3,
   ].filter(Boolean);
 
-  const roles = detail.myRole || [];
-  const currentRoleData = roles[currentRole];
+  // const roles = detail.myRole || [];
+  // const currentRoleData = roles[currentRole];
 
-  const roleImages = currentRoleData
-    ? [
-        currentRoleData.bigImage,
-        currentRoleData.image2,
-        currentRoleData.image3,
-      ].filter(Boolean)
-    : [];
+  // // const roleImages = currentRoleData
+  // //   ? [
+  // //       currentRoleData.bigImage,
+  // //       currentRoleData.image2,
+  // //       currentRoleData.image3,
+  // //     ].filter(Boolean)
+  // //   : [];
 
-  function nextRole() {
-    setCurrentRole((current) =>
-      current === roles.length - 1 ? 0 : current + 1,
-    );
-  }
+  // function nextRole() {
+  //   setCurrentRole((current) =>
+  //     current === roles.length - 1 ? 0 : current + 1,
+  //   );
+  // }
 
-  function previousRole() {
-    setCurrentRole((current) =>
-      current === 0 ? roles.length - 1 : current - 1,
-    );
-  }
+  // function previousRole() {
+  //   setCurrentRole((current) =>
+  //     current === 0 ? roles.length - 1 : current - 1,
+  //   );
+  // }
 
   const linkLabels = {
     live: "Visit live project",

@@ -1,4 +1,6 @@
 .overviewCard {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
@@ -6,6 +8,20 @@
   padding: 4rem 0;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.overviewCard::before {
+  position: absolute;
+  inset: 0 auto 0 50%;
+  z-index: -1;
+  width: 100vw;
+  background: var(--color-bg-primary);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.overviewCard:nth-child(even)::before {
+  background: var(--color-bg-secondary);
 }
 
 .textContent {
@@ -39,4 +55,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 700px) {
+  .overviewCard {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 3rem var(--padding-horizontal);
+  }
+
+  .polaroidWrapper {
+    order: -1;
+  }
 }

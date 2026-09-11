@@ -20,9 +20,7 @@
 
 .copyright {
   color: var(--color-bg);
-  font-family: var(--font-body);
   font-size: 0.9rem;
-  opacity: 0.8;
 }
 
 .contactGroup {

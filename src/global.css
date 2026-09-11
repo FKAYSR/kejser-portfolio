@@ -5,12 +5,17 @@
 }
 
 :root {
+  /* Textures */
+  --texture-paper: url("https://transparenttextures.com/patterns/clean-gray-paper.png");
+  
   /* Colors */
-  --color-bg: #f6f3ee;
+  --color-bg: #F6F3EE;
+  --color-bg-primary: var(--color-bg) var(--texture-paper) repeat;
+  --color-surface: #eae7e1;
+  --color-bg-secondary: var(--color-surface) var(--texture-paper) repeat;
   --color-polaroid: #e7e7e7;
   --color-nav-transparent: #f6f3eeb2;
   --color-path: #e6ddd2;
-  --color-surface: #fcfbf8;
   --color-text: #191919;
   --color-muted: #706b64;
   --color-border: #d9d2c8;
@@ -28,6 +33,7 @@
   /* Spacing */
   --padding-horizontal: 16px;
   --padding-vertical: 12px;
+  --navbar-height: 4.6875rem;
 
   /* Font families */
   --font-heading: "Cinzel", serif;
@@ -41,10 +47,12 @@
 /* Body */
 body {
   background-color: var(--color-bg);
+  background-image: url("https://transparenttextures.com/patterns/clean-gray-paper.png");
   color: var(--color-text);
   font-family: var(--font-body);
   overflow-x: hidden;
 }
+
 
 /* Typografi styles */
 .text-style-h1 {
