@@ -1,5 +1,6 @@
 import PolaroidCard from "../components/PolaroidCard.jsx";
 import styles from "./About.module.css";
+import LinkBtn from "../components/LinkBtn.jsx";
 import whDo from "../assets/icons/wh-do.svg";
 import whEnjoy from "../assets/icons/wh-enjoy.svg";
 import whLearning from "../assets/icons/wh-learning.svg";
@@ -10,13 +11,7 @@ export default function About() {
     {
       title: "WHAT I USE",
       icon: whUse,
-      items: [
-        "Figma",
-        "HTML & CSS",
-        "JavaScript & React",
-        "VS Code",
-        "GitHub",
-      ],
+      items: ["Figma", "HTML & CSS", "JavaScript & React", "VS Code", "GitHub"],
     },
     {
       title: "WHAT I CAN DO",
@@ -49,6 +44,44 @@ export default function About() {
     },
   ];
 
+  const timelineData = [
+    {
+      period: "2025 - NOW",
+      title: "Multimedia Design",
+      subtitle: "Business Academy Aarhus",
+      description:
+        "Education with focus on UX design, UI-prototyping in Figma, Accessibility and modern frontend-development with React.",
+    },
+    {
+      period: "2023",
+      title: "Volunteer Teacher",
+      subtitle: "Bagamoyo, Tanzania",
+      description:
+        "Taught English and Math to 4th-6th grade students. Developed strong intercultural communication skills, adaptability, and gained experience in structuring engaging lesson plans.",
+    },
+    {
+      period: "2020 - 2023",
+      title: "Student NGO Board Member & Chair",
+      subtitle: "Egaa Gymnasium",
+      description:
+        "Served as Vice Chair and later Chair for the school's student-led NGO called RANI. Coordinated annual fundraising initiatives, managing student workdays to support community projects in Tanzania.",
+    },
+    {
+      period: "2022",
+      title: "Red Cross High School Ambassador",
+      subtitle: "Egaa Gymnasium",
+      description:
+        "Represented a Red Cross campaign at Egaa Gymnasium. Co-hosted a school-wide presentation to drive student awareness and engagement for the national Red Cross high-school fundraiser.",
+    },
+    {
+      period: "2020 - 2023",
+      title: "General Upper Secondary Education (STX)",
+      subtitle: "Egaa Gymnasium",
+      description:
+        "High school diploma with specialized focus on English and Music. Built a strong foundation in collaborative project work, critical thinking, and creative expression.",
+    },
+  ];
+
   return (
     <main className="page">
       {/* Presentation section */}
@@ -77,11 +110,7 @@ export default function About() {
               </p>
             </div>
             <div className={styles.portraitWrapper}>
-              <PolaroidCard
-                images={[]}
-                title=""
-                size="large"
-              />
+              <PolaroidCard images={[]} title="" size="large" />
             </div>
           </div>
         </div>
@@ -94,10 +123,10 @@ export default function About() {
             <div key={index} className={styles.skillCard}>
               <div className={styles.cardHeader}>
                 <img
-                src={box.icon}
-                alt=""
-                className={styles.cardIcon}
-                aria-hidden="true"
+                  src={box.icon}
+                  alt=""
+                  className={styles.cardIcon}
+                  aria-hidden="true"
                 />
                 <h3>{box.title}</h3>
               </div>
@@ -143,8 +172,43 @@ export default function About() {
       </section>
 
       {/* Experience section */}
-      <section className={`page-section ${styles.section}`}>
-        <div></div>
+      <section className={`page-section ${styles.timelineSection}`}>
+        <div className={styles.timelineContainer}>
+          <div className={styles.timelineHeader}>
+            <h2>Education & Experience</h2>
+          </div>
+
+          {/* Timeline */}
+          <div className={styles.timelineWrapper}>
+            <ul className={styles.timelineList}>
+              {timelineData.map((item, index) => (
+                <li key={index} className={styles.timelineItem}>
+                  <div className={styles.timelinePeriod}>{item.period}</div>
+                  <div className={styles.timelineDot} />
+                  <div className={styles.timelineContent}>
+                    <h3>{item.title}</h3>
+                    <span className={styles.timelineSubtitle}>
+                      {item.subtitle}
+                    </span>
+                    <p>{item.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* CV Download button */}
+        <div className={styles.cvContainer}>
+          <LinkBtn
+            href="/freja-kejser-cv.pdf"
+            variant="external"
+            target="_blank"
+            className={styles.cvButton}
+          >
+            Download full CV (PDF)
+          </LinkBtn>
+        </div>
       </section>
     </main>
   );
