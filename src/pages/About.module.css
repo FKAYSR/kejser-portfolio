@@ -1,0 +1,64 @@
+.section {
+  position: relative;
+  width: 100%;
+}
+
+.sectionAlt::before {
+  background-color: var(--color-surface);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding-x);
+  box-sizing: border-box;
+}
+
+/* Bio Grid */
+.bioGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.bioText h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.bioText p {
+  font-family: var(--font-body);
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 1.25rem;
+}
+
+/* Exploring Grid */
+.centeredHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.centeredHeader h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  color: var(--color-text);
+}
+
+.exploringGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 850px) {
+  .bioGrid,
+  .exploringGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
