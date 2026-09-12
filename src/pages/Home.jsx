@@ -6,6 +6,9 @@ import heroStyles from "../components/Hero.module.css";
 import projects from "../data/projects.js";
 import PolaroidCard from "../components/PolaroidCard.jsx";
 import styles from "./Home.module.css";
+import projectDetailStyles from "./ProjectDetail.module.css";
+import ToolItem from "../components/ToolItem.jsx";
+import toolIcons, { homeTools } from "../data/toolIcons.js";
 
 export default function Home() {
   const featuredProjects = projects
@@ -94,7 +97,14 @@ export default function Home() {
         <div className={styles.centeredHeader}>
           <h2>TOOLKIT</h2>
         </div>
-        {/* Indsæt dine ikoner / Toolkit-komponent her */}
+        
+        <div className={projectDetailStyles.sectionContent}>
+          <ul className={projectDetailStyles.toolsList}>
+            {homeTools.map((tool) => (
+              <ToolItem key={tool} name={tool} icon={toolIcons[tool]} />
+            ))}
+          </ul>
+        </div>
       </section>
 
       {/* CURRENTLY EXPLORING SECTION */}

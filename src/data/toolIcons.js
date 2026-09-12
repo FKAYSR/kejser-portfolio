@@ -22,4 +22,15 @@ const toolIcons = {
   UiSystems: uiSystemsIcon,
 };
 
+export const homeTools = [
+  "Figma",
+  "GitHub",
+  "React",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Supabase",
+  "Lottie",
+];
+
 export default toolIcons;
