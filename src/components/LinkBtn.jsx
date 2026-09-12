@@ -10,8 +10,9 @@ export default function LinkBtn({
   variant = "internal",
   icon,
   onClick,
+  className = "",
 }) {
-  const className = `${styles.linkButton} ${styles[`linkButton--${variant}`]}`;
+  const buttonClassName = `${styles.linkButton} ${styles[`linkButton--${variant}`]} ${className}`.trim();
   const iconMarkup = icon
     ?.replaceAll("#513238", "var(--icon-fill)")
     .replaceAll("#F6F3EE", "var(--icon-stroke)");
@@ -39,7 +40,7 @@ export default function LinkBtn({
 
   if (to) {
     return (
-      <Link to={to} className={className} onClick={onClick}>
+      <Link to={to} className={buttonClassName} onClick={onClick}>
         {content}
       </Link>
     );
@@ -50,7 +51,7 @@ export default function LinkBtn({
       href={href}
       target={variant === "external" ? "_blank" : undefined}
       rel={variant === "external" ? "noopener noreferrer" : undefined}
-      className={className}
+      className={buttonClassName}
       onClick={onClick}
     >
       {content}

@@ -1,0 +1,281 @@
+.section {
+  position: relative;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--page-padding-x);
+  box-sizing: border-box;
+}
+
+/* Bio Grid */
+.bioGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.bioText h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.bioText p {
+  font-family: var(--font-body);
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 1.25rem;
+}
+
+/* Exploring Grid */
+.centeredHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.centeredHeader h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  color: var(--color-text);
+}
+
+.exploringGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.skillsSection {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 2rem var(--page-padding-x);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.skillCard {
+  background-color: var(--color-green);
+  color: var(--color-text);
+  border-radius: 28px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+    
+.skillCard:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 5px;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.cardHeader h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.cardIcon {
+  font-size: 1.5rem;
+}
+
+.skillCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skillCard li {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Timeline */
+.timelineSection {
+  width: 100%;
+  max-width: var(--content-max-width, 75rem);
+  margin: 0 auto;
+  padding: 4rem var(--page-padding-x, 2rem);
+  box-sizing: border-box;
+}
+
+.timelineContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.timelineHeader h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--color-text, #1a1714);
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+}
+
+/* Timeline layout */
+.timelineWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 58rem;
+  margin-inline: auto;
+}
+
+.timelineList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 110px 24px 1fr;
+  align-items: flex-start;
+  gap: 1.25rem;
+  position: relative;
+}
+
+.timelinePeriod {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-text);
+  text-align: right;
+  padding-top: 0.15rem;
+}
+
+/* Timeline Line and dots */
+.timelineItem::before {
+  content: "";
+  position: absolute;
+  left: calc(110px + 1.25rem + 11px);
+  top: 0;
+  bottom: calc(-2.5rem - 0.3rem - 7px);
+  width: 2px;
+  background-color: var(--color-accent);
+  z-index: 1;
+  margin-top: 0.3rem;
+}
+
+.timelineItem:last-child::before {
+  display: none;
+}
+
+.timelineDot {
+  width: 14px;
+  height: 14px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  justify-self: center;
+  z-index: 2;
+  margin-top: 0.3rem;
+  position: relative;
+}
+
+.cvContainer .cvButton {
+  width: fit-content;
+  max-width: 100%;
+}
+
+/* Timeline text */
+.timelineContent h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin: 0 0 0.25rem 0;
+}
+
+.timelineSubtitle {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--color-muted);
+  margin-bottom: 0.5rem;
+}
+
+.timelineContent p {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* CV button */
+.cvContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+/* Responsive breakpoints for mobil */
+@media (max-width: 768px) {
+  .timelineContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .timelineItem {
+    grid-template-columns: 24px 1fr;
+  }
+
+  .timelinePeriod {
+    grid-column: 2;
+    text-align: left;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+
+  .timelineContent {
+    grid-column: 2;
+  }
+
+  .timelineDot {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .timelineItem::before {
+    left: 11px;
+    bottom: calc(-2.5rem - 0.3rem - 7px);
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 850px) {
+  .bioGrid,
+  .exploringGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
