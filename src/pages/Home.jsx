@@ -106,20 +106,6 @@ export default function Home() {
           </ul>
         </div>
       </section>
-
-      {/* CURRENTLY EXPLORING SECTION */}
-      <section
-        className={`page-section ${styles.section}`}
-        aria-label="Currently exploring"
-      >
-        <div className={styles.centeredHeader}>
-          <h2>CURRENTLY EXPLORING</h2>
-          <p className={styles.sectionSubtitle}>
-            Things I am currently exploring and improving my skills in
-          </p>
-        </div>
-        {/* Indsæt dine Exploring-kort her */}
-      </section>
     </main>
   );
 }

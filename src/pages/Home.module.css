@@ -89,6 +89,10 @@
   opacity: 0.9;
 }
 
+#projects {
+  scroll-margin-top: var(--navbar-height);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .projectsGrid {
