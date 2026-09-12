@@ -11,6 +11,21 @@ export default function Hero({
   onCtaClick,
   imageFit = "cover",
 }) {
+
+  const handleCtaClick = (e) => {
+    if (ctaHref && ctaHref.startsWith("#")) {
+      e.preventDefault();
+      const element = document.querySelector(ctaHref);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+
+    if (onCtaClick) {
+      onCtaClick(e);
+    }
+  };
+
   return (
     <section className={`${styles.hero} hero-full-bleed`}>
       <img
@@ -23,7 +38,7 @@ export default function Hero({
         {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         {ctaLabel &&
           (ctaHref ? (
-            <LinkBtn href={ctaHref} variant="internal">
+            <LinkBtn href={ctaHref} variant="internal" onClick={handleCtaClick}>
               {ctaLabel}
             </LinkBtn>
           ) : (

@@ -9,6 +9,7 @@ export default function LinkBtn({
   children = "Visit live site",
   variant = "internal",
   icon,
+  onClick,
 }) {
   const className = `${styles.linkButton} ${styles[`linkButton--${variant}`]}`;
   const iconMarkup = icon
@@ -38,7 +39,7 @@ export default function LinkBtn({
 
   if (to) {
     return (
-      <Link to={to} className={className}>
+      <Link to={to} className={className} onClick={onClick}>
         {content}
       </Link>
     );
@@ -50,6 +51,7 @@ export default function LinkBtn({
       target={variant === "external" ? "_blank" : undefined}
       rel={variant === "external" ? "noopener noreferrer" : undefined}
       className={className}
+      onClick={onClick}
     >
       {content}
     </a>
