@@ -120,7 +120,7 @@ export default function About() {
       <section className={`page-section ${styles.section}`}>
         <div className={styles.skillsGrid}>
           {skillsBoxes.map((box, index) => (
-            <div key={index} className={styles.skillCard}>
+            <article key={index} className={styles.skillCard} tabIndex={0}>
               <div className={styles.cardHeader}>
                 <img
                   src={box.icon}
@@ -128,14 +128,14 @@ export default function About() {
                   className={styles.cardIcon}
                   aria-hidden="true"
                 />
-                <h3>{box.title}</h3>
+                <h2 id={`skill-heading-${index}`}>{box.title}</h2>
               </div>
               <ul>
                 {box.items.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
               </ul>
-            </div>
+            </article>
           ))}
         </div>
       </section>
@@ -182,7 +182,7 @@ export default function About() {
           <div className={styles.timelineWrapper}>
             <ul className={styles.timelineList}>
               {timelineData.map((item, index) => (
-                <li key={index} className={styles.timelineItem}>
+                <li key={index} className={styles.timelineItem} tabIndex={0}>
                   <div className={styles.timelinePeriod}>{item.period}</div>
                   <div className={styles.timelineDot} />
                   <div className={styles.timelineContent}>

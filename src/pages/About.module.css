@@ -70,6 +70,11 @@
   padding: 2.5rem 2rem;
   text-align: center;
 }
+    
+.skillCard:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 5px;
+}
 
 .cardHeader {
   display: flex;
@@ -79,7 +84,7 @@
   margin-bottom: 1.5rem;
 }
 
-.cardHeader h3 {
+.cardHeader h2 {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   letter-spacing: 0.05em;
