@@ -9,20 +9,12 @@ export default function Navbar() {
         <img src={name} alt="Freja Kejser" />
       </Link>
 
-      <div className={styles.links}>
-        <NavLink to="/" className={styles.textWrapper} alt="Home">
-          Home
-        </NavLink>
-        <NavLink to="/overview" className={styles.textWrapper} alt="Project overview">
-          Projects
-        </NavLink>
-        <NavLink to="/about" className={styles.textWrapper} alt="About me">
-          About me
-        </NavLink>
-        <NavLink to="/contact" className={styles.textWrapper} alt="Contact">
-          Contact
-        </NavLink>
-      </div>
+      <ul className={styles.links}>
+        <li><NavLink to="/" className={styles.textWrapper}>Home</NavLink></li>
+        <li><NavLink to="/overview" className={styles.textWrapper}>Projects</NavLink></li>
+        <li><NavLink to="/about" className={styles.textWrapper}>About me</NavLink></li>
+        <li><NavLink to="/contact" className={styles.textWrapper}>Contact</NavLink></li>
+      </ul>
     </nav>
   );
 };

@@ -15,7 +15,7 @@ export default function Overview() {
         subtitle="A selection of projects exploring UX/UI Design and Frontend Development"
       />
 
-      <section>
+      <section aria-label="Project overview">
         {overviewProjects.map((project) => (
           <OverviewCard key={project.id} project={project} />
         ))}

@@ -76,12 +76,15 @@
   gap: 0.75rem;
 
   margin-bottom: 2rem;
+  padding: 0;
+
+  list-style: none;
 
   color: var(--color-muted);
   font-size: 0.875rem;
 }
 
-.tags span:not(:last-child)::after {
+.tags li:not(:last-child)::after {
   content: "·";
   margin-left: 0.75rem;
 }
@@ -176,6 +179,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   gap: clamp(1rem, 3vw, 2.5rem);
+  padding: 0;
+  list-style: none;
 }
 
 /* =========================
@@ -260,6 +265,8 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
+  padding: 0;
+  list-style: none;
 }
 
 /* =========================

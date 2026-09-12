@@ -20,7 +20,7 @@ export default function Hero({
       />
       <div className={styles.frame}>
         <h1 className={styles.title}>{title}</h1>
-        {subtitle && <h3 className={styles.subtitle}>{subtitle}</h3>}
+        {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         {ctaLabel && (
           ctaHref ? (
             <LinkBtn href={ctaHref} variant="internal">

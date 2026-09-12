@@ -12,7 +12,7 @@ export default function Footer() {
         <span className={styles.copyright}>© 2026 Freja Kejser</span>
       </div>
 
-      <div className={styles.contactGroup}>
+      <address className={styles.contactGroup}>
         <a href="mailto:kejserfreja@gmail.com" className={styles.mailLink}>
           <img className={styles.icon} alt="Mail" src={mail} />
           <span>kejserfreja@gmail.com</span>
@@ -35,7 +35,7 @@ export default function Footer() {
         >
           <img className={styles.icon} alt="GitHub" src={github} />
         </a>
-      </div>
+      </address>
     </footer>
   );
 }

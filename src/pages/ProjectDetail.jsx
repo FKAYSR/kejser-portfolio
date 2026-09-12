@@ -101,11 +101,11 @@ export default function ProjectDetail() {
               </h2>
 
               {project.tags?.length > 0 && (
-                <div className={styles.tags}>
+                <ul className={styles.tags}>
                   {project.tags.map((tag) => (
-                    <span key={tag}>{tag}</span>
+                    <li key={tag}>{tag}</li>
                   ))}
-                </div>
+                </ul>
               )}
 
               {detail.overview?.description && (
@@ -241,11 +241,11 @@ export default function ProjectDetail() {
             </div>
 
             <div className={styles.sectionContent}>
-              <div className={styles.toolsList}>
+              <ul className={styles.toolsList}>
                 {detail.toolsUsed.map((tool) => (
                   <ToolItem key={tool} name={tool} icon={toolIcons[tool]} />
                 ))}
-              </div>
+              </ul>
             </div>
           </section>
         )}
@@ -351,30 +351,31 @@ export default function ProjectDetail() {
             </div>
 
             <div className={styles.sectionContent}>
-              <div className={styles.projectLinks}>
+              <ul className={styles.projectLinks}>
                 {Object.entries(detail.links)
                   .filter(([key, url]) => key !== "live" && url)
                   .map(([key, url]) => {
                     return (
-                      <LinkBtn
-                        key={key}
-                        href={url}
-                        variant="external"
-                        icon={
-                          key === "repository"
-                            ? githubLinkIcon
-                            : key === "figmaPrototype" || key === "designFile"
-                              ? figmaLinkIcon
-                              : key === "report"
-                                ? reportIcon
-                                : undefined
-                        }
-                      >
-                        {linkLabels[key] || key}
-                      </LinkBtn>
+                      <li key={key}>
+                        <LinkBtn
+                          href={url}
+                          variant="external"
+                          icon={
+                            key === "repository"
+                              ? githubLinkIcon
+                              : key === "figmaPrototype" || key === "designFile"
+                                ? figmaLinkIcon
+                                : key === "report"
+                                  ? reportIcon
+                                  : undefined
+                          }
+                        >
+                          {linkLabels[key] || key}
+                        </LinkBtn>
+                      </li>
                     );
                   })}
-              </div>
+              </ul>
             </div>
           </section>
         )}
