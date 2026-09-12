@@ -91,9 +91,11 @@ export default function ProjectDetail() {
         />
       </header>
 
-      <main className={styles.projectDetail}>
+      <main className={`page ${styles.projectDetail}`}>
         {/* OVERVIEW */}
-        <section className={`${styles.section} ${styles.overviewSection}`}>
+        <section
+          className={`page-section ${styles.section} ${styles.overviewSection}`}
+        >
           <div className={styles.overviewLayout}>
             <div className={styles.overviewText}>
               <h2 className={`${styles.overviewTitle} text-style-h2`}>
@@ -144,7 +146,7 @@ export default function ProjectDetail() {
         </section>
 
         {/* THE ASSIGNMENT */}
-        <section className={styles.section}>
+        <section className={`page-section ${styles.section}`}>
           <div className={styles.sectionLabel}>
             <h2 className="text-style-h2">THE ASSIGNMENT</h2>
             {detail.assignment?.type && (
@@ -178,7 +180,7 @@ export default function ProjectDetail() {
         </section>
 
         {/* OUR SOLUTION */}
-        <section className={styles.section}>
+        <section className={`page-section ${styles.section}`}>
           <div className={styles.solutionLayout}>
             <div className={styles.solutionText}>
               <h2 className="text-style-h2">OUR SOLUTION</h2>
@@ -235,7 +237,7 @@ export default function ProjectDetail() {
 
         {/* TOOLS */}
         {detail.toolsUsed?.length > 0 && (
-          <section className={styles.section}>
+          <section className={`page-section ${styles.section}`}>
             <div className={styles.sectionLabel}>
               <h2 className="text-style-h2">TOOLS I USED</h2>
             </div>
@@ -312,7 +314,9 @@ export default function ProjectDetail() {
         {/* WHAT I LEARNED / IF I DID IT AGAIN */}
         {(detail.whatILearned?.length > 0 ||
           detail.ifIDidItAgain?.length > 0) && (
-          <section className={`${styles.section} ${styles.learnedSection}`}>
+          <section
+            className={`page-section ${styles.section} ${styles.learnedSection}`}
+          >
             {detail.whatILearned?.length > 0 && (
               <div className={styles.learnedColumn}>
                 <h2 className="text-style-h2">WHAT I LEARNED</h2>
@@ -345,7 +349,7 @@ export default function ProjectDetail() {
 
         {/* EXPLORE PROJECT */}
         {detail.links && Object.values(detail.links).some(Boolean) && (
-          <section className={styles.section}>
+          <section className={`page-section ${styles.section}`}>
             <div className={styles.sectionLabel}>
               <h2 className="text-style-h2">EXPLORE THE PROJECT</h2>
             </div>

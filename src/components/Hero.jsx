@@ -12,7 +12,7 @@ export default function Hero({
   imageFit = "cover",
 }) {
   return (
-    <section className={styles.hero}>
+    <section className={`${styles.hero} hero-full-bleed`}>
       <img
         className={`${styles.image} ${styles[imageFit]}`}
         src={image}
@@ -21,8 +21,8 @@ export default function Hero({
       <div className={styles.frame}>
         <h1 className={styles.title}>{title}</h1>
         {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
-        {ctaLabel && (
-          ctaHref ? (
+        {ctaLabel &&
+          (ctaHref ? (
             <LinkBtn href={ctaHref} variant="internal">
               {ctaLabel}
             </LinkBtn>
@@ -30,8 +30,7 @@ export default function Hero({
             <button className={styles.CTA} onClick={onCtaClick} type="button">
               <span className={styles[`text-wrapper`]}>{ctaLabel}</span>
             </button>
-          )
-        )}
+          ))}
       </div>
     </section>
   );

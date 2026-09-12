@@ -7,9 +7,9 @@
 :root {
   /* Textures */
   --texture-paper: url("https://transparenttextures.com/patterns/clean-gray-paper.png");
-  
+
   /* Colors */
-  --color-bg: #F6F3EE;
+  --color-bg: #f6f3ee;
   --color-bg-primary: var(--color-bg) var(--texture-paper) repeat;
   --color-surface: #eae7e1;
   --color-bg-secondary: var(--color-surface) var(--texture-paper) repeat;
@@ -31,6 +31,8 @@
   --big-buttons: 55px;
 
   /* Spacing */
+  --content-max-width: 75rem;
+  --page-padding-x: clamp(1.5rem, 5vw, 4rem);
   --padding-horizontal: 16px;
   --padding-vertical: 12px;
   --navbar-height: 4.6875rem;
@@ -52,7 +54,6 @@ body {
   font-family: var(--font-body);
   overflow-x: hidden;
 }
-
 
 /* Typografi styles */
 .text-style-h1 {
@@ -97,4 +98,42 @@ body {
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.2;
+}
+
+/* Shared page layout */
+.page {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-padding-x);
+  padding-right: var(--page-padding-x);
+}
+
+.page-section {
+  position: relative;
+  isolation: isolate;
+  padding-top: clamp(4rem, 8vw, 6rem);
+  padding-bottom: clamp(4rem, 8vw, 6rem);
+}
+
+.page-section::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: -1;
+  width: 100vw;
+  background: var(--color-bg-primary);
+  content: "";
+  transform: translateX(-50%);
+}
+
+.page-section:nth-of-type(even)::before {
+  background: var(--color-bg-secondary);
+}
+
+.page .hero-full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
