@@ -58,7 +58,7 @@ export default function Home() {
 
         <div className={styles.projectsGrid}>
           {featuredProjects.map((project) => (
-            <PolaroidCard key={project.id} project={project} size="large" />
+            <PolaroidCard key={project.id} project={project} size="large" link={`/project/${project.id}`}/>
           ))}
         </div>
       </section>
