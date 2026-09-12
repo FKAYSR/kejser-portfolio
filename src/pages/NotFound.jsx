@@ -6,7 +6,7 @@ export default function NotFoundPage() {
       <header>
         <h1 className="not-found-title">404</h1>
       </header>
-      <main className="not-found">
+      <main className="page not-found">
         <p>The page you are searching for doesn't exist...</p>
         <Link to="/" className="not-found-link">
           Go back to the front page

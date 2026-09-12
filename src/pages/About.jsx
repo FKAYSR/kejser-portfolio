@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <main>
+    <main className="page">
       <h1>about</h1>
     </main>
   );
