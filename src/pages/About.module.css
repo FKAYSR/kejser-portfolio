@@ -3,10 +3,6 @@
   width: 100%;
 }
 
-.sectionAlt::before {
-  background-color: var(--color-surface);
-}
-
 .container {
   width: 100%;
   max-width: var(--content-max-width);
@@ -53,6 +49,63 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+}
+
+.skillsSection {
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 2rem var(--page-padding-x);
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.skillCard {
+  background-color: #5c6b54; /* Den dæmpede grønne nuance */
+  color: #1a1714;
+  border-radius: 28px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.cardHeader h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.cardIcon {
+  font-size: 1.5rem;
+}
+
+.skillCard ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skillCard li {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 850px) {

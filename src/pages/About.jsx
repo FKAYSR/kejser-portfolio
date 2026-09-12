@@ -1,7 +1,54 @@
 import PolaroidCard from "../components/PolaroidCard.jsx";
 import styles from "./About.module.css";
+import whDo from "../assets/icons/wh-do.svg";
+import whEnjoy from "../assets/icons/wh-enjoy.svg";
+import whLearning from "../assets/icons/wh-learning.svg";
+import whUse from "../assets/icons/wh-use.svg";
 
 export default function About() {
+  const skillsBoxes = [
+    {
+      title: "WHAT I USE",
+      icon: whUse,
+      items: [
+        "Figma",
+        "HTML & CSS",
+        "JavaScript & React",
+        "VS Code",
+        "GitHub",
+      ],
+    },
+    {
+      title: "WHAT I CAN DO",
+      icon: whDo,
+      items: [
+        "UI & UX Design",
+        "Frontend Development",
+        "Design Systems",
+        "Prototyping",
+      ],
+    },
+    {
+      title: "WHAT I ENJOY",
+      icon: whEnjoy,
+      items: [
+        "Micro-interactions",
+        "Structured Workflows",
+        "Hiking & Nature",
+        "Creative Problem Solving",
+      ],
+    },
+    {
+      title: "WHAT I AM LEARNING",
+      icon: whLearning,
+      items: [
+        "Accessibility (WCAG)",
+        "Advanced React States",
+        "Database Normalization",
+      ],
+    },
+  ];
+
   return (
     <main className="page">
       {/* Presentation section */}
@@ -31,8 +78,8 @@ export default function About() {
             </div>
             <div className={styles.portraitWrapper}>
               <PolaroidCard
-                title="Freja Kejser"
-                description="Multimedia Design Student"
+                images={[]}
+                title=""
                 size="large"
               />
             </div>
@@ -41,16 +88,31 @@ export default function About() {
       </section>
 
       {/* WHAT section with skills and passions */}
-      <section
-        className={`page-section ${styles.section} ${styles.sectionAlt}`}
-      >
-        <div></div>
+      <section className={`page-section ${styles.section}`}>
+        <div className={styles.skillsGrid}>
+          {skillsBoxes.map((box, index) => (
+            <div key={index} className={styles.skillCard}>
+              <div className={styles.cardHeader}>
+                <img
+                src={box.icon}
+                alt=""
+                className={styles.cardIcon}
+                aria-hidden="true"
+                />
+                <h3>{box.title}</h3>
+              </div>
+              <ul>
+                {box.items.map((item, i) => (
+                  <li key={i}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* HIDDEN TALENTS section */}
-      <section
-        className={`page-section ${styles.section} ${styles.sectionAlt}`}
-      >
+      <section className={`page-section ${styles.section}`}>
         <div className={styles.container}>
           <div className={styles.centeredHeader}>
             <h2>HIDDEN TALENTS</h2>
@@ -81,9 +143,7 @@ export default function About() {
       </section>
 
       {/* Experience section */}
-      <section
-        className={`page-section ${styles.section} ${styles.sectionAlt}`}
-      >
+      <section className={`page-section ${styles.section}`}>
         <div></div>
       </section>
     </main>
