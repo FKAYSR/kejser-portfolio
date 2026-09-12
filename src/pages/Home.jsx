@@ -11,7 +11,7 @@ export default function Home() {
       .sort((a, b) => a.homeOrder - b.homeOrder);
 
   return (
-    <>
+    <main>
       <header>
         <Hero
           image={heroImage}
@@ -32,15 +32,15 @@ export default function Home() {
         />
       </header>
 
-      <section id="projects" className="projects">
-      {featuredProjects.map((project) => (
-        <PolaroidCard
-          key={project.id}
-          project={project}
-          size="large"
-        />
-      ))}
-    </section>
-    </>
+      <section id="projects" className="projects" aria-label="Featured projects">
+        {featuredProjects.map((project) => (
+          <PolaroidCard
+            key={project.id}
+            project={project}
+            size="large"
+          />
+        ))}
+      </section>
+    </main>
   );
 }

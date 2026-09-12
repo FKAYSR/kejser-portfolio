@@ -5,7 +5,7 @@ import styles from "./Contact.module.css";
 
 export default function Contact() {
   return (
-    <div className={styles.pageWrapper}>
+    <main className={styles.pageWrapper}>
       <div className={styles.contactContainer}>
         <h1 className={styles.heading}>want to explore together?</h1>
         <a href="mailto:kejserfreja@gmail.com" className={styles.mailLink}>
@@ -13,7 +13,7 @@ export default function Contact() {
           <span>kejserfreja@gmail.com</span>
         </a>
 
-        <div className={styles.socialGroup}>
+        <div className={styles.socialGroup} aria-label="Social links">
           <a
             className={styles.socialLink}
             href="https://www.linkedin.com/in/freja-kejser-00605b383"
@@ -33,6 +33,6 @@ export default function Contact() {
           </a>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

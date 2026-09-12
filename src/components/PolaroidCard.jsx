@@ -61,7 +61,7 @@ function PolaroidCard({
       </div>
 
       {(polaroidTitle || polaroidDescription) && (
-        <div className={styles.polaroidContent}>
+        <figcaption className={styles.polaroidContent}>
           {polaroidTitle && (
             <h3 className={`${styles.polaroidTitle} text-style-h3`}>{polaroidTitle}</h3>
           )}
@@ -69,13 +69,13 @@ function PolaroidCard({
           {polaroidDescription && (
             <p className={styles.polaroidDescription}>{polaroidDescription}</p>
           )}
-        </div>
+        </figcaption>
       )}
     </>
   );
 
   return (
-    <div
+    <figure
       className={`${styles.polaroid} ${
         styles[`polaroid--${size}`]
       } ${styles[tiltClass]}`}
@@ -109,7 +109,7 @@ function PolaroidCard({
           </button>
         </div>
       )}
-    </div>
+    </figure>
   );
 }
 
