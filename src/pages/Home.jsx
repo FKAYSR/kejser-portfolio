@@ -13,7 +13,7 @@ export default function Home() {
     .sort((a, b) => a.homeOrder - b.homeOrder);
 
   return (
-    <main className={`page ${styles.homeContainer}`}>
+    <main className="page">
       <header>
         <Hero
           image={heroImage}

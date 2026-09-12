@@ -31,7 +31,7 @@
   --big-buttons: 55px;
 
   /* Spacing */
-  --content-max-width: 75rem;
+  --content-max-width: 90rem;
   --page-padding-x: clamp(1.5rem, 5vw, 4rem);
   --padding-horizontal: 16px;
   --padding-vertical: 12px;
@@ -113,6 +113,7 @@ body {
 .page-section {
   position: relative;
   isolation: isolate;
+  width: 100%;
   padding-top: clamp(4rem, 8vw, 6rem);
   padding-bottom: clamp(4rem, 8vw, 6rem);
 }
@@ -131,6 +132,13 @@ body {
 
 .page-section:nth-of-type(even)::before {
   background: var(--color-bg-secondary);
+}
+
+.overview-page-section {
+  position: relative;
+  width: 100%;
+  display: grid;
+  gap: clamp(4rem, 8vw, 6rem);
 }
 
 .page .hero-full-bleed {

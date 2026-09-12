@@ -17,7 +17,10 @@ export default function Overview() {
         />
       </header>
 
-      <section className="page-section" aria-label="Project overview">
+      <section
+        className="page-section overview-page-section"
+        aria-label="Project overview"
+      >
         {overviewProjects.map((project) => (
           <OverviewCard key={project.id} project={project} />
         ))}
