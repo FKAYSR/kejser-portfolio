@@ -9,6 +9,7 @@ import styles from "./Home.module.css";
 import projectDetailStyles from "./ProjectDetail.module.css";
 import ToolItem from "../components/ToolItem.jsx";
 import toolIcons, { homeTools } from "../data/toolIcons.js";
+import LinkBtn from "../components/LinkBtn.jsx";
 
 export default function Home() {
   const featuredProjects = projects
@@ -81,9 +82,9 @@ export default function Home() {
               the details and seeing how the different parts can come together
               to create a clear and enjoyable experience.
             </p>
-            <Link to="/about" className={styles.ctaButton}>
-              Read more &rarr;
-            </Link>
+            <LinkBtn to="/about" variant="internal">
+              Read more
+            </LinkBtn>
           </div>
           <PolaroidCard size="large" />
         </div>
