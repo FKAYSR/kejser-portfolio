@@ -41,7 +41,8 @@
   background-color: var(--color-surface);
   border-color: var(--color-accent);
   color: var(--color-accent);
-  transform: translateY(-2px);
+  transform: var(--transform-lift);
+  filter: var(--glow-shadow-filter);
 }
 
 .linkButton--external:hover {

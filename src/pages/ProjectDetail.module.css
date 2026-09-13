@@ -278,6 +278,12 @@
   display: grid;
   gap: 0.5rem;
   width: fit-content;
+  transition: var(--transition-smooth);
+}
+
+.nextProjectContent:hover {
+  transform: var(--transform-lift);
+  filter: var(--glow-shadow-filter);
 }
 
 .nextProjectContent > span {

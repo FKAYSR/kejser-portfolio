@@ -165,6 +165,7 @@
   color: var(--color-text);
   text-align: right;
   padding-top: 0.15rem;
+  transition: var(--transition-smooth);
 }
 
 /* Timeline Line and dots */
@@ -193,14 +194,17 @@
   z-index: 2;
   margin-top: 0.3rem;
   position: relative;
-}
-
-.cvContainer .cvButton {
-  width: fit-content;
-  max-width: 100%;
+  transition: var(--transition-smooth);
 }
 
 /* Timeline text */
+.timelineContent {
+  padding: 1.25rem 1.25rem;
+  border-radius: var(--small-buttons);
+  border: 1px solid transparent;
+  transition: var(--transition-smooth);
+}
+
 .timelineContent h3 {
   font-family: var(--font-body);
   font-weight: 700;
@@ -226,11 +230,35 @@
   margin: 0;
 }
 
+/* Hover states */
+.timelineItem:hover .timelineDot {
+  background-color: var(--color-sand);
+  filter: var(--glow-shadow-filter);
+  transform: var(--transform-scale);
+}
+
+.timelineItem:hover .timelinePeriod {
+  color: var(--color-accent);
+  transform: translateX(3px);
+}
+
+.timelineItem:hover .timelineContent {
+  background-color: var(--color-bg-primary);
+  border-color: var(--color-border);
+  box-shadow: var(--drop-shadow);
+  transform: var(--transform-lift);
+}
+
 /* CV button */
 .cvContainer {
   display: flex;
   justify-content: center;
   margin-top: 4rem;
+}
+
+.cvContainer .cvButton {
+  width: fit-content;
+  max-width: 100%;
 }
 
 /* Responsive breakpoints for mobil */
