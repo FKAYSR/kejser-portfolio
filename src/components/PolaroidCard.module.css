@@ -16,7 +16,19 @@
 }
 
 .polaroid:hover {
-  transform: translateY(-6px) rotate(1deg);
+  box-shadow: var(--shadow-lifted);
+}
+
+.polaroid--tilt-0:hover {
+  transform: translateY(-6px) rotate(0deg);
+}
+
+.polaroid--tilt-1:hover {
+  transform: translateY(-6px) rotate(1.5deg);
+}
+
+.polaroid--tilt-2:hover {
+  transform: translateY(-6px) rotate(-1.5deg);
 }
 
 /* =========================
