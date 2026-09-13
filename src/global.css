@@ -14,7 +14,7 @@
   --color-surface: #eae7e1;
   --color-bg-secondary: var(--color-surface) var(--texture-paper) repeat;
   --color-polaroid: #e7e7e7;
-  --color-nav-transparent: #f6f3eeb2;
+  --color-nav-transparent: rgba(4, 2, 17, 0.9);
   --color-path: #e6ddd2;
   --color-text: #191919;
   --color-muted: #706b64;
@@ -45,6 +45,7 @@
   /* Effects */
   --drop-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
   --shadow-lifted: 0px 12px 20px rgba(0, 0, 0, 0.2);
+  --nav-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   --glow-shadow-filter: drop-shadow(0 0 8px var(--color-sand));
   --transition-fast: all 0.2s ease-in-out;
   --transition-smooth: all 0.3s ease;
