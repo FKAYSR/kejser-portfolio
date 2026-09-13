@@ -7,7 +7,7 @@
   width: 100%;
   padding: 0.75rem 3.5rem;
   background-color: var(--color-nav-transparent);
-  box-shadow: var(--drop-shadow);
+  box-shadow: var(--nav-shadow);
   backdrop-filter: blur(12px);
   position: sticky;
   top: 0;
@@ -19,42 +19,45 @@
   display: block;
   height: 3.1875rem;
   width: auto;
+  filter: brightness(0) invert(1);
 }
 
 .links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .textWrapper {
-  color: var(--color-text);
+  display: inline-block;
+  color: var(--color-path);
   text-decoration: none;
   font-family: var(--font-body);
   font-size: clamp(0.9rem, 0.5vw + 0.8rem, 1rem);
   font-weight: 500;
   white-space: nowrap;
-  padding: 8px 18px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  transition: all 0.2s ease;
+  padding: 0.4rem 0.2rem;
+  transition: var(--transition-fast);
 }
 
+/* Hover & Active states */
 .textWrapper:hover {
-  background-color: var(--color-path);
-  color: var(--color-accent);
+  color: var(--color-bg);
+  filter: var(--glow-shadow-filter);
+  transform: var(--transform-lift);
   cursor: pointer;
 }
 
 .textWrapper:global(.active) {
-  background-color: var(--color-accent);
-  color: var(--color-bg); 
+  color: var(--color-sand); 
+  filter: var(--glow-shadow-filter);
   font-weight: 600;
+  text-shadow: 0 0 8px rgba(185, 163, 131, 0.6);
 }
 
 .textWrapper:global(.active):hover {
-  background-color: var(--color-accent-hover);
+  color: var(--color-sand);
 }
