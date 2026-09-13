@@ -61,18 +61,22 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  background-color: var(--color-accent);
+  padding: 1.5rem;
+  border-radius: var(--big-buttons);
+  box-shadow: var(--drop-shadow);
 }
 
 .skillCard {
-  background-color: var(--color-green);
+  background: var(--color-bg-primary);
   color: var(--color-text);
-  border-radius: 28px;
+  border-radius: var(--big-buttons);
   padding: 2.5rem 2rem;
   text-align: center;
 }
     
 .skillCard:focus-visible {
-  outline: 3px solid var(--color-accent);
+  outline: 3px solid var(--color-sand);
   outline-offset: 5px;
 }
 
