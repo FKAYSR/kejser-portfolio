@@ -6,6 +6,29 @@ import whEnjoy from "../assets/icons/wh-enjoy.svg";
 import whLearning from "../assets/icons/wh-learning.svg";
 import whUse from "../assets/icons/wh-use.svg";
 
+// images
+import closeupFeather from "../assets/about-me/closeup-feather.jpg";
+import closeupFlower from "../assets/about-me/closeup-flower.jpg";
+import closeupGround from "../assets/about-me/closeup-ground.jpg";
+import closeupSnailhouse from "../assets/about-me/closeup-snailhouse.jpg";
+import closeupTree from "../assets/about-me/closeup-tree.jpg";
+
+import blackbear from "../assets/about-me/blackbear.jpg";
+import mandalaColor from "../assets/about-me/color-mandala.jpg";
+import mandalaFolder from "../assets/about-me/folder-mandala.jpg";
+import embroideryBearclaw from "../assets/about-me/embroidery-bearclaw.jpg";
+import embroideryShoe from "../assets/about-me/embroidery-shoe.jpg";
+import braceletHeart from "../assets/about-me/heart-bracelet.jpg";
+
+import notionLifeDash from "../assets/about-me/notion-life-dashboard.png";
+import notionPortfolioDash from "../assets/about-me/notion-portfolio-dashboard.png";
+import notionPortfolioTemp from "../assets/about-me/notion-portfolio-template.png";
+
+import meFishhat from "../assets/about-me/me-fishhat.jpg";
+import meNorway from "../assets/about-me/me-norway.jpg";
+import meAndDeer from "../assets/about-me/deer-and-me.jpg";
+
+
 export default function About() {
   const skillsBoxes = [
     {
@@ -110,7 +133,11 @@ export default function About() {
               </p>
             </div>
             <div className={styles.portraitWrapper}>
-              <PolaroidCard images={[]} title="" size="large" />
+              <PolaroidCard
+                images={[meFishhat, meNorway, meAndDeer]}
+                title=""
+                size="large"
+              />
             </div>
           </div>
         </div>
@@ -153,19 +180,39 @@ export default function About() {
 
           <div className={styles.exploringGrid}>
             <PolaroidCard
-              title="Embroidery"
-              description="Learning how to put my own personal touch on different items."
+              title="Noticing little details"
+              description="Learning to notice all the little things in life that we often overlook."
               size="medium"
-            />
-            <PolaroidCard
-              title="Japanese"
-              description="Continued learning of Japanese, because of interest for the culture."
-              size="medium"
+              images={[
+                closeupTree,
+                closeupFeather,
+                closeupFlower,
+                closeupGround,
+                closeupSnailhouse,
+              ]}
             />
             <PolaroidCard
               title="Notion"
-              description="Structuring creative projects and creating a better overview of things."
+              description="Structuring creative projects and creating a better overview of different projects and ideas."
               size="medium"
+              images={[
+                notionLifeDash,
+                notionPortfolioDash,
+                notionPortfolioTemp,
+              ]}
+            />
+            <PolaroidCard
+              title="Creative expressions"
+              description="Exploring different hands-on crafts and DIY projects."
+              size="medium"
+              images={[
+                blackbear,
+                mandalaFolder,
+                embroideryShoe,
+                braceletHeart,
+                mandalaColor,
+                embroideryBearclaw,
+              ]}
             />
           </div>
         </div>
