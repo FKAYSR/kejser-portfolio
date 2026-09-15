@@ -10,6 +10,9 @@ import projectDetailStyles from "./ProjectDetail.module.css";
 import ToolItem from "../components/ToolItem.jsx";
 import toolIcons, { homeTools } from "../data/toolIcons.js";
 import LinkBtn from "../components/LinkBtn.jsx";
+import meFishhat from "../assets/about-me/me-fishhat.jpg";
+import mandalaFolder from "../assets/about-me/folder-mandala.jpg";
+import embroideryShoe from "../assets/about-me/embroidery-shoe.jpg";
 
 export default function Home() {
   const featuredProjects = projects
@@ -86,7 +89,7 @@ export default function Home() {
               Read more
             </LinkBtn>
           </div>
-          <PolaroidCard size="large" />
+          <PolaroidCard size="large" images={[meFishhat, mandalaFolder, embroideryShoe]}/>
         </div>
       </section>
 

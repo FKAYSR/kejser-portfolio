@@ -181,7 +181,7 @@ export default function About() {
           <div className={styles.exploringGrid}>
             <PolaroidCard
               title="Noticing little details"
-              description="Learning to notice all the little things in life that we often overlook."
+              description="Learning to notice all the little things that we often overlook."
               size="medium"
               images={[
                 closeupTree,
