@@ -10,6 +10,7 @@ import reportIcon from "../assets/icons/report-link.svg?raw";
 import projects from "../data/projects.js";
 import toolIcons from "../data/toolIcons.js";
 import styles from "./ProjectDetail.module.css";
+import arrow from "../assets/icons/arrow-accent-middle.svg";
 
 export default function ProjectDetail() {
   const { slug } = useParams();
@@ -394,7 +395,15 @@ export default function ProjectDetail() {
                 to={`/project/${nextProject.id}`}
                 className={styles.nextProjectLink}
               >
-                <h2 className="text-style-h2">{nextProject.title} →</h2>
+                <h2 className="text-style-h2">
+                  {nextProject.title}
+                  <img
+                    src={arrow}
+                    alt=""
+                    aria-hidden="true"
+                    className={styles.nextProjectArrow}
+                  />
+                </h2>
               </Link>
             </div>
           </section>

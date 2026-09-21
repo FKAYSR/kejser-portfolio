@@ -295,6 +295,18 @@
   text-decoration: none;
 }
 
+.nextProjectLink h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nextProjectArrow {
+  width: 2.3rem;
+  height: 2.1rem;
+  object-fit: contain;
+}
+
 /* =========================
    NOT FOUND
 ========================= */

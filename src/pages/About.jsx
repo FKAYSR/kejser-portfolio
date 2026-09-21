@@ -5,6 +5,7 @@ import whDo from "../assets/icons/wh-do.svg";
 import whEnjoy from "../assets/icons/wh-enjoy.svg";
 import whLearning from "../assets/icons/wh-learning.svg";
 import whUse from "../assets/icons/wh-use.svg";
+import cv from "../assets/cv.pdf";
 
 // images
 import closeupFeather from "../assets/about-me/closeup-feather.jpg";
@@ -248,7 +249,7 @@ export default function About() {
         {/* CV Download button */}
         <div className={styles.cvContainer}>
           <LinkBtn
-            href="/freja-kejser-cv.pdf"
+            href= {cv}
             variant="external"
             target="_blank"
             className={styles.cvButton}
