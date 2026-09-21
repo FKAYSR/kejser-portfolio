@@ -10,7 +10,7 @@ export default function Contact() {
         <h1 className={styles.heading}>Let's explore together</h1>
         <a href="mailto:kejserfreja@gmail.com" className={styles.mailLink}>
           <img className={styles.mailIcon} alt="Mail" src={mail} />
-          <span>kejserfreja@gmail.com</span>
+          <span>freja.kaysr@gmail.com</span>
         </a>
 
         <div className={styles.socialGroup} aria-label="Social links">

@@ -15,7 +15,7 @@ export default function Footer() {
       <address className={styles.contactGroup}>
         <a href="mailto:kejserfreja@gmail.com" className={styles.mailLink}>
           <img className={styles.icon} alt="Mail" src={mail} />
-          <span>kejserfreja@gmail.com</span>
+          <span>freja.kaysr@gmail.com</span>
         </a>
 
         <a
