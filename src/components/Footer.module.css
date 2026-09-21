@@ -20,7 +20,6 @@
 
 .copyright {
   color: var(--color-bg);
-  font-size: 0.9rem;
 }
 
 .contactGroup {
@@ -30,14 +29,29 @@
   font-style: normal;
 }
 
+.separator {
+  color: var(--color-bg);
+}
+
+.cvButton {
+  min-height: 0;
+  padding: 0.45rem 0.75rem;
+  border-width: 1px;
+  border-radius: 0.3rem;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  gap: 0.35rem;
+}
+
 .mailLink {
   display: flex;
   align-items: center;
   gap: 8px;
   color: var(--color-bg);
   text-decoration: none;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-family: inherit;
+  font-size: inherit;
   transition: var(--transition-fast);
 }
 
@@ -49,7 +63,7 @@
 
 .mailLink:hover,
 .socialLink:hover {
-  transform: var(--transform-scale);
+  transform: var(--transform-lift);
   filter: var(--glow-shadow-filter);
 }
 

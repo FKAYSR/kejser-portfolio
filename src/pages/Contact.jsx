@@ -2,6 +2,8 @@ import github from "../assets/icons/github-contact.svg";
 import linkedin from "../assets/icons/linkedin-contact.svg";
 import mail from "../assets/icons/mail-contact.svg";
 import styles from "./Contact.module.css";
+import LinkBtn from "../components/LinkBtn";
+import cv from "../assets/cv.pdf";
 
 export default function Contact() {
   return (
@@ -32,6 +34,17 @@ export default function Contact() {
             <img className={styles.socialIcon} alt="GitHub" src={github} />
           </a>
         </div>
+
+        <div className={styles.cvContainer}>
+                  <LinkBtn
+                    href= {cv}
+                    variant="external"
+                    target="_blank"
+                    className={styles.cvButton}
+                  >
+                    Download full CV (PDF)
+                  </LinkBtn>
+                </div>
       </div>
     </main>
   );
