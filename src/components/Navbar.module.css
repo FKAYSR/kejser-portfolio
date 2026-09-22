@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0.75rem 3.5rem;
+  padding: 0.75rem var(--frame-padding-x);
   background-color: var(--color-nav-transparent);
   box-shadow: var(--nav-shadow);
   backdrop-filter: blur(12px);
@@ -60,4 +60,34 @@
 
 .textWrapper:global(.active):hover {
   color: var(--color-sand);
+}
+
+@media (max-width: 700px) {
+  .navbar {
+    height: auto;
+    min-height: var(--navbar-height);
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem var(--frame-padding-x) 1rem;
+  }
+
+  .navbar img {
+    height: 2.75rem;
+  }
+
+  .links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .links {
+    gap: 0.25rem 0.8rem;
+  }
+
+  .textWrapper {
+    font-size: 0.9rem;
+  }
 }

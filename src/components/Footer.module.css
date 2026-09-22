@@ -3,18 +3,18 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 24px 56px;
+  padding: 24px var(--frame-padding-x);
   background-color: var(--color-accent);
 }
 
 .brandGroup {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 2rem;
 }
 
 .logo {
-  height: 48px;
+  height: 5rem;
   width: auto;
   filter: brightness(0) invert(1);
 }
@@ -26,7 +26,7 @@
 .contactGroup {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 2rem;
   font-style: normal;
 }
 
@@ -37,7 +37,7 @@
 .cvButton {
   min-height: 0;
   padding: 0.45rem 0.75rem;
-  border-width: 1px;
+  border-width: 0.1rem;
   border-radius: 0.3rem;
   font-family: inherit;
   font-size: inherit;
@@ -48,7 +48,7 @@
 .mailLink {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
   color: var(--color-bg);
   text-decoration: none;
   font-family: inherit;
@@ -62,6 +62,12 @@
   transition: var(--transition-fast);
 }
 
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .mailLink:hover,
 .socialLink:hover {
   transform: var(--transform-lift);
@@ -69,7 +75,63 @@
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: 3rem;
+  height: 2rem;
   object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .footer {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 24px var(--frame-padding-x);
+  }
+
+  .contactGroup {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.75rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .brandGroup {
+    display: contents;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .contactGroup {
+    order: 2;
+    flex-direction: column;
+  }
+
+  .copyright {
+    order: 3;
+  }
+
+  .contactGroup {
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .mailLink {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .cvContainer,
+  .cvButton {
+    width: 100%;
+  }
+
+  .cvButton {
+    justify-content: center;
+  }
 }
