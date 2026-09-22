@@ -14,7 +14,11 @@
   --color-surface: #eae7e1;
   --color-bg-secondary: var(--color-surface) var(--texture-paper) repeat;
   --color-polaroid: #e7e7e7;
-  --color-nav-transparent: rgba(4, 2, 17, 0.9);
+  --color-nav-transparent: color-mix(
+    in srgb,
+    var(--color-accent) 90%,
+    transparent
+  );;
   --color-path: #e6ddd2;
   --color-text: #191919;
   --color-muted: #706b64;

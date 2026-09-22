@@ -8,8 +8,11 @@ export default function Hero({
   subtitle,
   ctaLabel,
   ctaHref,
+  ctaClassName = "",
+  ctaArrowDirection = "right",
   onCtaClick,
   imageFit = "cover",
+  variant = "default",
 }) {
 
   const handleCtaClick = (e) => {
@@ -27,7 +30,7 @@ export default function Hero({
   };
 
   return (
-    <section className={`${styles.hero} hero-full-bleed`}>
+    <section className={`${styles.hero} ${styles[variant]} hero-full-bleed`}>
       <img
         className={`${styles.image} ${styles[imageFit]}`}
         src={image}
@@ -38,7 +41,13 @@ export default function Hero({
         {subtitle && <p className={styles.subtitle}>{subtitle}</p>}
         {ctaLabel &&
           (ctaHref ? (
-            <LinkBtn href={ctaHref} variant="internal" onClick={handleCtaClick}>
+            <LinkBtn
+              href={ctaHref}
+              variant="internal"
+              onClick={handleCtaClick}
+              className={ctaClassName}
+              arrowDirection={ctaArrowDirection}
+            >
               {ctaLabel}
             </LinkBtn>
           ) : (

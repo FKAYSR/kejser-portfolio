@@ -74,6 +74,10 @@
   flex: 0 0 2.3rem;
 }
 
+.arrow--down {
+  transform: rotate(90deg);
+}
+
 .arrow img {
   position: absolute;
   inset: 0;

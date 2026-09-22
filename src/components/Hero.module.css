@@ -1,9 +1,15 @@
 .hero {
   display: flex;
-  min-height: 100svh;
+  min-height: 75svh;
   overflow: hidden;
   position: relative;
   width: 100%;
+  margin-top: calc(-1 * var(--navbar-height));
+}
+
+.home {
+  min-height: 100vh;
+  min-height: 100svh;
 }
 
 .image {

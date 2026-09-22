@@ -4,6 +4,27 @@
   box-sizing: border-box;
 }
 
+@keyframes exploreWorkFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.4rem);
+  }
+}
+
+.exploreWorkButton {
+  animation: exploreWorkFloat 3s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exploreWorkButton {
+    animation: none;
+  }
+}
+
 .sectionHeader {
   display: flex;
   justify-content: space-between;
