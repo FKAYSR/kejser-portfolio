@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import Hero from "../components/Hero.jsx";
-import name from "../assets/images/full-name.svg";
+import name from "../assets/icons/full-name.svg";
 import heroImage from "../assets/images/hero-img.jpg";
 import heroStyles from "../components/Hero.module.css";
 import projects from "../data/projects.js";
@@ -26,13 +26,11 @@ export default function Home() {
           image={heroImage}
           imageAlt="A portrait of Freja Kejser in nature"
           title={
-            <span
+            <img
               className={heroStyles.homeNameHero}
-              role="img"
+              src={name}
               aria-label="Freja Kejser"
-              style={{
-                "--logo-image": `url(${name})`,
-              }}
+              alt="Freja Kejser"
             />
           }
           subtitle="Digital Designer & Frontend Developer"
@@ -65,7 +63,12 @@ export default function Home() {
 
         <div className={styles.projectsGrid}>
           {featuredProjects.map((project) => (
-            <PolaroidCard key={project.id} project={project} size="large" link={`/project/${project.id}`}/>
+            <PolaroidCard
+              key={project.id}
+              project={project}
+              size="large"
+              link={`/project/${project.id}`}
+            />
           ))}
         </div>
       </section>
@@ -92,7 +95,11 @@ export default function Home() {
               Read more
             </LinkBtn>
           </div>
-          <PolaroidCard size="large" images={[meForest, mandalaFolder, embroideryShoe]} link="/about"/>
+          <PolaroidCard
+            size="large"
+            images={[meForest, mandalaFolder, embroideryShoe]}
+            link="/about"
+          />
         </div>
       </section>
 
@@ -104,7 +111,7 @@ export default function Home() {
         <div className={styles.centeredHeader}>
           <h2>TOOLKIT</h2>
         </div>
-        
+
         <div className={projectDetailStyles.sectionContent}>
           <ul className={projectDetailStyles.toolsList}>
             {homeTools.map((tool) => (

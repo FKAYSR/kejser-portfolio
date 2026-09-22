@@ -1,6 +1,6 @@
 import styles from "../components/Navbar.module.css";
 import { NavLink, Link, useLocation } from "react-router";
-import name from "../assets/images/full-name.svg";
+import name from "../assets/icons/full-name.svg";
 
 export default function Navbar() {
   const location = useLocation();
