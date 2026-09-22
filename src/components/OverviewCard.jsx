@@ -33,6 +33,7 @@ export default function OverviewCard({ project }) {
           title={project.title}
           size="large"
           tilt={project.tiltClass}
+          link={`/project/${project.id}`}
         />
       </div>
     </article>

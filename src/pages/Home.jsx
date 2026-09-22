@@ -92,7 +92,7 @@ export default function Home() {
               Read more
             </LinkBtn>
           </div>
-          <PolaroidCard size="large" images={[meForest, mandalaFolder, embroideryShoe]}/>
+          <PolaroidCard size="large" images={[meForest, mandalaFolder, embroideryShoe]} link="/about"/>
         </div>
       </section>
 
