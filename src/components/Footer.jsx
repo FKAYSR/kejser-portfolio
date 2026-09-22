@@ -27,7 +27,7 @@ export default function Footer() {
         </div>
 
         <span className={styles.separator} aria-hidden="true">•</span>
-        <a href="mailto:kejserfreja@gmail.com" className={styles.mailLink}>
+        <a href="mailto:freja.kaysr@gmail.com" className={styles.mailLink}>
           <img className={styles.icon} alt="Mail" src={mail} />
           <span>freja.kaysr@gmail.com</span>
         </a>
