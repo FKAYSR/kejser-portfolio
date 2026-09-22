@@ -28,6 +28,7 @@ import notionPortfolioTemp from "../assets/about-me/notion-portfolio-template.pn
 import meFishhat from "../assets/about-me/me-fishhat.jpg";
 import meNorway from "../assets/about-me/me-norway.jpg";
 import meAndDeer from "../assets/about-me/deer-and-me.jpg";
+import meForest from "../assets/about-me/me-forest.jpg";
 
 
 export default function About() {
@@ -135,7 +136,7 @@ export default function About() {
             </div>
             <div className={styles.portraitWrapper}>
               <PolaroidCard
-                images={[meFishhat, meNorway, meAndDeer]}
+                images={[meNorway, meAndDeer, meFishhat, meForest]}
                 title=""
                 size="large"
               />
@@ -249,7 +250,7 @@ export default function About() {
         {/* CV Download button */}
         <div className={styles.cvContainer}>
           <LinkBtn
-            href= {cv}
+            href={cv}
             variant="external"
             target="_blank"
             className={styles.cvButton}

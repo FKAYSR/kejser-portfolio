@@ -10,7 +10,7 @@ import projectDetailStyles from "./ProjectDetail.module.css";
 import ToolItem from "../components/ToolItem.jsx";
 import toolIcons, { homeTools } from "../data/toolIcons.js";
 import LinkBtn from "../components/LinkBtn.jsx";
-import meFishhat from "../assets/about-me/me-fishhat.jpg";
+import meForest from "../assets/about-me/me-forest.jpg";
 import mandalaFolder from "../assets/about-me/folder-mandala.jpg";
 import embroideryShoe from "../assets/about-me/embroidery-shoe.jpg";
 
@@ -38,6 +38,9 @@ export default function Home() {
           subtitle="Digital Designer & Frontend Developer"
           ctaLabel="Explore my work"
           ctaHref="#projects"
+          ctaClassName={styles.exploreWorkButton}
+          ctaArrowDirection="down"
+          variant="home"
         />
       </header>
 
@@ -89,7 +92,7 @@ export default function Home() {
               Read more
             </LinkBtn>
           </div>
-          <PolaroidCard size="large" images={[meFishhat, mandalaFolder, embroideryShoe]}/>
+          <PolaroidCard size="large" images={[meForest, mandalaFolder, embroideryShoe]}/>
         </div>
       </section>
 
