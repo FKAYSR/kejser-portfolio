@@ -8,6 +8,7 @@ import ProjectDetail from "../src/pages/ProjectDetail.jsx";
 import NotFound from "../src/pages/NotFound.jsx";
 import Navbar from "../src/components/Navbar.jsx";
 import Footer from "../src/components/Footer.jsx";
+import ScrollToTop from "../src/components/ScrollToTop.jsx";
 
 function App() {
   const location = useLocation();
@@ -20,6 +21,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <ScrollToTop />
 
       <Routes>
         <Route path="/" element={<Home />} />
