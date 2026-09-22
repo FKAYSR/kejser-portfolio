@@ -9,6 +9,7 @@ import NotFound from "../src/pages/NotFound.jsx";
 import Navbar from "../src/components/Navbar.jsx";
 import Footer from "../src/components/Footer.jsx";
 import ScrollToTop from "../src/components/ScrollToTop.jsx";
+import ProgressBanner from "../src/components/ProgressBanner.jsx";
 
 function App() {
   const location = useLocation();
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <>
+      <ProgressBanner />
       <Navbar />
       <ScrollToTop />
 
