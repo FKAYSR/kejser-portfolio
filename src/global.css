@@ -40,6 +40,7 @@
   --frame-padding-x: clamp(2rem, 8vw, 10rem);
   --padding-horizontal: 16px;
   --padding-vertical: 12px;
+  --progress-banner-height: 4.6875rem;
   --navbar-height: 4.6875rem;
 
   /* Font families */

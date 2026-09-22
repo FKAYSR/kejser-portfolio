@@ -1,0 +1,60 @@
+.banner {
+  position: relative;
+  top: 0;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--progress-banner-height);
+  padding: 0.75rem var(--frame-padding-x);
+  background-color: var(--color-sand);
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: var(--drop-shadow);
+}
+
+.bannerContent {
+  display: block;
+  max-width: 100%;
+  line-height: 1.2;
+}
+
+.dots {
+  display: inline-flex;
+  margin-left: 0.15em;
+}
+
+.dot {
+  color: var(--color-accent);
+  animation: typingDot 1.2s infinite;
+}
+
+.dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingDot {
+  0%,
+  60%,
+  100% {
+    color: var(--color-accent);
+  }
+
+  30% {
+    color: var(--color-bg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    animation: none;
+    color: var(--color-accent);
+  }
+}
