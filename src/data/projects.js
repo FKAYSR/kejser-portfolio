@@ -50,7 +50,7 @@ const projects = [
       heroImage: merEndToastHero,
       heroImageAlt: "Mer' end Toast recipe planning app",
       links: {
-        live: "https://fkaysr.github.io/webapp-mer-end-toast/hjem",
+        live: "https://fkaysr.github.io/webapp-mer-end-toast/",
         repository: "https://github.com/FKAYSR/webapp-mer-end-toast",
         designFile:
           "https://www.figma.com/design/zIaaBLDnY3stpeh7Hi87vU/Design-stuff?node-id=233-4203&t=fOH2DkUISm52xc71-1",
