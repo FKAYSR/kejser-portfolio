@@ -17,40 +17,48 @@ export default function Footer() {
       <address className={styles.contactGroup}>
         <div className={styles.cvContainer}>
           <LinkBtn
-            href= {cv}
+            href={cv}
             variant="external"
             target="_blank"
             className={styles.cvButton}
           >
-              Download full CV (PDF)
+            Download full CV (PDF)
           </LinkBtn>
         </div>
 
-        <span className={styles.separator} aria-hidden="true">•</span>
+        <span className={styles.separator} aria-hidden="true">
+          •
+        </span>
         <a href="mailto:freja.kaysr@gmail.com" className={styles.mailLink}>
           <img className={styles.icon} alt="Mail" src={mail} />
           <span>freja.kaysr@gmail.com</span>
         </a>
 
-        <span className={styles.separator} aria-hidden="true">•</span>
-        <a
-          className={styles.socialLink}
-          href="https://www.linkedin.com/in/freja-kejser-00605b383"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <img className={styles.icon} alt="LinkedIn" src={linkedin} />
-        </a>
+        <span className={styles.separator} aria-hidden="true">
+          •
+        </span>
+        <div className={styles.socialLinks}>
+          <a
+            className={styles.socialLink}
+            href="https://www.linkedin.com/in/freja-kejser-00605b383"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img className={styles.icon} alt="LinkedIn" src={linkedin} />
+          </a>
 
-        <span className={styles.separator} aria-hidden="true">•</span>
-        <a
-          className={styles.socialLink}
-          href="https://github.com/FKAYSR"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <img className={styles.icon} alt="GitHub" src={github} />
-        </a>
+          <span className={styles.separator} aria-hidden="true">
+            •
+          </span>
+          <a
+            className={styles.socialLink}
+            href="https://github.com/FKAYSR"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img className={styles.icon} alt="GitHub" src={github} />
+          </a>
+        </div>
       </address>
     </footer>
   );

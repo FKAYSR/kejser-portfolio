@@ -36,7 +36,8 @@
 
   /* Spacing */
   --content-max-width: 90rem;
-  --page-padding-x: clamp(1.5rem, 5vw, 4rem);
+  --page-padding-x: clamp(1.5rem, 5vw, 3rem);
+  --frame-padding-x: clamp(2rem, 8vw, 10rem);
   --padding-horizontal: 16px;
   --padding-vertical: 12px;
   --navbar-height: 4.6875rem;

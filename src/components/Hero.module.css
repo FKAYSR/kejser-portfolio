@@ -36,7 +36,10 @@
   gap: clamp(1.5rem, 3vw, 2.5rem);
   position: absolute;
   top: 50%;
-  left: clamp(2rem, 10vw, 9.9375rem);
+  left: max(
+    var(--page-padding-x),
+    calc((100vw - var(--content-max-width)) / 2 + var(--page-padding-x))
+  );
   transform: translateY(-50%);
   width: min(calc(100% - 3rem), 45rem);
   z-index: 1;
@@ -98,10 +101,6 @@
 }
 
 @media (max-width: 600px) {
-  .hero .frame {
-    margin-left: 24px;
-  }
-
   .hero .subtitle {
     font-size: 32px;
     line-height: 1.2;
