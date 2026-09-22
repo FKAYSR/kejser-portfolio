@@ -9,6 +9,7 @@ export default function LinkBtn({
   children = "Visit live site",
   variant = "internal",
   icon,
+  arrowDirection = "right",
   onClick,
   className = "",
 }) {
@@ -18,7 +19,10 @@ export default function LinkBtn({
     .replaceAll("#F6F3EE", "var(--icon-stroke)");
 
   const arrow = (
-    <span className={styles.arrow} aria-hidden="true">
+    <span
+      className={`${styles.arrow} ${styles[`arrow--${arrowDirection}`]}`}
+      aria-hidden="true"
+    >
       <img src={arrowAccent} alt="" className={styles.arrowAccent} />
       <img src={arrowBg} alt="" className={styles.arrowBg} />
     </span>

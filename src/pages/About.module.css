@@ -1,6 +1,7 @@
 .section {
   position: relative;
   width: 100%;
+  margin-top: calc(-1 * var(--navbar-height));
 }
 
 .container {
