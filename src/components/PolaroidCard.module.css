@@ -15,22 +15,6 @@
     box-shadow 0.3s ease;
 }
 
-.polaroid:hover {
-  box-shadow: var(--shadow-lifted);
-}
-
-.polaroid--tilt-0:hover {
-  transform: translateY(-6px) rotate(0deg);
-}
-
-.polaroid--tilt-1:hover {
-  transform: translateY(-6px) rotate(1.5deg);
-}
-
-.polaroid--tilt-2:hover {
-  transform: translateY(-6px) rotate(-1.5deg);
-}
-
 /* =========================
    SIZES
 ========================= */
@@ -73,9 +57,9 @@
 }
 
 .polaroidImageContainer {
+  position: relative;
   width: 100%;
   overflow: hidden;
-  background-color: white;
 }
 
 .polaroidImage {
@@ -122,42 +106,51 @@
   transition: transform 0.3s ease;
 }
 
-.polaroidArrow {
-  pointer-events: auto;
-  cursor: pointer;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 2.25rem;
-  height: 2.25rem;
-  padding: 0;
-
-  background: transparent;
-  border: none;
-
-  transition: transform 0.2s ease;
-}
-
-.polaroidArrow img {
-  width: 100%;
+.clickZoneLeft,
+.clickZoneRight {
+  position: absolute;
+  top: 0;
+  width: 50%;
   height: 100%;
-  object-fit: contain;
-  display: block;
+  z-index: 2;
+  cursor: pointer;
 }
 
-.polaroidArrowPrevious img {
-  transform: scaleX(-1);
+.clickZoneLeft {
+  left: 0;
 }
 
-.polaroidArrow:hover {
-  transform: scale(1.15);
+.clickZoneRight {
+  right: 0;
+}
+
+.polaroidDots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-sand);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.activeDot {
+  background-color: var(--color-accent);
+  transform: scale(1.25);
 }
 
 
 /* =========================
-   POLAROID TILT
+   POLAROID TILT & HOVER
 ========================= */
 
 .polaroid--tilt-0 {
@@ -165,17 +158,33 @@
 }
 
 .polaroid--tilt-1 {
-  transform: rotate(1.5deg);
+  transform: rotate(2deg);
 }
 
 .polaroid--tilt-2 {
-  transform: rotate(-1.5deg);
+  transform: rotate(-2deg);
 }
 
-.polaroid--tilt-1 .polaroidNavigation {
-  transform: translateY(-50%) rotate(-1.5deg);
+.polaroid--tilt-3 {
+  transform: rotate(1.5deg);
 }
 
-.polaroid--tilt-2 .polaroidNavigation {
-  transform: translateY(-50%) rotate(1.5deg);
+.polaroid:hover {
+  box-shadow: var(--shadow-lifted);
+}
+
+.polaroid--tilt-0:hover {
+  transform: translateY(-6px) rotate(-0.5deg);
+}
+
+.polaroid--tilt-1:hover {
+  transform: translateY(-6px) rotate(1.5deg);
+}
+
+.polaroid--tilt-2:hover {
+  transform: translateY(-6px) rotate(-1.5deg);
+}
+
+.polaroid--tilt-3:hover {
+  transform: translateY(-6px) rotate(0.5deg);
 }
