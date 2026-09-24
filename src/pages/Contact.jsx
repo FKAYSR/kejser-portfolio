@@ -18,7 +18,7 @@ export default function Contact() {
         <div className={styles.socialGroup} aria-label="Social links">
           <a
             className={styles.socialLink}
-            href="https://www.linkedin.com/in/freja-kejser-00605b383"
+            href="https://www.linkedin.com/in/freja-kejser"
             rel="noopener noreferrer"
             target="_blank"
           >
