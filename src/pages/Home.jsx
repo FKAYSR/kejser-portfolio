@@ -33,7 +33,7 @@ export default function Home() {
               alt="Freja Kejser"
             />
           }
-          subtitle="Digital Designer & Frontend Developer"
+          subtitle="UX/UI Designer & Frontend Developer"
           ctaLabel="Explore my work"
           ctaHref="#projects"
           ctaClassName={styles.exploreWorkButton}
