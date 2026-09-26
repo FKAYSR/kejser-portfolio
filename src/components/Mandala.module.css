@@ -1,0 +1,30 @@
+.mandalaSvg {
+  isolation: isolate;
+}
+
+.nameGroup {
+  cursor: pointer;
+  opacity: 0.1;
+  transition: opacity 180ms ease, filter 180ms ease;
+}
+
+.backwards {
+  pointer-events: none;
+  opacity: 0.1;
+}
+
+.nameGroup.active,
+.nameGroup:hover {
+  opacity: 1;
+  filter: var(--glow-shadow-filter);
+  mix-blend-mode: normal;
+}
+
+.nameGroup.active path,
+.nameGroup:hover path {
+  fill: var(--color-accent);
+  stroke: var(--color-surface);
+  stroke-width: 0.125rem;
+  paint-order: stroke fill;
+  filter: var(--glow-shadow-filter);
+}
