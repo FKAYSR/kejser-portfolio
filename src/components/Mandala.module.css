@@ -1,11 +1,26 @@
 .mandalaSvg {
+  display: block;
+  width: 110%;
+  max-width: none;
+  height: auto;
+  margin-left: auto;
+  margin-right: -20%;
   isolation: isolate;
+}
+
+@media (max-width: 900px) {
+  .mandalaSvg {
+    width: 100%;
+    margin-inline: auto;
+  }
 }
 
 .nameGroup {
   cursor: pointer;
   opacity: 0.1;
-  transition: opacity 180ms ease, filter 180ms ease;
+  transition:
+    opacity 180ms ease,
+    filter 180ms ease;
 }
 
 .backwards {

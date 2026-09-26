@@ -8,7 +8,6 @@
   width: 100%;
   max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 0 var(--page-padding-x);
   box-sizing: border-box;
 }
 
@@ -75,7 +74,7 @@
   padding: 2.5rem 2rem;
   text-align: center;
 }
-    
+
 .skillCard:focus-visible {
   outline: 3px solid var(--color-sand);
   outline-offset: 5px;

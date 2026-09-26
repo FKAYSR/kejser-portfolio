@@ -13,6 +13,7 @@ import LinkBtn from "../components/LinkBtn.jsx";
 import meForest from "../assets/about-me/me-forest.jpg";
 import mandalaFolder from "../assets/about-me/folder-mandala.jpg";
 import embroideryShoe from "../assets/about-me/embroidery-shoe.jpg";
+import FullNameMandala from "../components/MandalaGraphic.jsx";
 
 export default function Home() {
   const featuredProjects = projects
@@ -95,11 +96,7 @@ export default function Home() {
               Read more
             </LinkBtn>
           </div>
-          <PolaroidCard
-            size="large"
-            images={[meForest, mandalaFolder, embroideryShoe]}
-            link="/about"
-          />
+          <FullNameMandala />
         </div>
       </section>
 
