@@ -1,8 +1,8 @@
 import { Link } from "react-router";
-import Hero from "../components/Hero.jsx";
 import name from "../assets/icons/full-name.svg";
 import heroImage from "../assets/images/hero-img.jpg";
-import heroStyles from "../components/Hero.module.css";
+import mandalaName from "../assets/icons/mandala-freja-kejser.svg";
+import mandalaInititals from "../assets/icons/mandala-initials.svg";
 import projects from "../data/projects.js";
 import PolaroidCard from "../components/PolaroidCard.jsx";
 import styles from "./Home.module.css";
@@ -10,9 +10,6 @@ import projectDetailStyles from "./ProjectDetail.module.css";
 import ToolItem from "../components/ToolItem.jsx";
 import toolIcons, { homeTools } from "../data/toolIcons.js";
 import LinkBtn from "../components/LinkBtn.jsx";
-import meForest from "../assets/about-me/me-forest.jpg";
-import mandalaFolder from "../assets/about-me/folder-mandala.jpg";
-import embroideryShoe from "../assets/about-me/embroidery-shoe.jpg";
 import FullNameMandala from "../components/MandalaGraphic.jsx";
 
 export default function Home() {
@@ -23,24 +20,45 @@ export default function Home() {
   return (
     <main className="page">
       <header>
-        <Hero
-          image={heroImage}
-          imageAlt="A portrait of Freja Kejser in nature"
-          title={
+        <section className={styles.homeHero} aria-label="Introduction">
+          <div className={styles.homeHeroContent}>
+            <h1 className={styles.homeHeroTitle}>
+              <img src={name} alt="Freja Kejser" />
+            </h1>
+            <p className={styles.homeHeroSubtitle}>
+              UX/UI Designer & Frontend Developer
+            </p>
+            <LinkBtn
+              href="#projects"
+              className={`${styles.exploreWorkButton} ${styles.homeHeroCta}`}
+              arrowDirection="down"
+            >
+              Explore my work
+            </LinkBtn>
+          </div>
+
+          <div className={styles.homeHeroVisual} aria-hidden="true">
             <img
-              className={heroStyles.homeNameHero}
-              src={name}
-              aria-label="Freja Kejser"
-              alt="Freja Kejser"
+              className={`${styles.homeHeroMandala} ${styles.heroMandalaTopRight}`}
+              src={mandalaName}
+              alt=""
             />
-          }
-          subtitle="UX/UI Designer & Frontend Developer"
-          ctaLabel="Explore my work"
-          ctaHref="#projects"
-          ctaClassName={styles.exploreWorkButton}
-          ctaArrowDirection="down"
-          variant="home"
-        />
+
+            <img
+              className={`${styles.homeHeroMandala} ${styles.heroMandalaBottomLeft}`}
+              src={mandalaInititals}
+              alt=""
+            />
+
+            <div className={styles.polaroidWrapper}>
+              <PolaroidCard
+                images={[heroImage]}
+                imageAlt="Image of Freja Kejser"
+                size="large"
+              />
+            </div>
+          </div>
+        </section>
       </header>
 
       {/* FEATURED PROJECTS SECTION */}

@@ -4,6 +4,107 @@
   box-sizing: border-box;
 }
 
+.homeHero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(24rem, 1.05fr);
+  align-items: center;
+  min-height: calc(100svh - var(--navbar-height));
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+}
+
+.homeHeroContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  width: min(100%, 35rem);
+  margin-left: max(
+    var(--page-padding-x),
+    calc((100vw - var(--content-max-width)) / 2 + var(--page-padding-x))
+  );
+  padding: 3rem 0;
+}
+
+.homeHeroTitle {
+  margin: 0;
+}
+
+.homeHeroTitle img {
+  display: block;
+  width: clamp(14rem, 28vw, 22rem);
+  height: auto;
+}
+
+.homeHeroSubtitle {
+  max-width: 34rem;
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-accent);
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  line-height: 1.1;
+}
+
+.homeHeroCta {
+  min-height: 3.25rem;
+  font-size: 1rem;
+}
+
+.homeHeroVisual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38rem;
+}
+
+.polaroidWrapper {
+  position: relative;
+  z-index: 2;
+  transform: rotate(2deg)
+}
+
+.homeHeroMandala {
+  position: absolute;
+  z-index: 1;
+  height: auto;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.heroMandalaTopRight {
+  width: clamp(16rem, 26vw, 30rem);
+  top: -15%;
+  right: 15%;
+  animation: spinMandala 80s linear infinite;
+}
+
+.heroMandalaBottomLeft {
+  width: clamp(16rem, 26vw, 22rem);
+  bottom: -15%;
+  left: 17%;
+  animation: spinMandala 60s linear infinite;
+  animation-direction: reverse;
+}
+
+@keyframes spinMandala {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.exploreWorkButton{
+  animation: exploreWorkFloat 3s ease-in-out infinite;
+}
+
 @keyframes exploreWorkFloat {
   0%,
   100% {
@@ -13,10 +114,6 @@
   50% {
     transform: translateY(-0.4rem);
   }
-}
-
-.exploreWorkButton {
-  animation: exploreWorkFloat 3s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -119,6 +216,22 @@
 
 /* Responsive */
 @media (max-width: 900px) {
+  .homeHero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 5rem var(--page-padding-x) 4rem;
+  }
+
+  .homeHeroContent {
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .homeHeroVisual {
+    min-height: 30rem;
+  }
+
   .projectsGrid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
@@ -134,5 +247,23 @@
 
   .aboutMandala {
     width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .homeHero {
+    padding-top: 3.5rem;
+  }
+
+  .homeHeroVisual {
+    min-height: 23rem;
+  }
+
+  .homeHeroMandala {
+    width: 115%;
+  }
+
+  .homeHeroPolaroid {
+    width: min(72%, 18rem);
   }
 }
