@@ -152,6 +152,8 @@ body {
   width: 100%;
   display: grid;
   gap: 0;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .page .hero-full-bleed {
