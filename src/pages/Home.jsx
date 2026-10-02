@@ -38,19 +38,19 @@ export default function Home() {
           </div>
 
           <div className={styles.homeHeroVisual} aria-hidden="true">
-            <img
-              className={`${styles.homeHeroMandala} ${styles.heroMandalaTopRight}`}
-              src={mandalaName}
-              alt=""
-            />
-
-            <img
-              className={`${styles.homeHeroMandala} ${styles.heroMandalaBottomLeft}`}
-              src={mandalaInititals}
-              alt=""
-            />
-
             <div className={styles.polaroidWrapper}>
+              <img
+                className={`${styles.homeHeroMandala} ${styles.heroMandalaTopRight}`}
+                src={mandalaName}
+                alt=""
+              />
+
+              <img
+                className={`${styles.homeHeroMandala} ${styles.heroMandalaBottomLeft}`}
+                src={mandalaInititals}
+                alt=""
+              />
+
               <PolaroidCard
                 images={[heroImage]}
                 imageAlt="Image of Freja Kejser"
