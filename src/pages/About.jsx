@@ -122,7 +122,7 @@ export default function About() {
               <p>
                 People in my network often describe me as a jack of all trades
                 because I love exploring new creative possibilities and learning
-                new skills. I am passionate about UX, design systems and turning
+                new skills. I am passionate about UX, UI, design systems and turning
                 complex ideas into clear, usable experiences.
               </p>
               <p>

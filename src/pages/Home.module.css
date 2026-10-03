@@ -7,9 +7,9 @@
 .homeHero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(24rem, 1.05fr);
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
   align-items: center;
-  min-height: calc(100svh - var(--navbar-height));
+  min-height: clamp(38rem, calc(100svh - var(--navbar-height)), 48rem);
   width: 100vw;
   margin-left: calc(50% - 50vw);
   overflow: hidden;
@@ -23,7 +23,8 @@
   flex-direction: column;
   align-items: flex-start;
   gap: clamp(1.25rem, 2.5vw, 2rem);
-  width: min(100%, 35rem);
+  width: min(100%, 34rem);
+  min-width: 0;
   margin-left: max(
     var(--page-padding-x),
     calc((100vw - var(--content-max-width)) / 2 + var(--page-padding-x))
@@ -37,7 +38,7 @@
 
 .homeHeroTitle img {
   display: block;
-  width: clamp(14rem, 28vw, 22rem);
+  width: min(100%, var(--hero-name-width));
   height: auto;
 }
 
@@ -46,27 +47,43 @@
   margin: 0;
   color: var(--color-text);
   font-family: var(--font-accent);
-  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-size: var(--font-size-hero-subtitle);
   line-height: 1.1;
+  text-wrap: balance
 }
 
 .homeHeroCta {
-  min-height: 3.25rem;
-  font-size: 1rem;
+  min-height: 3.5rem;
+  font-size: var(--font-size-button);
 }
 
 .homeHeroVisual {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 38rem;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 100%;
+  padding-right: max(
+    var(--page-padding-x),
+    calc((100vw - var(--content-max-width)) / 2 + var(--page-padding-x))
+  );
 }
 
 .polaroidWrapper {
   position: relative;
   z-index: 2;
-  transform: rotate(2deg)
+  width: min(100%, 38rem);
+  aspect-ratio: 19 / 20;
+}
+
+.polaroidWrapper > figure {
+  position: relative;
+  z-index: 2;
+  width: 60%;
+  margin: 17% 0 0 20%;
+  transform: rotate(2deg);
 }
 
 .homeHeroMandala {
@@ -78,16 +95,16 @@
 }
 
 .heroMandalaTopRight {
-  width: clamp(16rem, 26vw, 30rem);
-  top: -15%;
-  right: 15%;
+  width: 75%;
+  top: 0;
+  right: 0;
   animation: spinMandala 80s linear infinite;
 }
 
 .heroMandalaBottomLeft {
-  width: clamp(16rem, 26vw, 22rem);
-  bottom: -15%;
-  left: 17%;
+  width: 55%;
+  bottom: 0;
+  left: 0;
   animation: spinMandala 60s linear infinite;
   animation-direction: reverse;
 }
@@ -101,7 +118,7 @@
   }
 }
 
-.exploreWorkButton{
+.exploreWorkButton {
   animation: exploreWorkFloat 3s ease-in-out infinite;
 }
 
@@ -219,7 +236,7 @@
   .homeHero {
     grid-template-columns: 1fr;
     min-height: auto;
-    padding: 5rem var(--page-padding-x) 4rem;
+    padding: clamp(4rem, 9vw, 5rem) var(--page-padding-x) clamp(3rem, 8vw, 4rem);
   }
 
   .homeHeroContent {
@@ -229,7 +246,15 @@
   }
 
   .homeHeroVisual {
-    min-height: 30rem;
+    width: 100%;
+    min-height: clamp(22rem, 68vw, 31rem);
+    margin-top: clamp(1rem, 3vw, 2rem);
+    justify-content: center;
+    padding-right: 0;
+  }
+
+  .polaroidWrapper {
+    width: min(100%, 26rem);
   }
 
   .projectsGrid {
@@ -256,14 +281,10 @@
   }
 
   .homeHeroVisual {
-    min-height: 23rem;
+    min-height: clamp(20rem, 88vw, 25rem);
   }
 
-  .homeHeroMandala {
-    width: 115%;
-  }
-
-  .homeHeroPolaroid {
-    width: min(72%, 18rem);
+  .polaroidWrapper > figure {
+    width: 60%;
   }
 }

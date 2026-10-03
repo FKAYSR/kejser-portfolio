@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import name from "../assets/icons/full-name.svg";
-import heroImage from "../assets/images/hero-img.jpg";
+import heroImage from "../assets/images/me-green-shirt.jpg";
 import mandalaName from "../assets/icons/mandala-freja-kejser.svg";
 import mandalaInititals from "../assets/icons/mandala-initials.svg";
 import projects from "../data/projects.js";
@@ -38,19 +38,19 @@ export default function Home() {
           </div>
 
           <div className={styles.homeHeroVisual} aria-hidden="true">
-            <img
-              className={`${styles.homeHeroMandala} ${styles.heroMandalaTopRight}`}
-              src={mandalaName}
-              alt=""
-            />
-
-            <img
-              className={`${styles.homeHeroMandala} ${styles.heroMandalaBottomLeft}`}
-              src={mandalaInititals}
-              alt=""
-            />
-
             <div className={styles.polaroidWrapper}>
+              <img
+                className={`${styles.homeHeroMandala} ${styles.heroMandalaTopRight}`}
+                src={mandalaName}
+                alt=""
+              />
+
+              <img
+                className={`${styles.homeHeroMandala} ${styles.heroMandalaBottomLeft}`}
+                src={mandalaInititals}
+                alt=""
+              />
+
               <PolaroidCard
                 images={[heroImage]}
                 imageAlt="Image of Freja Kejser"

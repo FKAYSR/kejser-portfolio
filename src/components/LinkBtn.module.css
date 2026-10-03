@@ -14,7 +14,7 @@
   box-shadow: var(--drop-shadow);
   color: var(--color-bg);
   font-family: var(--font-body);
-  font-size: 1.25rem;
+  font-size: var(--font-size-button);
   line-height: 1.15;
   text-decoration: none;
   box-sizing: border-box;

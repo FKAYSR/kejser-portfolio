@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 :root {
   /* Textures */
   --texture-paper: url("https://transparenttextures.com/patterns/clean-gray-paper.png");
@@ -47,6 +51,11 @@
   --font-heading: "Cinzel", serif;
   --font-body: "Inter", sans-serif;
   --font-accent: "Caveat", cursive;
+  --font-size-body: clamp(1.05rem, 0.55vw + 0.9rem, 1.2rem);
+  --font-size-small: clamp(0.95rem, 0.4vw + 0.8rem, 1.05rem);
+  --font-size-button: clamp(1.1rem, 0.5vw + 1rem, 1.35rem);
+  --font-size-hero-subtitle: clamp(2rem, 3.5vw, 3.25rem);
+  --hero-name-width: clamp(16rem, 29vw, 25rem);
 
   /* Effects */
   --drop-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
@@ -65,7 +74,13 @@ body {
   background-image: url("https://transparenttextures.com/patterns/clean-gray-paper.png");
   color: var(--color-text);
   font-family: var(--font-body);
+  font-size: var(--font-size-body);
   overflow-x: hidden;
+}
+
+#root {
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 /* Typografi styles */
@@ -100,14 +115,14 @@ body {
 }
 
 .text-style-body-text {
-  font-size: clamp(1rem, 0.5vw + 0.875rem, 1.125rem);
+  font-size: var(--font-size-body);
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.5;
 }
 
 .text-style-small-text {
-  font-size: 0.875rem;
+  font-size: var(--font-size-small);
   font-family: var(--font-body);
   font-weight: 400;
   line-height: 1.2;
