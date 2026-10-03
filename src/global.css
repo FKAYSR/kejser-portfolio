@@ -5,7 +5,7 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 :root {
@@ -23,9 +23,10 @@ html {
     var(--color-accent) 90%,
     transparent
   );
-  --color-path: #e6ddd2;
+
   --color-text: #191919;
-  --color-muted: #706b64;
+  --color-path: #e6ddd2;
+  --color-muted: #5f5a54;
   --color-border: #d9d2c8;
   --color-accent: #513238;
   --color-accent-hover: #5e3a41;
@@ -38,30 +39,34 @@ html {
   --small-buttons: 8px;
   --big-buttons: 55px;
 
-  /* Spacing */
+  /* Layout */
+  --navbar-height: 5rem;
   --content-max-width: 90rem;
   --page-padding-x: clamp(1.5rem, 5vw, 3rem);
-  --frame-padding-x: clamp(2rem, 8vw, 10rem);
+
   --padding-horizontal: 16px;
-  --padding-vertical: 12px;
+
   --progress-banner-height: 4.6875rem;
-  --navbar-height: 4.6875rem;
 
   /* Font families */
   --font-heading: "Cinzel", serif;
   --font-body: "Inter", sans-serif;
   --font-accent: "Caveat", cursive;
+
+  /* Font sizes */
   --font-size-body: clamp(1.05rem, 0.55vw + 0.9rem, 1.2rem);
   --font-size-small: clamp(0.95rem, 0.4vw + 0.8rem, 1.05rem);
   --font-size-button: clamp(1.1rem, 0.5vw + 1rem, 1.35rem);
-  --font-size-hero-subtitle: clamp(2rem, 3.5vw, 3.25rem);
-  --hero-name-width: clamp(16rem, 29vw, 25rem);
+  --font-size-hero-subtitle: clamp(2rem, 3.5vw, 4.25rem);
+  --hero-name-width: clamp(16rem, 29vw, 30rem);
 
   /* Effects */
   --drop-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
   --shadow-lifted: 0px 12px 20px rgba(0, 0, 0, 0.2);
   --nav-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   --glow-shadow-filter: drop-shadow(0 0 8px var(--color-sand));
+
+  /* Motion */
   --transition-fast: all 0.2s ease-in-out;
   --transition-smooth: all 0.3s ease;
   --transform-lift: translateY(-2px);
@@ -70,17 +75,21 @@ html {
 
 /* Body */
 body {
-  background-color: var(--color-bg);
-  background-image: url("https://transparenttextures.com/patterns/clean-gray-paper.png");
+  background: var(--color-bg-primary);
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--font-size-body);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 #root {
   max-width: 100%;
-  overflow-x: clip;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding-bottom: var(--navbar-height);
+  }
 }
 
 /* Typografi styles */
@@ -132,18 +141,16 @@ body {
 .page {
   width: 100%;
   max-width: var(--content-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--page-padding-x);
-  padding-right: var(--page-padding-x);
+  margin-inline: auto;
+  padding-inline: var(--page-padding-x);
 }
 
 .page-section {
   position: relative;
   isolation: isolate;
   width: 100%;
-  padding-top: clamp(4rem, 8vw, 6rem);
-  padding-bottom: clamp(4rem, 8vw, 6rem);
+  padding-block: clamp(4rem, 8vw, 6rem);
+  scroll-margin-top: var(--navbar-height);
 }
 
 .page-section::before {
@@ -163,15 +170,9 @@ body {
 }
 
 .overview-page-section {
-  position: relative;
-  width: 100%;
-  display: grid;
-  gap: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-block: 0;
 }
 
-.page .hero-full-bleed {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+.overview-page-section > .page {
+  display: grid;
 }

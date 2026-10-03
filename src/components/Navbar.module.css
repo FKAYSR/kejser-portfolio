@@ -1,112 +1,114 @@
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   height: var(--navbar-height);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0.75rem var(--frame-padding-x);
   background-color: var(--color-nav-transparent);
   box-shadow: var(--nav-shadow);
   backdrop-filter: blur(12px);
-  position: sticky;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  box-sizing: border-box;
 }
-
-.navbar img {
+ 
+.navbarInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding-block: 0.75rem;
+}
+ 
+.logo {
+  display: flex;
+}
+ 
+.logo img {
   display: block;
   height: 3.5rem;
   width: auto;
   filter: brightness(0) invert(1);
 }
-
+ 
 .links {
   display: flex;
   align-items: center;
   gap: 2.5rem;
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
-
-.textWrapper {
+ 
+.link {
   display: inline-block;
+  padding: 0.4rem 0.2rem;
   color: var(--color-path);
-  text-decoration: none;
   font-family: var(--font-body);
   font-size: 1.2rem;
   font-weight: 500;
+  text-decoration: none;
   white-space: nowrap;
-  padding: 0.4rem 0.2rem;
   transition: var(--transition-fast);
 }
-
-/* Hover & Active states */
-.textWrapper:hover {
+ 
+/* Hover & active */
+.link:hover {
   color: var(--color-bg);
   filter: var(--glow-shadow-filter);
   transform: var(--transform-lift);
   cursor: pointer;
 }
-
-.textWrapper:global(.active) {
+ 
+.link:global(.active) {
   color: var(--color-sand);
   filter: var(--glow-shadow-filter);
   font-weight: 600;
   text-shadow: 0 0 8px rgba(185, 163, 131, 0.6);
 }
-
-.textWrapper:global(.active):hover {
+ 
+.link:global(.active):hover {
   color: var(--color-sand);
 }
-
+ 
+/* Mobil: navbaren ligger fast i bunden og logoet skjules.
+   Siden får luft i bunden via body-reglen i global.css. */
 @media (max-width: 700px) {
   .navbar {
     position: fixed;
+    top: auto;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
-    top: auto;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    height: auto;
     min-height: var(--navbar-height);
-    gap: 0.5rem;
-    box-sizing: border-box;
-    padding: 0.75rem var(--frame-padding-x)
-      max(1rem, env(safe-area-inset-bottom));
   }
-
-  .navbar > a {
+ 
+  .navbarInner {
+    justify-content: space-around;
+    height: auto;
+    padding-top: 0.75rem;
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+ 
+  .logo {
     display: none;
   }
-
-  .textWrapper {
-    font-size: 1rem;
-  }
-
-  :global(body) {
-    padding-bottom: calc(var(--navbar-height));
-  }
-
+ 
   .links {
-    width: 100%;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem 1rem;
+    width: 100%;
+  }
+ 
+  .link {
+    font-size: 1rem;
   }
 }
-
+ 
 @media (max-width: 420px) {
   .links {
     gap: 0.25rem 0.8rem;
   }
-
-  .textWrapper {
+ 
+  .link {
     font-size: 0.9rem;
   }
 }

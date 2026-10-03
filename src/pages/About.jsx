@@ -6,31 +6,30 @@ import whEnjoy from "../assets/icons/wh-enjoy.svg";
 import whLearning from "../assets/icons/wh-learning.svg";
 import whUse from "../assets/icons/wh-use.svg";
 import cv from "../assets/cv.pdf";
-
+ 
 // images
 import closeupFeather from "../assets/about-me/closeup-feather.jpg";
 import closeupFlower from "../assets/about-me/closeup-flower.jpg";
 import closeupGround from "../assets/about-me/closeup-ground.jpg";
 import closeupSnailhouse from "../assets/about-me/closeup-snailhouse.jpg";
 import closeupTree from "../assets/about-me/closeup-tree.jpg";
-
+ 
 import blackbear from "../assets/about-me/blackbear.jpg";
 import mandalaColor from "../assets/about-me/color-mandala.jpg";
 import mandalaFolder from "../assets/about-me/folder-mandala.jpg";
 import embroideryBearclaw from "../assets/about-me/embroidery-bearclaw.jpg";
 import embroideryShoe from "../assets/about-me/embroidery-shoe.jpg";
 import braceletHeart from "../assets/about-me/heart-bracelet.jpg";
-
+ 
 import notionLifeDash from "../assets/about-me/notion-life-dashboard.png";
 import notionPortfolioDash from "../assets/about-me/notion-portfolio-dashboard.png";
 import notionPortfolioTemp from "../assets/about-me/notion-portfolio-template.png";
-
+ 
 import meFishhat from "../assets/about-me/me-fishhat.jpg";
 import meNorway from "../assets/about-me/me-norway.jpg";
 import meAndDeer from "../assets/about-me/deer-and-me.jpg";
 import meForest from "../assets/about-me/me-forest.jpg";
-
-
+ 
 export default function About() {
   const skillsBoxes = [
     {
@@ -68,7 +67,7 @@ export default function About() {
       ],
     },
   ];
-
+ 
   const timelineData = [
     {
       period: "2025 - NOW",
@@ -106,12 +105,12 @@ export default function About() {
         "High school diploma with specialized focus on English and Music. Built a strong foundation in collaborative project work, critical thinking, and creative expression.",
     },
   ];
-
+ 
   return (
-    <main className="page">
+    <main>
       {/* Presentation section */}
       <section className={`page-section ${styles.section}`}>
-        <div className={styles.container}>
+        <div className="page">
           <div className={styles.bioGrid}>
             <div className={styles.bioText}>
               <h2>Who is FREJA KEJSER?</h2>
@@ -122,8 +121,8 @@ export default function About() {
               <p>
                 People in my network often describe me as a jack of all trades
                 because I love exploring new creative possibilities and learning
-                new skills. I am passionate about UX, UI, design systems and turning
-                complex ideas into clear, usable experiences.
+                new skills. I am passionate about UX, UI, design systems and
+                turning complex ideas into clear, usable experiences.
               </p>
               <p>
                 I enjoy creating structure, organizing information and turning
@@ -146,32 +145,34 @@ export default function About() {
       </section>
 
       {/* WHAT section with skills and passions */}
-      <section className={`page-section ${styles.section}`}>
-        <div className={styles.skillsGrid}>
-          {skillsBoxes.map((box, index) => (
-            <article key={index} className={styles.skillCard} tabIndex={0}>
-              <div className={styles.cardHeader}>
-                <img
-                  src={box.icon}
-                  alt=""
-                  className={styles.cardIcon}
-                  aria-hidden="true"
-                />
-                <h2 id={`skill-heading-${index}`}>{box.title}</h2>
-              </div>
-              <ul>
-                {box.items.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
+      <section className="page-section">
+        <div className="page">
+          <div className={styles.skillsGrid}>
+            {skillsBoxes.map((box, index) => (
+              <article key={index} className={styles.skillCard} tabIndex={0}>
+                <div className={styles.cardHeader}>
+                  <img
+                    src={box.icon}
+                    alt=""
+                    className={styles.cardIcon}
+                    aria-hidden="true"
+                  />
+                  <h2 id={`skill-heading-${index}`}>{box.title}</h2>
+                </div>
+                <ul>
+                  {box.items.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* HIDDEN TALENTS section */}
       <section className={`page-section ${styles.section}`}>
-        <div className={styles.container}>
+        <div className="page">
           <div className={styles.centeredHeader}>
             <h2>HIDDEN TALENTS</h2>
             <p className={styles.subtitle}>
@@ -221,42 +222,43 @@ export default function About() {
       </section>
 
       {/* Experience section */}
-      <section className={`page-section ${styles.timelineSection}`}>
-        <div className={styles.timelineContainer}>
-          <div className={styles.timelineHeader}>
-            <h2>Education & Experience</h2>
+      <section className="page-section">
+        <div className="page">
+          <div className={styles.timelineContainer}>
+            <div className={styles.timelineHeader}>
+              <h2>Education & Experience</h2>
+            </div>
+
+            <div className={styles.timelineWrapper}>
+              <ul className={styles.timelineList}>
+                {timelineData.map((item, index) => (
+                  <li key={index} className={styles.timelineItem} tabIndex={0}>
+                    <div className={styles.timelinePeriod}>{item.period}</div>
+                    <div className={styles.timelineDot} />
+                    <div className={styles.timelineContent}>
+                      <h3>{item.title}</h3>
+                      <span className={styles.timelineSubtitle}>
+                        {item.subtitle}
+                      </span>
+                      <p>{item.description}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Timeline */}
-          <div className={styles.timelineWrapper}>
-            <ul className={styles.timelineList}>
-              {timelineData.map((item, index) => (
-                <li key={index} className={styles.timelineItem} tabIndex={0}>
-                  <div className={styles.timelinePeriod}>{item.period}</div>
-                  <div className={styles.timelineDot} />
-                  <div className={styles.timelineContent}>
-                    <h3>{item.title}</h3>
-                    <span className={styles.timelineSubtitle}>
-                      {item.subtitle}
-                    </span>
-                    <p>{item.description}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+          {/* CV download button */}
+          <div className={styles.cvContainer}>
+            <LinkBtn
+              href={cv}
+              variant="external"
+              target="_blank"
+              className={styles.cvButton}
+            >
+              Download full CV (PDF)
+            </LinkBtn>
           </div>
-        </div>
-
-        {/* CV Download button */}
-        <div className={styles.cvContainer}>
-          <LinkBtn
-            href={cv}
-            variant="external"
-            target="_blank"
-            className={styles.cvButton}
-          >
-            Download full CV (PDF)
-          </LinkBtn>
         </div>
       </section>
     </main>
