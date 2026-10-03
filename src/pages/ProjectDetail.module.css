@@ -1,32 +1,7 @@
-.projectDetail {
-  width: 100%;
-}
-
-/* =========================
-   GENERAL
-========================= */
-
+/* GENERAL */
 .section {
-  position: relative;
-  isolation: isolate;
   display: grid;
   gap: clamp(2rem, 4vw, 5rem);
-}
-
-.nextProject::before {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  z-index: -1;
-  width: 100vw;
-  background: var(--color-bg-primary);
-  content: "";
-  transform: translateX(-50%);
-}
-
-.overviewSection {
-  padding-top: clamp(4rem, 8vw, 6rem);
 }
 
 .overviewTitle {
@@ -58,20 +33,15 @@
   min-width: 0;
 }
 
-/* =========================
-   TAGS
-========================= */
+/* TAGS */
 
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-
   margin-bottom: 2rem;
   padding: 0;
-
   list-style: none;
-
   color: var(--color-muted);
   font-size: 0.875rem;
 }
@@ -81,9 +51,7 @@
   margin-left: 0.75rem;
 }
 
-/* =========================
-   OVERVIEW
-========================= */
+/* OVERVIEW */
 
 .overviewLayout {
   display: grid;
@@ -104,9 +72,7 @@
   padding-top: 1rem;
 }
 
-/* =========================
-   ASSIGNMENT
-========================= */
+/* ASSIGNMENT */
 
 .assignmentLayout {
   display: grid;
@@ -120,9 +86,7 @@
   gap: 1rem;
 }
 
-/* =========================
-   SOLUTION
-========================= */
+/* SOLUTION */
 
 .solutionIntro {
   display: grid;
@@ -163,9 +127,7 @@
   min-width: 0;
 }
 
-/* =========================
-   TOOLS
-========================= */
+/* TOOLS */
 
 .toolsList {
   display: grid;
@@ -175,15 +137,12 @@
   list-style: none;
 }
 
-/* =========================
-   MY ROLE
-========================= */
+/* MY ROLE */
 
 .roleLayout {
   display: grid;
   grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.2fr);
   gap: clamp(3rem, 7vw, 8rem);
-
   align-items: center;
 }
 
@@ -212,19 +171,14 @@
 .arrowButton {
   width: 48px;
   height: 48px;
-
   border: none;
   background: transparent;
-
   color: var(--color-accent);
-
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-/* =========================
-   WHAT I LEARNED AND IF I DID IT AGAIN LIST
-========================= */
+/* WHAT I LEARNED AND IF I DID IT AGAIN LIST */
 
 .learnedSection {
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -249,9 +203,7 @@
   padding-left: 1.25rem;
 }
 
-/* =========================
-   PROJECT LINKS
-========================= */
+/* PROJECT LINKS */
 
 .projectLinks {
   display: grid;
@@ -261,17 +213,15 @@
   list-style: none;
 }
 
-/* =========================
-   NEXT PROJECT
-========================= */
-
+/* NEXT PROJECT */
 .nextProject {
-  position: relative;
-  isolation: isolate;
+  padding-block: clamp(3rem, 3vw, 4rem);
+}
+
+.nextProjectInner {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: clamp(2rem, 3vw, 3rem) clamp(4rem, 6vw, 6rem);
 }
 
 .nextProjectContent {
@@ -307,19 +257,13 @@
   object-fit: contain;
 }
 
-/* =========================
-   NOT FOUND
-========================= */
-
+/* NOT FOUND */
 .notFound {
-  padding: 6rem var(--padding-horizontal);
+  padding: 6rem;
   text-align: center;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .assignmentLayout,
   .solutionLists,

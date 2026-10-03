@@ -1,21 +1,17 @@
-.section {
-  position: relative;
-  width: 100%;
-  box-sizing: border-box;
-}
-
 .homeHero {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  display: flex;
   align-items: center;
   min-height: clamp(38rem, calc(100svh - var(--navbar-height)), 48rem);
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
   overflow: hidden;
   background: var(--color-bg-secondary);
 }
-
+ 
+.homeHeroInner {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  align-items: center;
+}
+ 
 .homeHeroContent {
   position: relative;
   z-index: 2;
@@ -25,23 +21,19 @@
   gap: clamp(1.25rem, 2.5vw, 2rem);
   width: min(100%, 34rem);
   min-width: 0;
-  margin-left: max(
-    var(--page-padding-x),
-    calc((100vw - var(--content-max-width)) / 2 + var(--page-padding-x))
-  );
-  padding: 3rem 0;
+  padding-block: 3rem;
 }
-
+ 
 .homeHeroTitle {
   margin: 0;
 }
-
+ 
 .homeHeroTitle img {
   display: block;
   width: min(100%, var(--hero-name-width));
   height: auto;
 }
-
+ 
 .homeHeroSubtitle {
   max-width: 34rem;
   margin: 0;
@@ -49,35 +41,31 @@
   font-family: var(--font-accent);
   font-size: var(--font-size-hero-subtitle);
   line-height: 1.1;
-  text-wrap: balance
+  text-wrap: balance;
 }
-
+ 
 .homeHeroCta {
   min-height: 3.5rem;
   font-size: var(--font-size-button);
 }
-
+ 
 .homeHeroVisual {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  box-sizing: border-box;
   min-width: 0;
   min-height: 100%;
-  padding-right: max(
-    var(--page-padding-x),
-    calc((100vw - var(--content-max-width)) / 2 + var(--page-padding-x))
-  );
 }
-
+ 
+/* Polaroid + mandalas */
 .polaroidWrapper {
   position: relative;
   z-index: 2;
   width: min(100%, 38rem);
   aspect-ratio: 19 / 20;
 }
-
+ 
 .polaroidWrapper > figure {
   position: relative;
   z-index: 2;
@@ -85,7 +73,7 @@
   margin: 17% 0 0 20%;
   transform: rotate(2deg);
 }
-
+ 
 .homeHeroMandala {
   position: absolute;
   z-index: 1;
@@ -93,22 +81,25 @@
   opacity: 0.55;
   pointer-events: none;
 }
-
+ 
 .heroMandalaTopRight {
-  width: 75%;
   top: 0;
   right: 0;
+  width: 75%;
   animation: spinMandala 80s linear infinite;
 }
-
+ 
 .heroMandalaBottomLeft {
-  width: 55%;
   bottom: 0;
   left: 0;
-  animation: spinMandala 60s linear infinite;
-  animation-direction: reverse;
+  width: 55%;
+  animation: spinMandala 60s linear infinite reverse;
 }
-
+ 
+.exploreWorkButton {
+  animation: exploreWorkFloat 3s ease-in-out infinite;
+}
+ 
 @keyframes spinMandala {
   from {
     transform: rotate(0deg);
@@ -117,174 +108,157 @@
     transform: rotate(360deg);
   }
 }
-
-.exploreWorkButton {
-  animation: exploreWorkFloat 3s ease-in-out infinite;
-}
-
+ 
 @keyframes exploreWorkFloat {
   0%,
   100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(-0.4rem);
   }
 }
-
+ 
 @media (prefers-reduced-motion: reduce) {
-  .exploreWorkButton {
+  .exploreWorkButton,
+  .homeHeroMandala {
     animation: none;
   }
 }
-
+ 
+/* Section headers */
 .sectionHeader {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 2.5rem;
   gap: 1.5rem;
+  margin-bottom: 2.5rem;
 }
-
+ 
 .sectionHeader h2,
 .centeredHeader h2,
 .aboutText h2 {
+  margin: 0 0 0.5rem;
+  color: var(--color-text);
   font-family: var(--font-heading);
   font-size: clamp(1.75rem, 3vw, 2.5rem);
-  color: var(--color-text);
-  margin: 0 0 0.5rem 0;
   letter-spacing: 0.05em;
 }
-
+ 
 .sectionSubtitle {
-  font-family: var(--font-body);
-  color: var(--color-muted);
   margin: 0;
+  color: var(--color-muted);
+  font-family: var(--font-body);
   font-size: 0.95rem;
 }
-
+ 
 .seeAllLink {
   color: var(--color-text);
-  text-decoration: none;
   font-family: var(--font-body);
+  text-decoration: none;
   white-space: nowrap;
   transition: var(--transition-fast);
 }
-
+ 
 .seeAllLink:hover {
   transform: var(--transform-lift);
 }
-
+ 
 .centeredHeader {
-  text-align: center;
   margin-bottom: 3rem;
+  text-align: center;
 }
-
-/* Grid for Featured Projects */
+ 
+/* Featured projects */
 .projectsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   width: 100%;
-  margin: 0 auto;
 }
-
-/* About Me section */
+ 
+/* About me */
 .aboutGrid {
   display: grid;
   grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.9fr);
-  gap: clamp(0.5rem, 2vw, 2rem);
   align-items: center;
+  gap: clamp(0.5rem, 2vw, 2rem);
   width: 100%;
   max-width: 78rem;
 }
-
+ 
 .aboutGrid > * {
   min-width: 0;
 }
-
+ 
 .aboutText {
   max-width: 43rem;
 }
-
+ 
 .aboutText h2 {
+  margin-bottom: 2.5rem;
   font-size: clamp(2.25rem, 4vw, 3.25rem);
   line-height: 1;
-  margin-bottom: 2.5rem;
 }
-
+ 
 .aboutText p {
-  line-height: 1.55;
   margin-bottom: 1.5rem;
   color: var(--color-text);
+  line-height: 1.55;
 }
-
-.aboutMandala {
-  display: block;
-  width: 150%;
-  height: auto;
-  margin-inline: auto;
-}
-
-#projects {
-  scroll-margin-top: var(--navbar-height);
-}
-
+ 
 /* Responsive */
 @media (max-width: 900px) {
   .homeHero {
-    grid-template-columns: 1fr;
     min-height: auto;
-    padding: clamp(4rem, 9vw, 5rem) var(--page-padding-x) clamp(3rem, 8vw, 4rem);
+    padding-block: clamp(4rem, 9vw, 5rem) clamp(3rem, 8vw, 4rem);
   }
-
+ 
+  .homeHeroInner {
+    grid-template-columns: 1fr;
+  }
+ 
   .homeHeroContent {
     width: 100%;
-    margin-left: 0;
     padding: 0;
   }
-
+ 
   .homeHeroVisual {
     width: 100%;
     min-height: clamp(22rem, 68vw, 31rem);
     margin-top: clamp(1rem, 3vw, 2rem);
     justify-content: center;
-    padding-right: 0;
   }
-
+ 
   .polaroidWrapper {
     width: min(100%, 26rem);
   }
-
+ 
   .projectsGrid {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
-
+ 
   .aboutGrid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-
+ 
   .aboutText {
     max-width: none;
   }
-
+ 
   .aboutMandala {
     width: 100%;
   }
 }
-
+ 
 @media (max-width: 520px) {
   .homeHero {
     padding-top: 3.5rem;
   }
-
+ 
   .homeHeroVisual {
     min-height: clamp(20rem, 88vw, 25rem);
   }
-
-  .polaroidWrapper > figure {
-    width: 60%;
-  }
 }
+ 

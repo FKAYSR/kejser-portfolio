@@ -1,6 +1,6 @@
 .scrollButton {
   position: fixed;
-  right: var(--frame-padding-x);
+  right: var(--page-padding-x);
   bottom: calc(var(--navbar-height) + 1rem);
   z-index: 1001;
   display: none;
