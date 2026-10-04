@@ -24,12 +24,13 @@
 
 .heading {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-display);
   background: var(--color-bg);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: 2px;
+  letter-spacing: var(--letter-spacing-special);
 }
 
 .mailLink {
@@ -39,8 +40,8 @@
   color: var(--color-bg);
   text-decoration: none;
   font-family: var(--font-body);
-  font-size: clamp(1.2rem, 3vw, 2.2rem);
-  font-weight: 500;
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-medium);
   transition:
     transform 0.2s ease,
     color 0.2s ease;

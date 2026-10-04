@@ -38,8 +38,8 @@
   margin: 0;
   color: var(--color-text);
   font-family: var(--font-accent);
-  font-size: var(--font-size-hero-subtitle);
-  line-height: 1.1;
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-heading);
   text-wrap: balance;
 }
 
@@ -139,15 +139,16 @@
   margin: 0 0 0.5rem;
   color: var(--color-text);
   font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 3vw, 2.5rem);
-  letter-spacing: 0.05em;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-section);
+  letter-spacing: var(--letter-spacing-wide);
 }
 
 .sectionSubtitle {
   margin: 0;
   color: var(--color-muted);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: var(--font-size-small);
 }
 
 .centeredHeader {
@@ -174,8 +175,8 @@
 
 .featuredIntro h2 {
   margin: 0;
-  font-size: clamp(2.25rem, 4vw, 3.25rem);
-  line-height: 1;
+  font-size: var(--font-size-section-large);
+  line-height: var(--line-height-heading);
 }
 
 .polaroidFan {
@@ -244,14 +245,14 @@
 
 .aboutText h2 {
   margin-bottom: 2.5rem;
-  font-size: clamp(2.25rem, 4vw, 3.25rem);
-  line-height: 1;
+  font-size: var(--font-size-section-large);
+  line-height: var(--line-height-heading);
 }
 
 .aboutText p {
   margin-bottom: 1.5rem;
   color: var(--color-text);
-  line-height: 1.55;
+  line-height: var(--line-height-body);
 }
 
 /* Responsive */

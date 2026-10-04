@@ -15,7 +15,7 @@
   color: var(--color-bg);
   font-family: var(--font-body);
   font-size: var(--font-size-button);
-  line-height: 1.15;
+  line-height: var(--line-height-compact);
   text-decoration: none;
   box-sizing: border-box;
   transition:
@@ -28,8 +28,8 @@
   border: 3px solid var(--color-accent);
   background-color: var(--color-surface);
   color: var(--color-accent);
-  font-size: clamp(1rem, 1.5vw, 1.5rem);
-  font-weight: 400;
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-regular);
 }
 
 .linkButton > span:not(.icon):not(.arrow) {

@@ -10,14 +10,15 @@
   margin-bottom: 1.5rem;
   color: var(--color-text);
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-section-large);
 }
  
 .bioText p {
   margin-bottom: 1.25rem;
   color: var(--color-text);
   font-family: var(--font-body);
-  line-height: 1.7;
+  line-height: var(--line-height-relaxed);
 }
  
 /* Hidden talents */
@@ -29,7 +30,8 @@
 .centeredHeader h2 {
   color: var(--color-text);
   font-family: var(--font-heading);
-  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-section);
 }
  
 .exploringGrid {
@@ -73,13 +75,8 @@
 .cardHeader h2 {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: 1.5rem;
-  letter-spacing: 0.05em;
-}
- 
-.cardIcon {
-  font-size: 1.5rem;
-  color: var(--color-accent);
+  font-size: var(--font-size-h3);
+  letter-spacing: var(--letter-spacing-wide);
 }
  
 .skillCard ul {
@@ -90,8 +87,8 @@
  
 .skillCard li {
   font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: var(--font-size-mobile-nav);
+  line-height: var(--line-height-relaxed);
 }
  
 /* Timeline */
@@ -105,8 +102,9 @@
   margin: 0;
   color: var(--color-text);
   font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  line-height: 1.1;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-section);
+  line-height: var(--line-height-body);
   text-align: center;
   text-transform: uppercase;
 }
@@ -130,7 +128,7 @@
 .timelineItem {
   position: relative;
   display: grid;
-  grid-template-columns: 110px 24px 1fr;
+  grid-template-columns: 150px 24px 1fr;
   align-items: flex-start;
   gap: 1.25rem;
 }
@@ -139,8 +137,8 @@
   padding-top: 0.15rem;
   color: var(--color-text);
   font-family: var(--font-body);
-  font-size: 1.05rem;
-  font-weight: 600;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
   text-align: right;
   transition: var(--transition-smooth);
 }
@@ -150,7 +148,7 @@
   position: absolute;
   top: 0;
   bottom: calc(-2.5rem - 0.3rem - 7px);
-  left: calc(110px + 1.25rem + 11px);
+  left: calc(150px + 1.25rem + 11px);
   z-index: 1;
   width: 2px;
   margin-top: 0.3rem;
@@ -186,8 +184,8 @@
   margin: 0 0 0.25rem;
   color: var(--color-text);
   font-family: var(--font-body);
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
 }
  
 .timelineSubtitle {
@@ -195,16 +193,16 @@
   margin-bottom: 0.5rem;
   color: var(--color-muted);
   font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-style: italic;
+  font-size: var(--font-size-small);
+  font-style: var(--font-style-italic);
 }
  
 .timelineContent p {
   margin: 0;
   color: var(--color-text);
   font-family: var(--font-body);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-relaxed);
 }
  
 /* Hover states */
@@ -262,7 +260,7 @@
  
   .timelinePeriod {
     grid-column: 2;
-    font-size: 0.9rem;
+    font-size: var(--font-size-mobile-nav-small);
     text-align: left;
     opacity: 0.8;
   }
