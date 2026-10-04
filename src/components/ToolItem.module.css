@@ -5,8 +5,8 @@
   min-width: 0;
   color: var(--color-accent);
   font-family: var(--font-accent);
-  font-size: clamp(1.25rem, 1.7vw, 1.65rem);
-  line-height: 1;
+  font-size: var(--font-size-button);
+  line-height: var(--line-height-heading);
   text-align: center;
 }
 

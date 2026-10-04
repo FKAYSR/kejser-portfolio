@@ -10,8 +10,8 @@
   background-color: var(--color-sand);
   color: var(--color-accent);
   font-family: var(--font-body);
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-size: var(--font-size-banner);
+  font-weight: var(--font-weight-semibold);
   text-align: center;
   box-shadow: var(--drop-shadow);
 }
@@ -19,7 +19,7 @@
 .bannerContent {
   display: block;
   max-width: 100%;
-  line-height: 1.2;
+  line-height: var(--line-height-compact);
 }
 
 .dots {

@@ -7,7 +7,7 @@
 .overviewTitle {
   margin-bottom: 2rem;
   color: var(--color-text);
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: var(--font-size-section-large);
 }
 
 .sectionLabel {
@@ -19,9 +19,9 @@
 .solutionText > h2,
 .learnedColumn > h2 {
   color: var(--color-text);
-  font-size: clamp(1.45rem, 2.5vw, 2.35rem);
-  line-height: 1.05;
-  letter-spacing: 0.04em;
+  font-size: var(--font-size-section);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-wide);
 }
 
 .sectionLabel > .infoBlock,
@@ -43,7 +43,7 @@
   padding: 0;
   list-style: none;
   color: var(--color-muted);
-  font-size: 0.875rem;
+  font-size: var(--font-size-small);
 }
 
 .tags li:not(:last-child)::after {
@@ -153,7 +153,7 @@
 
 .roleNumber {
   color: var(--color-muted);
-  font-size: 0.875rem;
+  font-size: var(--font-size-small);
 }
 
 .rolePolaroids {
@@ -174,7 +174,7 @@
   border: none;
   background: transparent;
   color: var(--color-accent);
-  font-size: 1.5rem;
+  font-size: var(--font-size-button);
   cursor: pointer;
 }
 

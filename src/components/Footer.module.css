@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  font-style: normal;
+  font-style: var(--font-style-normal);
 }
  
 .separator {
@@ -41,9 +41,9 @@
   padding: 0.45rem 0.75rem;
   border-width: 0.1rem;
   border-radius: 0.3rem;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
   gap: 0.35rem;
 }
  
@@ -52,8 +52,8 @@
   align-items: center;
   gap: 0.5rem;
   color: var(--color-bg);
-  font-family: inherit;
-  font-size: inherit;
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
   text-decoration: none;
   transition: var(--transition-fast);
 }

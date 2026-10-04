@@ -49,19 +49,19 @@
   margin: 0;
   color: var(--color-bg);
   font-family: var(--font-heading);
-  font-size: clamp(3rem, 8vw, 7rem);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: 0.02em;
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-heading);
 }
 
 .hero .subtitle {
   color: var(--color-bg);
   font-family: var(--font-accent);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  letter-spacing: 0.8px;
-  line-height: 1.1;
+  font-size: var(--font-size-section-large);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--letter-spacing-heading);
+  line-height: var(--line-height-heading);
   position: relative;
   max-width: 100%;
 }
@@ -82,12 +82,12 @@
 
 .hero .text-wrapper {
   color: var(--color-bg);
-  font-family: var(--body-text-font-family);
-  font-size: var(--body-text-font-size);
-  font-style: var(--body-text-font-style);
-  font-weight: var(--body-text-font-weight);
-  letter-spacing: var(--body-text-letter-spacing);
-  line-height: var(--body-text-line-height);
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  font-style: var(--font-style-normal);
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--letter-spacing-body);
+  line-height: var(--line-height-body);
   margin-top: -1px;
   position: relative;
   white-space: nowrap;
@@ -102,7 +102,7 @@
 
 @media (max-width: 600px) {
   .hero .subtitle {
-    font-size: 32px;
-    line-height: 1.2;
+    font-size: var(--font-size-section-large);
+    line-height: var(--line-height-compact);
   }
 }

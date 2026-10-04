@@ -41,8 +41,8 @@
   padding: 0.4rem 0.2rem;
   color: var(--color-path);
   font-family: var(--font-body);
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: var(--font-size-nav);
+  font-weight: var(--font-weight-medium);
   text-decoration: none;
   white-space: nowrap;
   transition: var(--transition-fast);
@@ -59,7 +59,7 @@
 .link:global(.active) {
   color: var(--color-sand);
   filter: var(--glow-shadow-filter);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   text-shadow: 0 0 8px rgba(185, 163, 131, 0.6);
 }
  
@@ -99,7 +99,7 @@
   }
  
   .link {
-    font-size: 1rem;
+    font-size: var(--font-size-mobile-nav);
   }
 }
  
@@ -109,6 +109,6 @@
   }
  
   .link {
-    font-size: 0.9rem;
+    font-size: var(--font-size-mobile-nav-small);
   }
 }
