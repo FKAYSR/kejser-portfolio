@@ -1,4 +1,3 @@
-import { Link } from "react-router";
 import name from "../assets/icons/full-name.svg";
 import heroImage from "../assets/images/me-green-shirt.jpg";
 import mandalaName from "../assets/icons/mandala-freja-kejser.svg";
