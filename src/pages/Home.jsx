@@ -16,6 +16,14 @@ export default function Home() {
   const featuredProjects = projects
     .filter((project) => project.showOnHome)
     .sort((a, b) => a.homeOrder - b.homeOrder);
+
+  const handleExploreWorkClick = (event) => {
+    event.preventDefault();
+    document.getElementById("projects")?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
  
   return (
     <main>
@@ -34,6 +42,7 @@ export default function Home() {
             </p>
             <LinkBtn
               href="#projects"
+              onClick={handleExploreWorkClick}
               className={`${styles.exploreWorkButton} ${styles.homeHeroCta}`}
               arrowDirection="down"
             >
