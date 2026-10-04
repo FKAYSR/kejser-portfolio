@@ -49,7 +49,7 @@ export default function Home() {
               Explore my work
             </LinkBtn>
           </div>
- 
+
           <div className={styles.homeHeroVisual} aria-hidden="true">
             <div className={styles.polaroidWrapper}>
               <img
@@ -57,13 +57,13 @@ export default function Home() {
                 src={mandalaName}
                 alt=""
               />
- 
+
               <img
                 className={`${styles.homeHeroMandala} ${styles.heroMandalaBottomLeft}`}
                 src={mandalaInitials}
                 alt=""
               />
- 
+
               <PolaroidCard
                 images={[heroImage]}
                 imageAlt="Image of Freja Kejser"
@@ -73,40 +73,39 @@ export default function Home() {
           </div>
         </section>
       </header>
- 
+
       {/* FEATURED PROJECTS */}
       <section
         id="projects"
         className="page-section"
         aria-label="Featured projects"
       >
-        <div className="page">
-          <div className={styles.sectionHeader}>
-            <div>
-              <h2>FEATURED PROJECTS</h2>
-              <p className={styles.sectionSubtitle}>
-                Selected work from my journey through learning UX, UI and
-                Frontend development.
-              </p>
-            </div>
-            <Link to="/overview" className={styles.seeAllLink}>
-              See all
-            </Link>
+        <div className={`page ${styles.featured}`}>
+          <div className={styles.featuredIntro}>
+            <h2>FEATURED PROJECTS</h2>
+            <p className={styles.sectionSubtitle}>
+              Selected work from my journey through learning UX, UI and Frontend
+              development.
+            </p>
+            <LinkBtn to="/overview" variant="internal">
+              See all projects
+            </LinkBtn>
           </div>
- 
-          <div className={styles.projectsGrid}>
+
+          <div className={styles.polaroidFan}>
             {featuredProjects.map((project) => (
-              <PolaroidCard
-                key={project.id}
-                project={project}
-                size="large"
-                link={`/project/${project.id}`}
-              />
+              <div key={project.id} className={styles.fanItem}>
+                <PolaroidCard
+                  project={project}
+                  size="large"
+                  link={`/project/${project.id}`}
+                />
+              </div>
             ))}
           </div>
         </div>
       </section>
- 
+
       {/* ABOUT ME */}
       <section className="page-section" aria-label="About me">
         <div className="page">
@@ -131,14 +130,14 @@ export default function Home() {
           </div>
         </div>
       </section>
- 
+
       {/* TOOLKIT */}
       <section className="page-section" aria-label="Toolkit">
         <div className="page">
           <div className={styles.centeredHeader}>
             <h2>TOOLKIT</h2>
           </div>
- 
+
           <div className={projectDetailStyles.sectionContent}>
             <ul className={projectDetailStyles.toolsList}>
               {homeTools.map((tool) => (
