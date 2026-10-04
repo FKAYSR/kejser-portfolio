@@ -41,7 +41,7 @@ html {
 
   /* Layout */
   --navbar-height: 5rem;
-  --content-max-width: 90rem;
+  --content-max-width: 85rem;
   --page-padding-x: clamp(1.5rem, 5vw, 3rem);
 
   --padding-horizontal: 16px;

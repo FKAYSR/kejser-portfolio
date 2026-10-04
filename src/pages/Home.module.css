@@ -48,6 +48,7 @@
   font-size: var(--font-size-button);
 }
 
+/* Polaroid + mandalaer */
 .homeHeroVisual {
   position: relative;
   display: flex;
@@ -57,7 +58,6 @@
   min-height: 100%;
 }
 
-/* Polaroid + mandalaern */
 .polaroidWrapper {
   position: relative;
   z-index: 2;
@@ -77,7 +77,7 @@
   z-index: 2;
   width: 60%;
   margin: 17% 0 0 20%;
-  transform: rotate(2deg);
+  transform: rotate(4deg);
 }
 
 .homeHeroMandala {
@@ -96,8 +96,8 @@
 }
 
 .heroMandalaBottomLeft {
-  bottom: 0;
-  left: 0;
+  bottom: -1rem;
+  left: -2rem;
   width: 55%;
   animation: spinMandala 60s linear infinite reverse;
 }
@@ -181,7 +181,7 @@
 .polaroidFan {
   --card-width: clamp(14rem, calc((100svh - 12rem) / 1.6), 19rem);
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   padding-block: 1.5rem;
 }
 
