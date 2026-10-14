@@ -34,6 +34,7 @@ const projects = [
       "Supabase",
       "Design System",
     ],
+    teamSize: 2,
 
     // Visibility
     showOnHome: true,
@@ -157,6 +158,7 @@ const projects = [
     thumbnail: "",
     thumbnailAlt: "",
     tags: ["Optimization", "Webapp", "Accessibility", "Frontend Development"],
+    teamSize: 1,
 
     // Visibility
     showOnHome: true,
@@ -284,6 +286,7 @@ const projects = [
       "Brand experience",
       "UX/UI Design",
     ],
+    teamSize: 3,
 
     // Visibility
     showOnHome: true,
@@ -400,6 +403,7 @@ NEW PROJECT TEMPLATE
   thumbnail: "",
   thumbnailAlt: "",
   tags: [],
+  teamSize: 1,
 
   // Visibility
   showOnHome: false,
