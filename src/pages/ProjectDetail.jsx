@@ -109,7 +109,14 @@ export default function ProjectDetail() {
                     ))}
                   </ul>
                 )}
- 
+
+                {project.teamSize && (
+                  <p className={styles.teamSize}>
+                    Team size: {project.teamSize}{" "}
+                    {project.teamSize === 1 ? "person" : "people"}
+                  </p>
+                )}
+
                 {detail.overview?.description && (
                   <p className="text-style-body-text">
                     {detail.overview.description}
