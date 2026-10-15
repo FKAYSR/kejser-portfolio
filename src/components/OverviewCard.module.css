@@ -74,11 +74,11 @@
   .overviewCard {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 3rem var(--padding-horizontal);
+    padding: 3rem var;
   }
 
   .overviewCard:not(:first-child):not(:last-child) {
-    padding: 3rem var(--padding-horizontal);
+    padding: 3rem;
   }
 
   .polaroidWrapper {
