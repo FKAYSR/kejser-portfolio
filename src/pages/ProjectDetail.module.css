@@ -4,11 +4,6 @@
   gap: clamp(2rem, 4vw, 5rem);
 }
 
-.overviewTitle {
-  color: var(--color-text);
-  font-size: var(--font-size-section-large);
-}
-
 .sectionLabel {
   align-self: start;
   padding-top: 0.25rem;
@@ -32,6 +27,19 @@
   min-width: 0;
 }
 
+/* BACKLINK */
+.backLink {
+  justify-self: start;
+  color: var(--color-muted);
+  font-size: var(--font-size-small);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.backLink:hover {
+  color: var(--color-accent);
+}
+
 /* TAGS */
 .tags {
   display: flex;
@@ -49,34 +57,97 @@
   margin-left: 0.75rem;
 }
 
-/* TEAM SIZE */
-.teamSize {
-  margin: 0 0 1rem;
-  color: var(--color-muted);
-  font-size: var(--font-size-small);
+/* HERO IMAGE */
+.heroImage {
+  width: 100%;
+  height: calc(var(--hero-height) + var(--navbar-height));
+  margin-top: calc(-1 * var(--navbar-height));
 }
 
-/* OVERVIEW */
-.overviewLayout {
+.heroImage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+/* PROJECT INTRO */
+.projectIntro {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
-  gap: clamp(2rem, 6vw, 5rem);
-  align-items: center;
+  gap: 1.25rem;
 }
 
-.overviewText {
+.projectIntro .tags {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.projectTitle {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  margin-top: 0.5rem;
+}
+
+.introMain {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+}
+
+.pitch {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
+  line-height: 1.35;
+}
+
+.meta {
   display: grid;
   gap: 1rem;
+  margin: 0;
 }
 
-.overviewPolaroids {
+.meta dt {
+  margin-bottom: 0.25rem;
+  color: var(--color-muted);
+  font-size: var(--font-size-small);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.meta dd {
+  margin: 0;
+}
+
+.chips {
   display: flex;
-  justify-content: center;
-  padding-top: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  padding: 0.1rem 0.9rem;
+  border: 1.5px solid var(--color-accent);
+  border-radius: 999px;
+  color: var(--color-accent);
 }
 
 /* ASSIGNMENT */
-
 .assignmentLayout {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -90,7 +161,6 @@
 }
 
 /* SOLUTION */
-
 .solutionIntro {
   display: grid;
   max-width: 800px;
@@ -130,18 +200,45 @@
   min-width: 0;
 }
 
-/* TOOLS */
-
-.toolsList {
+/* BEFORE & AFTER */
+.beforeAfterLayout {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
-  gap: clamp(1rem, 3vw, 2.5rem);
-  padding: 0;
-  list-style: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 4rem);
+}
+
+.baColumn {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  min-width: 0;
+}
+
+.baImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+}
+
+.baAfter .baImage {
+  border: 2px solid var(--color-accent);
+}
+
+.baList {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.baMetric {
+  margin-top: 2rem;
+  color: var(--color-accent);
 }
 
 /* MY ROLE */
-
 .roleLayout {
   display: grid;
   grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.2fr);
@@ -272,7 +369,8 @@
   .solutionLists,
   .solutionLayout,
   .learnedSection,
-  .overviewLayout,
+  .introGrid,
+  .beforeAfterLayout,
   .roleLayout,
   .nextProject {
     grid-template-columns: 1fr;

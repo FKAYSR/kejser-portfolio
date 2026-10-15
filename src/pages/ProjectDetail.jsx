@@ -1,14 +1,10 @@
-// import { useState } from "react";
 import { Link, useParams } from "react-router";
-import Hero from "../components/Hero.jsx";
 import LinkBtn from "../components/LinkBtn.jsx";
 import PolaroidCard from "../components/PolaroidCard.jsx";
-import ToolItem from "../components/ToolItem.jsx";
 import figmaLinkIcon from "../assets/icons/figma-link.svg?raw";
 import githubLinkIcon from "../assets/icons/github-link.svg?raw";
 import reportIcon from "../assets/icons/report-link.svg?raw";
 import projects from "../data/projects.js";
-import toolIcons from "../data/toolIcons.js";
 import styles from "./ProjectDetail.module.css";
 import arrow from "../assets/icons/arrow-accent-middle.svg";
  
@@ -34,12 +30,6 @@ export default function ProjectDetail() {
   );
  
   const nextProject = projects[(currentProjectIndex + 1) % projects.length];
- 
-  const overviewImages = [
-    detail.overview?.detailImage1,
-    detail.overview?.detailImage2,
-    detail.overview?.detailImage3,
-  ].filter(Boolean);
  
   const solutionImages = [
     detail.solution?.solutionImage1,
@@ -77,82 +67,116 @@ export default function ProjectDetail() {
     designFile: "View design file",
     report: "Read report",
   };
+
+  const heroLabels = [
+    ...(project.tags || []),
+    project.semester,
+    project.year,
+  ].filter(Boolean);
+
+  const heroImage = detail.heroImage || project.thumbnail;
+  const heroImageAlt = detail.heroImage
+    ? detail.heroImageAlt || project.title
+    : project.thumbnailAlt;
  
   return (
     <>
-      <header>
-        <Hero
-          image={detail.heroImage || project.thumbnail}
-          imageAlt={
-            detail.heroImage
-              ? detail.heroImageAlt || project.title
-              : project.thumbnailAlt
+      <header
+        className={styles.heroImage}
+        style={
+          detail.heroImageHeight
+            ? {
+                height: `calc(${detail.heroImageHeight} + var(--navbar-height))`,
+              }
+            : undefined
+        }
+      >
+        <img
+          src={heroImage}
+          alt={heroImageAlt}
+          style={
+            detail.heroImagePosition
+              ? { objectPosition: detail.heroImagePosition }
+              : undefined
           }
-          title={project.title}
         />
       </header>
- 
+
       <main>
         {/* OVERVIEW */}
         <section className="page-section">
           <div className={`page ${styles.section}`}>
-            <div className={styles.overviewLayout}>
-              <div className={styles.overviewText}>
-                <h2 className={`${styles.overviewTitle} text-style-h2`}>
-                  OVERVIEW
-                </h2>
- 
-                {project.tags?.length > 0 && (
-                  <ul className={styles.tags}>
-                    {project.tags.map((tag) => (
-                      <li key={tag}>{tag}</li>
-                    ))}
-                  </ul>
-                )}
+            <div className={styles.projectIntro}>
+              <Link to="/overview" className={styles.backLink}>
+                ← All projects
+              </Link>
 
-                {project.teamSize && (
-                  <p className={styles.teamSize}>
-                    Team size: {project.teamSize}{" "}
-                    {project.teamSize === 1 ? "person" : "people"}
-                  </p>
-                )}
-
-                {detail.overview?.description && (
-                  <p className="text-style-body-text">
-                    {detail.overview.description}
-                  </p>
-                )}
- 
-                {detail.overview?.description2 && (
-                  <p className="text-style-body-text">
-                    {detail.overview.description2}
-                  </p>
-                )}
- 
-                {detail.links?.live && (
-                  <LinkBtn
-                    href={detail.links.live}
-                    variant="external"
-                    icon={githubLinkIcon}
-                  >
-                    Visit live site
-                  </LinkBtn>
-                )}
-              </div>
- 
-              {overviewImages.length > 0 && (
-                <div className={styles.overviewPolaroids}>
-                  <PolaroidCard
-                    images={overviewImages}
-                    imageAlt={`${project.title} overview`}
-                    size="large"
-                  />
-                </div>
+              {heroLabels.length > 0 && (
+                <ul className={styles.tags}>
+                  {heroLabels.map((label) => (
+                    <li key={label}>{label}</li>
+                  ))}
+                </ul>
               )}
+
+              <h1 className={styles.projectTitle}>{project.title}</h1>
+
+              <div className={styles.introGrid}>
+                <div className={styles.introMain}>
+                  {detail.overview?.pitch && (
+                    <p className={styles.pitch}>{detail.overview.pitch}</p>
+                  )}
+
+                  {detail.links?.live && (
+                    <LinkBtn
+                      href={detail.links.live}
+                      variant="external"
+                      icon={githubLinkIcon}
+                      className={styles.liveLinkBtn}
+                    >
+                      Visit live site
+                    </LinkBtn>
+                  )}
+                </div>
+
+                <dl className={styles.meta}>
+                  {project.teamSize && (
+                    <div>
+                      <dt>Team</dt>
+                      <dd>
+                        {project.teamSize}{" "}
+                        {project.teamSize === 1 ? "person" : "people"}
+                      </dd>
+                    </div>
+                  )}
+
+                  {project.role && (
+                    <div>
+                      <dt>Role</dt>
+                      <dd>{project.role}</dd>
+                    </div>
+                  )}
+
+                  {detail.toolsUsed?.length > 0 && (
+                    <div>
+                      <dt>Tools</dt>
+                      <dd>
+                        <ul className={styles.chips}>
+                          {detail.toolsUsed.map((tool) => (
+                            <li key={tool} className={styles.chip}>
+                              {tool}
+                            </li>
+                          ))}
+                        </ul>
+                      </dd>
+                    </div>
+                  )}
+                </dl>
+              </div>
             </div>
           </div>
         </section>
- 
+
         {/* THE ASSIGNMENT */}
         <section className="page-section">
           <div className={`page ${styles.section}`}>
@@ -166,7 +190,7 @@ export default function ProjectDetail() {
                 </article>
               )}
             </div>
- 
+
             <div className={styles.sectionContent}>
               <div className={styles.assignmentLayout}>
                 {detail.assignment?.problem && (
@@ -177,7 +201,7 @@ export default function ProjectDetail() {
                     </p>
                   </article>
                 )}
- 
+
                 {detail.assignment?.targetAudience && (
                   <article className={styles.infoBlock}>
                     <h3 className="text-style-h3">Target audience</h3>
@@ -190,7 +214,7 @@ export default function ProjectDetail() {
             </div>
           </div>
         </section>
- 
+
         {/* OUR SOLUTION */}
         <section className="page-section">
           <div className={`page ${styles.section}`}>
@@ -204,12 +228,12 @@ export default function ProjectDetail() {
                     </p>
                   )}
                 </div>
- 
+
                 <div className={styles.solutionLists}>
                   {detail.solution?.keyFeatures?.length > 0 && (
                     <div className={styles.listBlock}>
                       <h3 className="text-style-h3">Key features</h3>
- 
+
                       <ul>
                         {detail.solution.keyFeatures.map((feature) => (
                           <li key={feature} className="text-style-body-text">
@@ -219,11 +243,11 @@ export default function ProjectDetail() {
                       </ul>
                     </div>
                   )}
- 
+
                   {detail.solution?.valueCreation?.length > 0 && (
                     <div className={styles.listBlock}>
                       <h3 className="text-style-h3">Value creation</h3>
- 
+
                       <ul>
                         {detail.solution.valueCreation.map((value) => (
                           <li key={value} className="text-style-body-text">
@@ -235,7 +259,7 @@ export default function ProjectDetail() {
                   )}
                 </div>
               </div>
- 
+
               {solutionImages.length > 0 && (
                 <div className={styles.solutionPolaroids}>
                   <PolaroidCard
@@ -248,26 +272,64 @@ export default function ProjectDetail() {
             </div>
           </div>
         </section>
- 
-        {/* TOOLS */}
-        {detail.toolsUsed?.length > 0 && (
+
+        {/* BEFORE & AFTER */}
+        {detail.beforeAfter && (
           <section className="page-section">
             <div className={`page ${styles.section}`}>
               <div className={styles.sectionLabel}>
-                <h2 className="text-style-h2">TOOLS I USED</h2>
+                <h2 className="text-style-h2">BEFORE &amp; AFTER</h2>
               </div>
- 
+
               <div className={styles.sectionContent}>
-                <ul className={styles.toolsList}>
-                  {detail.toolsUsed.map((tool) => (
-                    <ToolItem key={tool} name={tool} icon={toolIcons[tool]} />
-                  ))}
-                </ul>
+                <div className={styles.beforeAfterLayout}>
+                  {["before", "after"].map((side) => {
+                    const data = detail.beforeAfter[side];
+                    if (!data) return null;
+
+                    return (
+                      <article
+                        key={side}
+                        className={`${styles.baColumn} ${
+                          side === "after" ? styles.baAfter : ""
+                        }`}
+                      >
+                        <h3 className="text-style-h3">
+                          {side === "before" ? "Before" : "After"}
+                        </h3>
+
+                        {data.image && (
+                          <img
+                            src={data.image}
+                            alt={data.imageAlt || `${project.title} ${side}`}
+                            className={styles.baImage}
+                          />
+                        )}
+
+                        {data.points?.length > 0 && (
+                          <ul className={styles.baList}>
+                            {data.points.map((point) => (
+                              <li key={point} className="text-style-body-text">
+                                {point}
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </article>
+                    );
+                  })}
+                </div>
+
+                {detail.beforeAfter.metric && (
+                  <p className={`${styles.baMetric} text-style-body-text`}>
+                    {detail.beforeAfter.metric}
+                  </p>
+                )}
               </div>
             </div>
           </section>
         )}
- 
+
         {/* MY ROLE (udkommenteret). Når den genindsættes, skal den bruge samme
             mønster som de andre sektioner: <section className="page-section">
             med en indre <div className={`page ${styles.section}`}>.
@@ -328,18 +390,16 @@ export default function ProjectDetail() {
             </div>
           </section>
         )} */}
- 
+
         {/* WHAT I LEARNED / IF I DID IT AGAIN */}
         {(detail.whatILearned?.length > 0 ||
           detail.ifIDidItAgain?.length > 0) && (
           <section className="page-section">
-            <div
-              className={`page ${styles.section} ${styles.learnedSection}`}
-            >
+            <div className={`page ${styles.section} ${styles.learnedSection}`}>
               {detail.whatILearned?.length > 0 && (
                 <div className={styles.learnedColumn}>
                   <h2 className="text-style-h2">WHAT I LEARNED</h2>
- 
+
                   <ul className={styles.pointList}>
                     {detail.whatILearned.map((item) => (
                       <li key={item}>
@@ -349,11 +409,11 @@ export default function ProjectDetail() {
                   </ul>
                 </div>
               )}
- 
+
               {detail.ifIDidItAgain?.length > 0 && (
                 <div className={styles.learnedColumn}>
                   <h2 className="text-style-h2">IF I DID IT AGAIN</h2>
- 
+
                   <ul className={styles.pointList}>
                     {detail.ifIDidItAgain.map((item) => (
                       <li key={item}>
@@ -366,7 +426,7 @@ export default function ProjectDetail() {
             </div>
           </section>
         )}
- 
+
         {/* EXPLORE PROJECT */}
         {detail.links && Object.values(detail.links).some(Boolean) && (
           <section className="page-section">
@@ -374,7 +434,7 @@ export default function ProjectDetail() {
               <div className={styles.sectionLabel}>
                 <h2 className="text-style-h2">EXPLORE THE PROJECT</h2>
               </div>
- 
+
               <div className={styles.sectionContent}>
                 <ul className={styles.projectLinks}>
                   {Object.entries(detail.links)
@@ -406,14 +466,14 @@ export default function ProjectDetail() {
             </div>
           </section>
         )}
- 
+
         {/* NEXT PROJECT */}
         {nextProject && nextProject.id !== project.id && (
           <section className={styles.nextProject}>
             <div className={`page ${styles.nextProjectInner}`}>
               <div className={styles.nextProjectContent}>
                 <span className="text-style-small-text">NEXT PROJECT</span>
- 
+
                 <Link
                   to={`/project/${nextProject.id}`}
                   className={styles.nextProjectLink}

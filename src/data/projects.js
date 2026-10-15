@@ -35,6 +35,8 @@ const projects = [
       "Design System",
     ],
     teamSize: 2,
+    semester: "3rd Semester",
+    role: "UX research, Design System",
 
     // Visibility
     showOnHome: true,
@@ -50,6 +52,8 @@ const projects = [
     detail: {
       heroImage: merEndToastHero,
       heroImageAlt: "Mer' end Toast recipe planning app",
+      heroImagePosition: "center 27%",
+      heroImageHeight: "clamp(480px, 80svh, 200px)",
       links: {
         live: "https://fkaysr.github.io/webapp-mer-end-toast/",
         repository: "https://github.com/FKAYSR/webapp-mer-end-toast",
@@ -63,6 +67,8 @@ const projects = [
       },
 
       overview: {
+        pitch:
+          "Mer' end Toast combines recipe inspiration, price comparison and shopping lists in one platform.",
         description:
           "Mer' end Toast is a web application designed to make everyday cooking more affordable and manageable. The concept combines recipe inspiration, ingredient search, price comparison and shopping lists into one platform.",
         description2:
@@ -175,6 +181,8 @@ const projects = [
     detail: {
       heroImage: "",
       heroImageAlt: "",
+      heroImagePosition: "",
+      heroImageHeight: "",
       links: {
         live: "https://fkaysr.github.io/case1-optimization/",
         repository: "https://github.com/FKAYSR/case1-optimization",
@@ -183,6 +191,7 @@ const projects = [
       },
 
       overview: {
+        pitch: "",
         description:
           "The webapp Mellemrum was developed to provide citizens of Aarhus with a simple way to discover and sign up for local cultural events.",
         description2:
@@ -214,6 +223,19 @@ const projects = [
           "Higher completion rate - Instant visual feedback via the custom success animation and continuous registration flow 'Vil du tilføje en ven?' keeps users engaged",
           "Increased Accesibility(A11y) - Proper HTML-semantics to make the text easier to understand for users of screen reader",
         ],
+      },
+
+      beforeAfter: {
+        before: {
+          image: "",
+          imageAlt: "",
+          points: ["What the problem was", "Pain point from testing"],
+        },
+        after: {
+          image: "",
+          imageAlt: "",
+          points: ["What we changed", "Result or expected metric"],
+        },
       },
 
       myRole: [
@@ -302,6 +324,8 @@ const projects = [
     detail: {
       heroImage: hangerHero,
       heroImageAlt: "Hero section of webshop Story Hangers",
+      heroImagePosition: "",
+      heroImageHeight: "",
       links: {
         live: "https://juliewboecher.github.io/customer-experience-exam/",
         repository: "https://github.com/juliewboecher/customer-experience-exam",
@@ -314,6 +338,7 @@ const projects = [
       },
 
       overview: {
+        pitch: "",
         description:
           "Story Hangers is a webshop designed to sell premium secondhand clothes. With the webshop we hope to portray a reliable, inclusive and inspiring picture, so the users can shop secondhand without any worries.",
         description2:
@@ -418,6 +443,8 @@ NEW PROJECT TEMPLATE
   detail: {
     heroImage: "",
     heroImageAlt: "",
+    heroImagePosition: "center 30%",   // hvad der skal være i fokus
+    heroImageHeight: "clamp(320px, 55svh, 600px)",  // valgfri: eget højdeforhold
     links: {
     live: "",
     repository: "",
@@ -426,6 +453,7 @@ NEW PROJECT TEMPLATE
     },
 
     overview: {
+      pitch: "",
       description: "",
       description2: "",
     },
@@ -441,6 +469,19 @@ NEW PROJECT TEMPLATE
       keyFeatures: [],
       valueCreation: [],
     },
+
+    beforeAfter: {
+        before: {
+          image: "",
+          imageAlt: "",
+          points: ["What the problem was", "Pain point from testing"],
+        },
+        after: {
+          image: "",
+          imageAlt: "",
+          points: ["What we changed", "Result or expected metric"],
+        },
+      },
 
     myRole: [
     {
