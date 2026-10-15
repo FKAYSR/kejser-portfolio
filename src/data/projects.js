@@ -36,6 +36,7 @@ import rogueDetail from "../assets/projects/go-rogue/rogue-detail.png";
 import rougePersona from "../assets/projects/go-rogue/rouge-persona.png";
 import roguePersona from "../assets/projects/go-rogue/rogue-persona.png";
 
+// Mellemrum
 
 
 const projects = [
@@ -357,8 +358,11 @@ const projects = [
     title: "Mellemrum",
     thumbnail: "",
     thumbnailAlt: "",
-    tags: ["Optimisation", "Webapp", "Accessibility", "Frontend Development"],
+    tags: ["Optimisation", "Webapp", "Accessibility"],
     teamSize: 1,
+    semester: "3rd Semester",
+    year: 2026,
+    role: "Technical audit, Frontend, Database",
 
     // Visibility
     showOnHome: true,
@@ -367,9 +371,9 @@ const projects = [
 
     // Short descriptions
     homeDescription:
-      "Optimized web application with focus on database normalization, UI-states and increased accessibility",
+      "A React prototype optimized with focus on database normalization, UI-states and increased accessibility",
     overviewDescription:
-      "A React-prototype optimized with focus on database normalization, UI-states and increased accessibility",
+      "A React prototype optimized with focus on database normalization, UI-states and increased accessibility",
 
     // Project detail page
     detail: {
@@ -377,116 +381,85 @@ const projects = [
       heroImageAlt: "",
       heroImagePosition: "",
       heroImageHeight: "",
+
+      toolsUsed: ["React", "Supabase", "JavaScript", "CSS", "Lottie", "GitHub"],
+
       links: {
         live: "https://fkaysr.github.io/case1-optimization/",
         repository: "https://github.com/FKAYSR/case1-optimization",
-        designFile: "",
-        figmaPrototype: "",
+        audit:
+          "https://private-apogee-a72.notion.site/3c85785bc37080c8aafac0a4bf963939?v=3cf5785bc370809bb791000cf28164ec",
       },
 
       overview: {
-        pitch: "",
-        description:
-          "The webapp Mellemrum was developed to provide citizens of Aarhus with a simple way to discover and sign up for local cultural events.",
-        description2:
-          "It was an individual school project about product optimization with focus on refactoring an existing React-prototype. The process began by making a technical audit and henceforth optimizing  the app accordingly. With basis in the audit I optimized the accessibility, usability, UI-consistency and performance.",
-        detailImage1: "",
-        detailImage2: "",
-        detailImage3: "",
+        pitch:
+          "Mellemrum is a fictive local culture and event platform for Aarhus. I made the React prototype more robust, accessible and easier to maintain.",
       },
 
       assignment: {
-        type: "To optimize and refactor an existing React web application.",
+        type: "To optimize and refactor an existing React web application by prioritising the most important problems and improving them.",
         problem:
-          "The prototype had a redundant data model, missing UI-states, insufficient navigation and fell short with the mobile experience.",
+          "The prototype had a redundant data model, missing UI-states, insufficient navigation, the mobile experience fell short and the code was hard to develop further.",
         targetAudience:
-          "Citizens of Aarhus who seek cultural experiences nearby.",
+          "Citizens of Aarhus who want a simple way to find and sign up for local cultural events. Organisers are a secondary audience.",
       },
 
       solution: {
         created:
-          "A stable and accessible React solution with a relational database structure, dynamic conditional rendering of payment and enhanced performance.",
+          "I documented 30 issues in a technical audit and prioritised them by effect, risk, maintainability and the time I had. I fixed 19 of them, starting with the five high-priority issues: registrations were not saved, venue names were repeated across tables, e-mail addresses were publicly visible, the register button could submit twice and the e-mail field had no label.",
         keyFeatures: [
           "Relational data model - Split data from two to three tables to remove redundancy and secure data integrity",
           "Dynamic payment logic - Conditional display of MobilePay-button, “Pay at the event” or default no button based on event data",
-          "Interactive registration flow - Submitting a registration form saves the registration directly to Supabase, updates the public list and triggers a dynamic success state with personalized confirmation text and an option to register a friend as well",
+          "Registration flow - Submitting a registration form saves the registration directly to Supabase, updates the public list and triggers a dynamic success state with personalized confirmation text and an option to register a friend as well",
           "Accessibility - Restructured heading hierarchy, semantic HTML tags and form-label at the registration page so screen readers can accurately read the content",
         ],
         valueCreation: [
-          "Reduced maintenance - Data only has to be updated at one place in the database to affect all relevant places across the platform",
-          "Higher completion rate - Instant visual feedback via the custom success animation and continuous registration flow 'Vil du tilføje en ven?' keeps users engaged",
-          "Increased Accesibility(A11y) - Proper HTML-semantics to make the text easier to understand for users of screen reader",
+          "Data is updated in one place, which lowers maintenance effort and makes the platform easier to develop further",
+          "No longer showing users e-mail addresses publicly reduces the risk of a GDPR breach",
+          "Instant visual feedback and continuous registration flow should make sign-up easier to complete",
+          "Increased Accesibility by using proper HTML-semantics to make the text easier to understand for screen readers",
         ],
+
+        solutionImage1: "",
+        solutionImage2: "",
+        solutionImage3: "",
       },
 
       beforeAfter: {
         before: {
-          image: "",
+          images: "",
           imageAlt: "",
-          points: ["What the problem was", "Pain point from testing"],
+          points: [
+            "Registrations were not saved in the database",
+            "Venue names were repeated across two tables",
+            "E-mail addresses were visible to everyone, and the form field had no label",
+          ],
         },
         after: {
-          image: "",
+          images: "",
           imageAlt: "",
-          points: ["What we changed", "Result or expected metric"],
+          points: [
+            "Registrations are saved in the database and can be seen at 'Se tilmeldinger'",
+            "Venues are stored once in a related table",
+            "E-mail addresses are hidden, and the registration form has labels and a clear success state",
+          ],
         },
+        metric:
+          "Verification: I tested the registration flow from the form to Supabase and back to the public list. The improvements have not been measured with real users.",
       },
 
-      myRole: [
-        {
-          title: "",
-          text: "Executed a technical audit and identified 18+ optimization points across the code and the database",
-          bigImage: "",
-          image2: "",
-          image3: "",
-        },
-        {
-          title: "",
-          text: "Restructured the given Supabase-database with a relational model to reduce redundancy",
-          bigImage: "",
-          image2: "",
-          image3: "",
-        },
-        {
-          title: "",
-          text: "Dynamic conditional rendering of paying logic",
-          bigImage: "",
-          image2: "",
-          image3: "",
-        },
-        {
-          title: "",
-          text: "Dynamic rendering of registrations success",
-          bigImage: "",
-          image2: "",
-          image3: "",
-        },
-      ],
-
-      toolsUsed: [
-        "React",
-        "Supabase",
-        "CSS",
-        "Lottie",
-        "GitHub",
-        "HTML",
-        "JavaScript",
-      ],
-
       whatILearned: [
-        "The value of database normalization to prevent data inconsistency and ease the long term project management",
-        "Handling derived state and conditional showing in React based on asynchronous data from Supabase",
+        "Database normalisation prevents inconsistent data and makes a project easier to maintain over time",
+        "Handling derived state and conditional rendering in React when data arrives asynchronously from Supabase",
         "I learned the importance of prioritizing the most critical blocks for the user over simply adding new features",
-        "My biggest takeaway were the insight of possible issues i could encounter in future collaborative projects",
+        "My biggest takeaway is an insight into the issues I could meet in future collaborative projects when taking over someone else's code",
       ],
 
       nextStepReflections: [
-        "I would improve my time management by balancing quick UI fixes against more time consuming tasks",
-        "I would approach other people more to bounce of ideas about possible optimizations",
-        "In further development I would implement the remaining items from my technical audit list",
+        "I would manage my time better by balancing quick UI fixes against more time-consuming tasks",
+        "I would approach other people more to bounce ideas off about possible optimisations",
+        "In further development I would work through the remaining items from my technical audit",
       ],
-
-      teamFeedback: "",
     },
   },
 
