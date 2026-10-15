@@ -60,7 +60,8 @@
 /* HERO IMAGE */
 .heroImage {
   width: 100%;
-  height: clamp(200px, 33svh, 380px);
+  height: calc(var(--hero-height) + var(--navbar-height));
+  margin-top: calc(-1 * var(--navbar-height));
 }
 
 .heroImage img {
@@ -68,6 +69,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 40%;
 }
 
 /* PROJECT INTRO */
@@ -102,10 +104,6 @@
   display: grid;
   gap: 1.5rem;
   align-content: start;
-}
-
-.liveLinkButton {
-  width: fit-content;
 }
 
 .pitch {
