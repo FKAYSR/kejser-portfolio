@@ -24,7 +24,6 @@ import hangerVariables from "../assets/projects/story-hangers/images/hanger-vari
 import rogueColor from "../assets/projects/go-rogue/rogue-colours.png";
 import rogueBe from "../assets/projects/go-rogue/rogue-be.png";
 import rogueLogoRed from "../assets/projects/go-rogue/rogue-logo-red.png";
-import rogueLogoWhite from "../assets/projects/go-rogue/rogue-logo.svg";
 import rogueLogoVersions from "../assets/projects/go-rogue/rogue-logo-versions.png";
 import rogueHangtag from "../assets/projects/go-rogue/rogue-hangtag-mockup.jpg";
 import rogueTypography from "../assets/projects/go-rogue/rogue-typography.png";
@@ -34,6 +33,8 @@ import rougeNavOri from "../assets/projects/go-rogue/rouge-nav.png";
 import rougeNavNew from "../assets/projects/go-rogue/rouge-nav-new.png";
 import rougeDetail from "../assets/projects/go-rogue/rouge-detail.png";
 import rogueDetail from "../assets/projects/go-rogue/rogue-detail.png";
+import rougePersona from "../assets/projects/go-rogue/rouge-persona.png";
+import roguePersona from "../assets/projects/go-rogue/rogue-persona.png";
 
 
 
@@ -172,8 +173,11 @@ const projects = [
   {
     id: "go-rogue",
     title: "Go Rogue",
-    thumbnail: "rogueThumb",
-    thumbnailAlt: "",
+    thumbnail: {
+      src: rogueLogoRed,
+      objectFit: "contain",
+    },
+    thumbnailAlt: "Logo of Go Rogue, subbrand to La Rouge",
     tags: ["Optimisation", "Recommerce", "Subbranding"],
     teamSize: 3,
     semester: "3rd Semester",
@@ -181,7 +185,7 @@ const projects = [
     role: "Design System, Concept Development",
 
     // Visibility
-    showOnHome: false,
+    showOnHome: true,
     homeOrder: 3,
     showOnOverview: true,
 
@@ -212,9 +216,9 @@ const projects = [
       },
 
       assignment: {
-        type: "To develop a concept for an independent subbrand under La Rouge, that can give the re-commerce initiative it’s own life, voice and digital presence. The subbrand should be able to stand alone but also draw from La Rouge’s DNA of timelessness, quality and responsibility.",
+        type: "To develop a concept for an independent subbrand under La Rouge, that can give the re-commerce initiative its own life, voice and digital presence. The subbrand should be able to stand alone but also draw from La Rouge’s DNA of timelessness, quality and responsibility.",
         problem:
-          "Today, La Rouge's re-commerce initiative lives in the shadow of the main brand, without its own visual identity, tone of voice or dedicated communication effort. This means the concept is far from reaching it’s full potential.",
+          "Today, La Rouge's re-commerce initiative lives in the shadow of the main brand, without its own visual identity, tone of voice or dedicated communication effort. This means the concept is far from reaching its full potential.",
         targetAudience:
           "La Rouge's existing customers, who value timeless quality and a brand they can trust, and a wider audience of second-hand shoppers who want to buy quality pieces at a better price and pass on their own clothes with confidence.",
       },
@@ -242,33 +246,69 @@ const projects = [
       beforeAfter: {
         before: {
           images: [
-            { src: rougeBranddeck, objectFit: "contain", alt: "" },
-            { src: rougeNavOri, objectFit: "contain", alt: "" },
-            { src: rougeDetail, objectFit: "contain", alt: "" },
+            {
+              src: rougeBranddeck,
+              objectFit: "contain",
+              alt: "Branddeck based on La Rouge",
+            },
+            {
+              src: rougeNavOri,
+              objectFit: "contain",
+              alt: "La Rouge's navbar",
+            },
+            {
+              src: rougeDetail,
+              objectFit: "contain",
+              alt: "One of La Rouge's detailpages",
+            },
+            {
+              src: rougePersona,
+              objectFit: "contain",
+              alt: "La Rouge persona",
+            },
           ],
           imageAlt: "Original brand material",
           points: [
             "Re-commerce lived in the shadows of the main brand",
             "Very few users knew how to send clothes back to La Rouge for re-use",
             "No visual identity or tone of voice of its own",
+            "Designed for one audience: La Rouge's existing customer",
           ],
         },
         after: {
           images: [
-            { src: rogueBranddeck, objectFit: "contain", alt: "" },
-            { src: rougeNavNew, objectFit: "contain", alt: "" },
-            { src: rogueDetail, objectFit: "contain", alt: "" },
+            {
+              src: rogueBranddeck,
+              objectFit: "contain",
+              alt: "Go Rogue's branddeck",
+            },
+            {
+              src: rougeNavNew,
+              objectFit: "contain",
+              alt: "Go Rouge's navbar",
+            },
+            {
+              src: rogueDetail,
+              objectFit: "contain",
+              alt: "One of Go Rouge's detailpages",
+            },
+            {
+              src: roguePersona,
+              objectFit: "contain",
+              alt: "Go Rogue persona",
+            },
           ],
           imageAlt: "New brand material",
           points: [
             "Its own identity and name, which makes re-commerce easier to notice",
             "A more clear flow that is more intuitive for the user",
             "A new way to add physical purchases to the online platform with a QR code",
+            "A second persona added for second-hand shoppers, so the subbrand reaches a new audience",
           ],
         },
 
         metric:
-          "How we checked it: we presented the concept to La Rouge on the pitch day and received feedback from them.",
+          "Validation: We presented Go Rogue to La Rouge on the pitch day. The prototype has not been tested with users, so the improvements are assessed against our personas, not measured.",
       },
 
       myRole: [
@@ -306,7 +346,7 @@ const projects = [
         "I would test the prototype with real users from both target groups",
         "I would run some user interviews, so the personas rest on feedback and not only on assumptions",
         "I would test whether the hangtag and QR code concept feels natural to someone who has never seen it",
-        "I would develop the hangtag and QR code idea further, for example how a scan connects to a customer’s profile",
+        "I would develop the hangtag and QR code idea further, for example how a scan connects to a customers profile",
       ],
     },
   },
@@ -465,7 +505,7 @@ const projects = [
     teamSize: 3,
 
     // Visibility
-    showOnHome: true,
+    showOnHome: false,
     homeOrder: 3,
     showOnOverview: true,
 

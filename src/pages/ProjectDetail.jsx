@@ -9,7 +9,7 @@ import projects from "../data/projects.js";
 import styles from "./ProjectDetail.module.css";
 import arrow from "../assets/icons/arrow-accent-middle.svg";
 import { useState } from "react";
- 
+
 function BeforeAfterGallery({
   images,
   alt,
@@ -76,11 +76,9 @@ function BeforeAfterGallery({
 export default function ProjectDetail() {
   const { slug } = useParams();
   const [beforeAfterImage, setBeforeAfterImage] = useState(0);
- 
+
   const project = projects.find((item) => item.id === slug);
- 
-  // const [currentRole, setCurrentRole] = useState(0);
- 
+
   if (!project) {
     return (
       <main className={`page ${styles.notFound}`}>
@@ -88,15 +86,15 @@ export default function ProjectDetail() {
       </main>
     );
   }
- 
+
   const detail = project.detail;
- 
+
   const currentProjectIndex = projects.findIndex(
     (item) => item.id === project.id,
   );
- 
+
   const nextProject = projects[(currentProjectIndex + 1) % projects.length];
- 
+
   const solutionImages = [
     detail.solution?.solutionImage1,
     detail.solution?.solutionImage2,
@@ -117,39 +115,16 @@ export default function ProjectDetail() {
 
     setBeforeAfterImage(
       (current) =>
-        (current + direction + beforeAfterImageCount) %
-        beforeAfterImageCount,
+        (current + direction + beforeAfterImageCount) % beforeAfterImageCount,
     );
   }
- 
-  // const roles = detail.myRole || [];
-  // const currentRoleData = roles[currentRole];
- 
-  // // const roleImages = currentRoleData
-  // //   ? [
-  // //       currentRoleData.bigImage,
-  // //       currentRoleData.image2,
-  // //       currentRoleData.image3,
-  // //     ].filter(Boolean)
-  // //   : [];
- 
-  // function nextRole() {
-  //   setCurrentRole((current) =>
-  //     current === roles.length - 1 ? 0 : current + 1,
-  //   );
-  // }
- 
-  // function previousRole() {
-  //   setCurrentRole((current) =>
-  //     current === 0 ? roles.length - 1 : current - 1,
-  //   );
-  // }
- 
+
   const linkLabels = {
     live: "Visit live project",
     repository: "View repository",
     figmaPrototype: "View prototype",
     designFile: "View design file",
+    brandDeck: "View brand deck",
     report: "Read report",
   };
 
@@ -163,7 +138,7 @@ export default function ProjectDetail() {
   const heroImageAlt = detail.heroImage
     ? detail.heroImageAlt || project.title
     : project.thumbnailAlt;
- 
+
   return (
     <>
       <header
@@ -331,7 +306,7 @@ export default function ProjectDetail() {
 
                   {detail.solution?.valueCreation?.length > 0 && (
                     <div className={styles.listBlock}>
-                      <h3 className="text-style-h3">Value creation</h3>
+                      <h3 className="text-style-h3">Business potential</h3>
 
                       <ul>
                         {detail.solution.valueCreation.map((value) => (
@@ -417,68 +392,29 @@ export default function ProjectDetail() {
           </section>
         )}
 
-        {/* MY ROLE (udkommenteret). Når den genindsættes, skal den bruge samme
-            mønster som de andre sektioner: <section className="page-section">
-            med en indre <div className={`page ${styles.section}`}>.
-        {/* {roles.length > 0 && currentRoleData && (
-          <section className={styles.section}>
-            <div className={styles.sectionLabel}>
-              <h2 className="text-style-h2">MY ROLE</h2>
-            </div>
- 
-            <div className={styles.sectionContent}>
-              <div className={styles.roleLayout}>
-                <div className={styles.roleContent}>
-                  <span className={styles.roleNumber}>
-                    {String(currentRole + 1).padStart(2, "0")}
-                    {" / "}
-                    {String(roles.length).padStart(2, "0")}
-                  </span>
- 
-                  <h2 className="text-style-h2">{currentRoleData.title}</h2>
- 
-                  <p className="text-style-body-text">{currentRoleData.text}</p>
- 
-                  {roles.length > 1 && (
-                    <div className={styles.roleNavigation}>
-                      <button
-                        type="button"
-                        onClick={previousRole}
-                        className={styles.arrowButton}
-                        aria-label="Previous role"
-                      >
-                        ←
-                      </button>
- 
-                      <button
-                        type="button"
-                        onClick={nextRole}
-                        className={styles.arrowButton}
-                        aria-label="Next role"
-                      >
-                        →
-                      </button>
-                    </div>
-                  )}
+        {/* MY ROLE */}
+        {detail.myRole?.length > 0 && (
+          <section className="page-section">
+            <div className={`page ${styles.section}`}>
+              <div className={styles.sectionLabel}>
+                <h2 className="text-style-h2">MY ROLE</h2>
+              </div>
+
+              <div className={styles.sectionContent}>
+                <div className={styles.roleGrid}>
+                  {detail.myRole.map((role) => (
+                    <article key={role.title} className={styles.infoBlock}>
+                      <h3 className="text-style-h3">{role.title}</h3>
+                      <p className="text-style-body-text">{role.text}</p>
+                    </article>
+                  ))}
                 </div>
- 
-                {roleImages.length > 0 && (
-                  <div className={styles.rolePolaroids}>
-                    <PolaroidCard
-                      images={roleImages}
-                      imageAlt={currentRoleData.title}
-                      title={currentRoleData.title}
-                      description={currentRoleData.text}
-                      size="large"
-                    />
-                  </div>
-                )}
               </div>
             </div>
           </section>
-        )} */}
+        )}
 
-        {/* WHAT I LEARNED / IF I DID IT AGAIN */}
+        {/* WHAT I LEARNED / NEXT STEPS & REFLECTIONS */}
         {(detail.whatILearned?.length > 0 ||
           detail.nextStepReflections?.length > 0) && (
           <section className="page-section">
@@ -499,7 +435,9 @@ export default function ProjectDetail() {
 
               {detail.nextStepReflections?.length > 0 && (
                 <div className={styles.learnedColumn}>
-                  <h2 className="text-style-h2">NEXT STEPS & REFLECTIONS</h2>
+                  <h2 className="text-style-h2">
+                    NEXT STEPS &amp; REFLECTIONS
+                  </h2>
 
                   <ul className={styles.pointList}>
                     {detail.nextStepReflections.map((item) => (
@@ -538,7 +476,7 @@ export default function ProjectDetail() {
                                 : key === "figmaPrototype" ||
                                     key === "designFile"
                                   ? figmaLinkIcon
-                                  : key === "report"
+                                  : key === "report" || key === "brandDeck"
                                     ? reportIcon
                                     : undefined
                             }
