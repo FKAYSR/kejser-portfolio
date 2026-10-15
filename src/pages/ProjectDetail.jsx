@@ -8,9 +8,74 @@ import reportIcon from "../assets/icons/report-link.svg?raw";
 import projects from "../data/projects.js";
 import styles from "./ProjectDetail.module.css";
 import arrow from "../assets/icons/arrow-accent-middle.svg";
+import { useState } from "react";
  
+function BeforeAfterGallery({
+  images,
+  alt,
+  className,
+  currentImage,
+  onImageChange,
+}) {
+  const normalizedImages = images.map((image) =>
+    typeof image === "string" ? { src: image } : image,
+  );
+  const hasMultipleImages = normalizedImages.length > 1;
+  const imageIndex = currentImage % normalizedImages.length;
+  const image = normalizedImages[imageIndex];
+
+  function changeImage(direction) {
+    onImageChange(direction);
+  }
+
+  return (
+    <div className={className}>
+      <div className={styles.baGalleryImageContainer}>
+        <img
+          src={image.src}
+          alt={image.alt || alt}
+          className={styles.baImage}
+          style={{ objectFit: image.objectFit || "cover" }}
+        />
+        {hasMultipleImages && (
+          <>
+            <button
+              type="button"
+              className={`${styles.baGalleryZone} ${styles.baGalleryZoneLeft}`}
+              onClick={() => changeImage(-1)}
+              aria-label="Previous image"
+            />
+            <button
+              type="button"
+              className={`${styles.baGalleryZone} ${styles.baGalleryZoneRight}`}
+              onClick={() => changeImage(1)}
+              aria-label="Next image"
+            />
+          </>
+        )}
+      </div>
+      {hasMultipleImages && (
+        <div className={styles.baGalleryDots}>
+          {normalizedImages.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              className={`${styles.dot} ${
+                index === imageIndex ? styles.activeDot : ""
+              }`}
+              onClick={() => onImageChange(index - imageIndex)}
+              aria-label={`Go to image ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ProjectDetail() {
   const { slug } = useParams();
+  const [beforeAfterImage, setBeforeAfterImage] = useState(0);
  
   const project = projects.find((item) => item.id === slug);
  
@@ -39,6 +104,23 @@ export default function ProjectDetail() {
     detail.solution?.solutionImage4,
     detail.solution?.solutionImage5,
   ].filter(Boolean);
+
+  const beforeAfterImageCount = Math.max(
+    detail.beforeAfter?.before?.images?.length ||
+      (detail.beforeAfter?.before?.image ? 1 : 0),
+    detail.beforeAfter?.after?.images?.length ||
+      (detail.beforeAfter?.after?.image ? 1 : 0),
+  );
+
+  function changeBeforeAfterImage(direction) {
+    if (beforeAfterImageCount === 0) return;
+
+    setBeforeAfterImage(
+      (current) =>
+        (current + direction + beforeAfterImageCount) %
+        beforeAfterImageCount,
+    );
+  }
  
   // const roles = detail.myRole || [];
   // const currentRoleData = roles[currentRole];
@@ -301,11 +383,13 @@ export default function ProjectDetail() {
                           {side === "before" ? "Before" : "After"}
                         </h3>
 
-                        {data.image && (
-                          <img
-                            src={data.image}
+                        {(data.images?.length > 0 || data.image) && (
+                          <BeforeAfterGallery
+                            images={data.images || [data.image]}
                             alt={data.imageAlt || `${project.title} ${side}`}
-                            className={styles.baImage}
+                            className={styles.baGallery}
+                            currentImage={beforeAfterImage}
+                            onImageChange={changeBeforeAfterImage}
                           />
                         )}
 

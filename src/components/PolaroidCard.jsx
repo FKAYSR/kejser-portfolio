@@ -27,6 +27,7 @@ function PolaroidCard({
 
   // Keep track of which image is currently shown
   const [currentImage, setCurrentImage] = useState(0);
+  const currentImageData = polaroidImages[currentImage];
 
   const [touchStartX, setTouchStartX] = useState(null);
 
@@ -93,7 +94,7 @@ function PolaroidCard({
         {polaroidImages.length > 0 && (
           <img
             src={polaroidImages[currentImage].src}
-            alt={polaroidImageAlt}
+            alt={polaroidImages[currentImage].alt || polaroidImageAlt}
             className={styles.polaroidImage}
             style={{
               objectFit: polaroidImages[currentImage].objectFit || "cover",
@@ -135,14 +136,16 @@ function PolaroidCard({
           </div>
         )}
 
-        {polaroidTitle && (
+        {(currentImageData?.title ?? polaroidTitle) && (
           <h3 className={`${styles.polaroidTitle} text-style-h3`}>
-            {polaroidTitle}
+            {currentImageData?.title ?? polaroidTitle}
           </h3>
         )}
 
-        {polaroidDescription && (
-          <p className={styles.polaroidDescription}>{polaroidDescription}</p>
+        {(currentImageData?.description ?? polaroidDescription) && (
+          <p className={styles.polaroidDescription}>
+            {currentImageData?.description ?? polaroidDescription}
+          </p>
         )}
       </figcaption>
     </>

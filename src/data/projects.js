@@ -24,16 +24,16 @@ import hangerVariables from "../assets/projects/story-hangers/images/hanger-vari
 import rogueColor from "../assets/projects/go-rogue/rogue-colours.png";
 import rogueBe from "../assets/projects/go-rogue/rogue-be.png";
 import rogueLogoRed from "../assets/projects/go-rogue/rogue-logo-red.png";
-import rogueSwitched from "../assets/projects/go-rogue/rogue-logo-switched.png";
 import rogueLogoWhite from "../assets/projects/go-rogue/rogue-logo.svg";
 import rogueLogoVersions from "../assets/projects/go-rogue/rogue-logo-versions.png";
-import rogueHangtagFront from "../assets/projects/go-rogue/rogue-hangtag-front.png";
-import rogueHangtagBack from "../assets/projects/go-rogue/rogue-hangtag-back.png";
 import rogueHangtag from "../assets/projects/go-rogue/rogue-hangtag-mockup.jpg";
 import rogueTypography from "../assets/projects/go-rogue/rogue-typography.png";
 import rogueBranddeck from "../assets/projects/go-rogue/rogue-branddeck.png";
 import rougeBranddeck from "../assets/projects/go-rogue/rouge-branddeck.png";
-import rougeNav from "../assets/projects/go-rogue/rogue-nav.png";
+import rougeNavOri from "../assets/projects/go-rogue/rouge-nav.png";
+import rougeNavNew from "../assets/projects/go-rogue/rouge-nav-new.png";
+import rougeDetail from "../assets/projects/go-rogue/rouge-detail.png";
+import rogueDetail from "../assets/projects/go-rogue/rogue-detail.png";
 
 
 
@@ -200,7 +200,8 @@ const projects = [
       toolsUsed: ["Figma"],
 
       links: {
-        live: "https://www.figma.com/proto/xJ147c7hA2Vpd1IKHds3Sg/La-Rouge---Go-Rogue?node-id=139-1495&p=f&viewport=25%2C116%2C0.09&t=kUT7eJuY8fWYBwpJ-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=139%3A1495&page-id=139%3A1494",
+        figmaPrototype:
+          "https://www.figma.com/proto/xJ147c7hA2Vpd1IKHds3Sg/La-Rouge---Go-Rogue?node-id=139-1495&p=f&viewport=25%2C116%2C0.09&t=kUT7eJuY8fWYBwpJ-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=139%3A1495&page-id=139%3A1494",
         designFile:
           "https://www.figma.com/design/xJ147c7hA2Vpd1IKHds3Sg/La-Rouge---Go-Rogue?node-id=1258-14783&t=0VD10BFPtjS8ICyn-1",
       },
@@ -232,16 +233,20 @@ const projects = [
           "Expands the target audience to include more price-conscious customers",
           "Adds a more youthful tone, so the platform does not put younger customers off",
         ],
-        solutionImage1: { src: rogueSwitched, objectFit: "contain" },
-        solutionImage2: { src: rogueTypography, objectFit: "contain" },
-        solutionImage3: rogueHangtag,
-        solutionImage4: rougeNav,
+        solutionImage1: { src: rogueLogoVersions, objectFit: "contain" },
+        solutionImage2: rogueHangtag,
+        solutionImage3: { src: rogueTypography, objectFit: "contain" },
+        solutionImage4: { src: rogueColor, objectFit: "contain" },
       },
 
       beforeAfter: {
         before: {
-          image: "",
-          imageAlt: "",
+          images: [
+            { src: rougeBranddeck, objectFit: "contain", alt: "" },
+            { src: rougeNavOri, objectFit: "contain", alt: "" },
+            { src: rougeDetail, objectFit: "contain", alt: "" },
+          ],
+          imageAlt: "Original brand material",
           points: [
             "Re-commerce lived in the shadows of the main brand",
             "Very few users knew how to send clothes back to La Rouge for re-use",
@@ -249,14 +254,21 @@ const projects = [
           ],
         },
         after: {
-          image: "",
-          imageAlt: "",
+          images: [
+            { src: rogueBranddeck, objectFit: "contain", alt: "" },
+            { src: rougeNavNew, objectFit: "contain", alt: "" },
+            { src: rogueDetail, objectFit: "contain", alt: "" },
+          ],
+          imageAlt: "New brand material",
           points: [
             "Its own identity and name, which makes re-commerce easier to notice",
             "A more clear flow that is more intuitive for the user",
             "A new way to add physical purchases to the online platform with a QR code",
           ],
         },
+
+        metric:
+          "How we checked it: we presented the concept to La Rouge on the pitch day and received feedback from them.",
       },
 
       myRole: [
