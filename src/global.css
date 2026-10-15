@@ -63,7 +63,7 @@ html {
   --font-size-button: clamp(1.1rem, 0.5vw + 1rem, 1.35rem);
   --font-size-h2: clamp(2.25rem, 4vw + 1rem, 3.5rem);
   --font-size-h3: clamp(1.75rem, 2vw + 1rem, 2.25rem);
-  --font-size-section: clamp(1.75rem, 3vw, 2.5rem);
+  --font-size-section: clamp(1.75rem, 2.5vw, 2.2rem);
   --font-size-section-large: clamp(2.25rem, 4vw, 3.25rem);
   --font-size-display: clamp(2rem, 4vw, 7rem);
   --font-size-nav: 1.2rem;

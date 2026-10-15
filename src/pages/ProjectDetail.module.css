@@ -60,8 +60,7 @@
 /* HERO IMAGE */
 .heroImage {
   width: 100%;
-  height: calc(var(--hero-height) + var(--navbar-height));
-  margin-top: calc(-1 * var(--navbar-height));
+  height: var(--hero-height);
 }
 
 .heroImage img {

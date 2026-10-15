@@ -12,10 +12,14 @@ function PolaroidCard({
   link,
 }) {
 
-  const polaroidImages =
+  const rawPolaroidImages =
     images ||
     project?.images ||
     (project?.thumbnail ? [project.thumbnail] : []);
+
+  const polaroidImages = rawPolaroidImages.map((image) =>
+    typeof image === "string" ? { src: image } : image,
+  );
 
   const polaroidTitle = title ?? project?.title;
   const polaroidDescription = description ?? project?.homeDescription;
@@ -88,9 +92,12 @@ function PolaroidCard({
       >
         {polaroidImages.length > 0 && (
           <img
-            src={polaroidImages[currentImage]}
+            src={polaroidImages[currentImage].src}
             alt={polaroidImageAlt}
             className={styles.polaroidImage}
+            style={{
+              objectFit: polaroidImages[currentImage].objectFit || "cover",
+            }}
           />
         )}
 

@@ -36,6 +36,8 @@ export default function ProjectDetail() {
     detail.solution?.solutionImage1,
     detail.solution?.solutionImage2,
     detail.solution?.solutionImage3,
+    detail.solution?.solutionImage4,
+    detail.solution?.solutionImage5,
   ].filter(Boolean);
  
   // const roles = detail.myRole || [];
@@ -87,7 +89,7 @@ export default function ProjectDetail() {
         style={
           detail.heroImageHeight
             ? {
-                height: `calc(${detail.heroImageHeight} + var(--navbar-height))`,
+                height: detail.heroImageHeight,
               }
             : undefined
         }
@@ -394,7 +396,7 @@ export default function ProjectDetail() {
 
         {/* WHAT I LEARNED / IF I DID IT AGAIN */}
         {(detail.whatILearned?.length > 0 ||
-          detail.ifIDidItAgain?.length > 0) && (
+          detail.nextStepReflections?.length > 0) && (
           <section className="page-section">
             <div className={`page ${styles.section} ${styles.learnedSection}`}>
               {detail.whatILearned?.length > 0 && (
@@ -411,12 +413,12 @@ export default function ProjectDetail() {
                 </div>
               )}
 
-              {detail.ifIDidItAgain?.length > 0 && (
+              {detail.nextStepReflections?.length > 0 && (
                 <div className={styles.learnedColumn}>
-                  <h2 className="text-style-h2">IF I DID IT AGAIN</h2>
+                  <h2 className="text-style-h2">NEXT STEPS & REFLECTIONS</h2>
 
                   <ul className={styles.pointList}>
-                    {detail.ifIDidItAgain.map((item) => (
+                    {detail.nextStepReflections.map((item) => (
                       <li key={item}>
                         <p className="text-style-body-text">{item}</p>
                       </li>
