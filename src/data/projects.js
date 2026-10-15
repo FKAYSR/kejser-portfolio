@@ -20,23 +20,35 @@ import hangerFooter from "../assets/projects/story-hangers/images/hanger-footer.
 import hangerRoot from "../assets/projects/story-hangers/images/hanger-root.png";
 import hangerVariables from "../assets/projects/story-hangers/images/hanger-variables.png";
 
+// Go Rogue
+import rogueColor from "../assets/projects/go-rogue/rogue-colours.png";
+import rogueBe from "../assets/projects/go-rogue/rogue-be.png";
+import rogueLogoRed from "../assets/projects/go-rogue/rogue-logo-red.png";
+import rogueLogoVersions from "../assets/projects/go-rogue/rogue-logo-versions.png";
+import rogueHangtag from "../assets/projects/go-rogue/rogue-hangtag-mockup.jpg";
+import rogueTypography from "../assets/projects/go-rogue/rogue-typography.png";
+import rogueBranddeck from "../assets/projects/go-rogue/rogue-branddeck.png";
+import rougeBranddeck from "../assets/projects/go-rogue/rouge-branddeck.png";
+import rougeNavOri from "../assets/projects/go-rogue/rouge-nav.png";
+import rougeNavNew from "../assets/projects/go-rogue/rouge-nav-new.png";
+import rougeDetail from "../assets/projects/go-rogue/rouge-detail.png";
+import rogueDetail from "../assets/projects/go-rogue/rogue-detail.png";
+import rougePersona from "../assets/projects/go-rogue/rouge-persona.png";
+import roguePersona from "../assets/projects/go-rogue/rogue-persona.png";
+
+
+
 const projects = [
   // MER' END TOAST
   {
     id: "mer-end-toast",
     title: "Mer' end Toast",
     thumbnail: merEndToastThumb,
-    thumbnailAlt: "Screenshot of the Mer' end Toast recipe planning app",
-    tags: [
-      "Web application",
-      "UX/UI Design",
-      "React",
-      "Supabase",
-      "Design System",
-    ],
+    thumbnailAlt: "Mer' end Toast's booth at a school EXPO",
+    tags: ["Web application", "UX/UI Design", "Design System"],
     teamSize: 2,
     semester: "3rd Semester",
-    role: "UX research, Design System",
+    role: "UX Research, Design System",
 
     // Visibility
     showOnHome: true,
@@ -147,7 +159,7 @@ const projects = [
         "My biggest takeaway is I learned how important it is to understand how different parts of a webapp depend on each other.",
       ],
 
-      ifIDidItAgain: [
+      nextStepReflections: [
         "I would improve the Supabase database structure and data fetching to make the search function fully functional.",
         "I would approach the data setup differently by agreeing early on a clear data structure and avoid changes during development.",
         "In further development, I would complete the search function and allergy feature.",
@@ -157,18 +169,200 @@ const projects = [
     },
   },
 
+  // Go Rogue
+  {
+    id: "go-rogue",
+    title: "Go Rogue",
+    thumbnail: {
+      src: rogueLogoRed,
+      objectFit: "contain",
+    },
+    thumbnailAlt: "Logo of Go Rogue, subbrand to La Rouge",
+    tags: ["Optimisation", "Recommerce", "Subbranding"],
+    teamSize: 3,
+    semester: "3rd Semester",
+    year: 2026,
+    role: "Design System, Concept Development",
+
+    // Visibility
+    showOnHome: true,
+    homeOrder: 3,
+    showOnOverview: true,
+
+    // Short descriptions
+    homeDescription:
+      "Execution of a concept, subbrand and user interface for La Rouge’s new and optimised re-commerce effort.",
+    overviewDescription:
+      "Execution of a concept, subbrand and user interface for La Rouge’s new and optimised re-commerce effort.",
+
+    // Project detail page
+    detail: {
+      heroImage: rogueBe,
+      heroImageAlt: "",
+      heroImagePosition: "center 45%",
+
+      toolsUsed: ["Figma"],
+
+      links: {
+        figmaPrototype:
+          "https://www.figma.com/proto/xJ147c7hA2Vpd1IKHds3Sg/La-Rouge---Go-Rogue?node-id=139-1495&p=f&viewport=25%2C116%2C0.09&t=kUT7eJuY8fWYBwpJ-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=139%3A1495&page-id=139%3A1494",
+        designFile:
+          "https://www.figma.com/design/xJ147c7hA2Vpd1IKHds3Sg/La-Rouge---Go-Rogue?node-id=1258-14783&t=0VD10BFPtjS8ICyn-1",
+      },
+
+      overview: {
+        pitch:
+          "Go Rogue is a subbrand that gives La Rouge's re-commerce initiative its own identity, voice and digital presence.",
+      },
+
+      assignment: {
+        type: "To develop a concept for an independent subbrand under La Rouge, that can give the re-commerce initiative its own life, voice and digital presence. The subbrand should be able to stand alone but also draw from La Rouge’s DNA of timelessness, quality and responsibility.",
+        problem:
+          "Today, La Rouge's re-commerce initiative lives in the shadow of the main brand, without its own visual identity, tone of voice or dedicated communication effort. This means the concept is far from reaching its full potential.",
+        targetAudience:
+          "La Rouge's existing customers, who value timeless quality and a brand they can trust, and a wider audience of second-hand shoppers who want to buy quality pieces at a better price and pass on their own clothes with confidence.",
+      },
+
+      solution: {
+        created:
+          "We created Go Rogue as a branded house for La Rouge's re-commerce initiative. Inspired by La Rouge's own storytelling, we drew on their mother-daughter story and positioned Go Rogue as the daughter brand.",
+        keyFeatures: [
+          "Wordplay - Go Rogue plays on La Rouge's name by swapping the U and the G, so the link is clear while the subbrand still stands on its own",
+          "Hangtag with QR code - A hangtag concept that customers can scan to add their physical purchases to the online platform",
+          "New story - A new perspective on La Rouge's story about their timeless pieces",
+          "Visibility - A more prominent button and an identity of its own makes it more clear that you can pass on your used clothes to someone new",
+        ],
+        valueCreation: [
+          "Gives La Rouge's re-commerce its own universe and voice",
+          "Expands the target audience to include more price-conscious customers",
+          "Adds a more youthful tone, so the platform does not put younger customers off",
+        ],
+        solutionImage1: { src: rogueLogoVersions, objectFit: "contain" },
+        solutionImage2: rogueHangtag,
+        solutionImage3: { src: rogueTypography, objectFit: "contain" },
+        solutionImage4: { src: rogueColor, objectFit: "contain" },
+      },
+
+      beforeAfter: {
+        before: {
+          images: [
+            {
+              src: rougeBranddeck,
+              objectFit: "contain",
+              alt: "Branddeck based on La Rouge",
+            },
+            {
+              src: rougeNavOri,
+              objectFit: "contain",
+              alt: "La Rouge's navbar",
+            },
+            {
+              src: rougeDetail,
+              objectFit: "contain",
+              alt: "One of La Rouge's detailpages",
+            },
+            {
+              src: rougePersona,
+              objectFit: "contain",
+              alt: "La Rouge persona",
+            },
+          ],
+          imageAlt: "Original brand material",
+          points: [
+            "Re-commerce lived in the shadows of the main brand",
+            "Very few users knew how to send clothes back to La Rouge for re-use",
+            "No visual identity or tone of voice of its own",
+            "Designed for one audience: La Rouge's existing customer",
+          ],
+        },
+        after: {
+          images: [
+            {
+              src: rogueBranddeck,
+              objectFit: "contain",
+              alt: "Go Rogue's branddeck",
+            },
+            {
+              src: rougeNavNew,
+              objectFit: "contain",
+              alt: "Go Rouge's navbar",
+            },
+            {
+              src: rogueDetail,
+              objectFit: "contain",
+              alt: "One of Go Rouge's detailpages",
+            },
+            {
+              src: roguePersona,
+              objectFit: "contain",
+              alt: "Go Rogue persona",
+            },
+          ],
+          imageAlt: "New brand material",
+          points: [
+            "Its own identity and name, which makes re-commerce easier to notice",
+            "A more clear flow that is more intuitive for the user",
+            "A new way to add physical purchases to the online platform with a QR code",
+            "A second persona added for second-hand shoppers, so the subbrand reaches a new audience",
+          ],
+        },
+
+        metric:
+          "Validation: We presented Go Rogue to La Rouge on the pitch day. The prototype has not been tested with users, so the improvements are assessed against our personas, not measured.",
+      },
+
+      myRole: [
+        {
+          title: "Design System & Visual Identity",
+          text: "I worked on the project's design system, defining typography and color palettes to ensure visual consistency across the prototype.",
+          bigImage: "",
+          image2: "",
+          image3: "",
+        },
+        {
+          title: "UI Design & Detail Pages",
+          text: "I was responsible for designing the Project Detail page layout and the 404 page",
+          bigImage: "",
+          image2: "",
+          image3: "",
+        },
+        {
+          title: "Component Building & Prototyping",
+          text: "Collaborated on building interactive Figma components and micro-interactions to refine the overall digital prototype.",
+          bigImage: "",
+          image2: "",
+          image3: "",
+        },
+      ],
+
+      whatILearned: [
+        "Creating a subbrand that has to stand alone but still feel like the original brand is a delicate balance",
+        "Exploring more than one visual direction before choosing made the process more interesting and made the final choice easier to argue for",
+        "Reusing default icons and other components from earlier projects can save a lot of time",
+        "My biggest takeaway is that changing visual direction mid-progress does not have to be as scary as it sounds",
+      ],
+
+      nextStepReflections: [
+        "I would test the prototype with real users from both target groups",
+        "I would run some user interviews, so the personas rest on feedback and not only on assumptions",
+        "I would test whether the hangtag and QR code concept feels natural to someone who has never seen it",
+        "I would develop the hangtag and QR code idea further, for example how a scan connects to a customers profile",
+      ],
+    },
+  },
+
   // MELLEMRUM
   {
     id: "mellemrum",
     title: "Mellemrum",
     thumbnail: "",
     thumbnailAlt: "",
-    tags: ["Optimization", "Webapp", "Accessibility", "Frontend Development"],
+    tags: ["Optimisation", "Webapp", "Accessibility", "Frontend Development"],
     teamSize: 1,
 
     // Visibility
     showOnHome: true,
-    homeOrder: 1,
+    homeOrder: 2,
     showOnOverview: true,
 
     // Short descriptions
@@ -286,7 +480,7 @@ const projects = [
         "My biggest takeaway were the insight of possible issues i could encounter in future collaborative projects",
       ],
 
-      ifIDidItAgain: [
+      nextStepReflections: [
         "I would improve my time management by balancing quick UI fixes against more time consuming tasks",
         "I would approach other people more to bounce of ideas about possible optimizations",
         "In further development I would implement the remaining items from my technical audit list",
@@ -311,8 +505,8 @@ const projects = [
     teamSize: 3,
 
     // Visibility
-    showOnHome: true,
-    homeOrder: 1,
+    showOnHome: false,
+    homeOrder: 3,
     showOnOverview: true,
 
     // Short descriptions
@@ -405,7 +599,7 @@ const projects = [
         "My biggest takeaway was learning how much research that goes into creating just one webshop.",
       ],
 
-      ifIDidItAgain: [
+      nextStepReflections: [
         "I would improve the initial target group definition to make the design process and team decisions more clear.",
         "I would approach testing earlier and identify usability issues before developing the final project.",
         "If we developed the project further, I would focus on completing the coded version of the webshop and refining the core functions.",
@@ -429,6 +623,9 @@ NEW PROJECT TEMPLATE
   thumbnailAlt: "",
   tags: [],
   teamSize: 1,
+  semester: "",
+  year: 2026,
+  role: "",
 
   // Visibility
   showOnHome: false,
@@ -443,19 +640,18 @@ NEW PROJECT TEMPLATE
   detail: {
     heroImage: "",
     heroImageAlt: "",
-    heroImagePosition: "center 30%",   // hvad der skal være i fokus
-    heroImageHeight: "clamp(320px, 55svh, 600px)",  // valgfri: eget højdeforhold
+    heroImagePosition: "center 30%",
+    heroImageHeight: "clamp(320px, 55svh, 600px)",
+
     links: {
-    live: "",
-    repository: "",
-    designFile: "",
-    figmaPrototype: "",
+      live: "",
+      repository: "",
+      designFile: "",
+      figmaPrototype: "",
     },
 
     overview: {
       pitch: "",
-      description: "",
-      description2: "",
     },
 
     assignment: {
@@ -468,6 +664,9 @@ NEW PROJECT TEMPLATE
       created: "",
       keyFeatures: [],
       valueCreation: [],
+      solutionImage1: "",
+      solutionImage2: "",
+      solutionImage3: "",
     },
 
     beforeAfter: {
@@ -511,7 +710,7 @@ NEW PROJECT TEMPLATE
 
     whatILearned: [],
 
-    ifIDidItAgain: [],
+    nextStepReflections: [],
 
     teamFeedback: "",
   },

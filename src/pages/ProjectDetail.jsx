@@ -8,14 +8,77 @@ import reportIcon from "../assets/icons/report-link.svg?raw";
 import projects from "../data/projects.js";
 import styles from "./ProjectDetail.module.css";
 import arrow from "../assets/icons/arrow-accent-middle.svg";
- 
+import { useState } from "react";
+
+function BeforeAfterGallery({
+  images,
+  alt,
+  className,
+  currentImage,
+  onImageChange,
+}) {
+  const normalizedImages = images.map((image) =>
+    typeof image === "string" ? { src: image } : image,
+  );
+  const hasMultipleImages = normalizedImages.length > 1;
+  const imageIndex = currentImage % normalizedImages.length;
+  const image = normalizedImages[imageIndex];
+
+  function changeImage(direction) {
+    onImageChange(direction);
+  }
+
+  return (
+    <div className={className}>
+      <div className={styles.baGalleryImageContainer}>
+        <img
+          src={image.src}
+          alt={image.alt || alt}
+          className={styles.baImage}
+          style={{ objectFit: image.objectFit || "cover" }}
+        />
+        {hasMultipleImages && (
+          <>
+            <button
+              type="button"
+              className={`${styles.baGalleryZone} ${styles.baGalleryZoneLeft}`}
+              onClick={() => changeImage(-1)}
+              aria-label="Previous image"
+            />
+            <button
+              type="button"
+              className={`${styles.baGalleryZone} ${styles.baGalleryZoneRight}`}
+              onClick={() => changeImage(1)}
+              aria-label="Next image"
+            />
+          </>
+        )}
+      </div>
+      {hasMultipleImages && (
+        <div className={styles.baGalleryDots}>
+          {normalizedImages.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              className={`${styles.dot} ${
+                index === imageIndex ? styles.activeDot : ""
+              }`}
+              onClick={() => onImageChange(index - imageIndex)}
+              aria-label={`Go to image ${index + 1}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ProjectDetail() {
   const { slug } = useParams();
- 
+  const [beforeAfterImage, setBeforeAfterImage] = useState(0);
+
   const project = projects.find((item) => item.id === slug);
- 
-  // const [currentRole, setCurrentRole] = useState(0);
- 
+
   if (!project) {
     return (
       <main className={`page ${styles.notFound}`}>
@@ -23,49 +86,45 @@ export default function ProjectDetail() {
       </main>
     );
   }
- 
+
   const detail = project.detail;
- 
+
   const currentProjectIndex = projects.findIndex(
     (item) => item.id === project.id,
   );
- 
+
   const nextProject = projects[(currentProjectIndex + 1) % projects.length];
- 
+
   const solutionImages = [
     detail.solution?.solutionImage1,
     detail.solution?.solutionImage2,
     detail.solution?.solutionImage3,
+    detail.solution?.solutionImage4,
+    detail.solution?.solutionImage5,
   ].filter(Boolean);
- 
-  // const roles = detail.myRole || [];
-  // const currentRoleData = roles[currentRole];
- 
-  // // const roleImages = currentRoleData
-  // //   ? [
-  // //       currentRoleData.bigImage,
-  // //       currentRoleData.image2,
-  // //       currentRoleData.image3,
-  // //     ].filter(Boolean)
-  // //   : [];
- 
-  // function nextRole() {
-  //   setCurrentRole((current) =>
-  //     current === roles.length - 1 ? 0 : current + 1,
-  //   );
-  // }
- 
-  // function previousRole() {
-  //   setCurrentRole((current) =>
-  //     current === 0 ? roles.length - 1 : current - 1,
-  //   );
-  // }
- 
+
+  const beforeAfterImageCount = Math.max(
+    detail.beforeAfter?.before?.images?.length ||
+      (detail.beforeAfter?.before?.image ? 1 : 0),
+    detail.beforeAfter?.after?.images?.length ||
+      (detail.beforeAfter?.after?.image ? 1 : 0),
+  );
+
+  function changeBeforeAfterImage(direction) {
+    if (beforeAfterImageCount === 0) return;
+
+    setBeforeAfterImage(
+      (current) =>
+        (current + direction + beforeAfterImageCount) % beforeAfterImageCount,
+    );
+  }
+
   const linkLabels = {
     live: "Visit live project",
     repository: "View repository",
     figmaPrototype: "View prototype",
     designFile: "View design file",
+    brandDeck: "View brand deck",
     report: "Read report",
   };
 
@@ -79,7 +138,7 @@ export default function ProjectDetail() {
   const heroImageAlt = detail.heroImage
     ? detail.heroImageAlt || project.title
     : project.thumbnailAlt;
- 
+
   return (
     <>
       <header
@@ -87,7 +146,7 @@ export default function ProjectDetail() {
         style={
           detail.heroImageHeight
             ? {
-                height: `calc(${detail.heroImageHeight} + var(--navbar-height))`,
+                height: detail.heroImageHeight,
               }
             : undefined
         }
@@ -247,7 +306,7 @@ export default function ProjectDetail() {
 
                   {detail.solution?.valueCreation?.length > 0 && (
                     <div className={styles.listBlock}>
-                      <h3 className="text-style-h3">Value creation</h3>
+                      <h3 className="text-style-h3">Business potential</h3>
 
                       <ul>
                         {detail.solution.valueCreation.map((value) => (
@@ -299,11 +358,13 @@ export default function ProjectDetail() {
                           {side === "before" ? "Before" : "After"}
                         </h3>
 
-                        {data.image && (
-                          <img
-                            src={data.image}
+                        {(data.images?.length > 0 || data.image) && (
+                          <BeforeAfterGallery
+                            images={data.images || [data.image]}
                             alt={data.imageAlt || `${project.title} ${side}`}
-                            className={styles.baImage}
+                            className={styles.baGallery}
+                            currentImage={beforeAfterImage}
+                            onImageChange={changeBeforeAfterImage}
                           />
                         )}
 
@@ -331,70 +392,31 @@ export default function ProjectDetail() {
           </section>
         )}
 
-        {/* MY ROLE (udkommenteret). Når den genindsættes, skal den bruge samme
-            mønster som de andre sektioner: <section className="page-section">
-            med en indre <div className={`page ${styles.section}`}>.
-        {/* {roles.length > 0 && currentRoleData && (
-          <section className={styles.section}>
-            <div className={styles.sectionLabel}>
-              <h2 className="text-style-h2">MY ROLE</h2>
-            </div>
- 
-            <div className={styles.sectionContent}>
-              <div className={styles.roleLayout}>
-                <div className={styles.roleContent}>
-                  <span className={styles.roleNumber}>
-                    {String(currentRole + 1).padStart(2, "0")}
-                    {" / "}
-                    {String(roles.length).padStart(2, "0")}
-                  </span>
- 
-                  <h2 className="text-style-h2">{currentRoleData.title}</h2>
- 
-                  <p className="text-style-body-text">{currentRoleData.text}</p>
- 
-                  {roles.length > 1 && (
-                    <div className={styles.roleNavigation}>
-                      <button
-                        type="button"
-                        onClick={previousRole}
-                        className={styles.arrowButton}
-                        aria-label="Previous role"
-                      >
-                        ←
-                      </button>
- 
-                      <button
-                        type="button"
-                        onClick={nextRole}
-                        className={styles.arrowButton}
-                        aria-label="Next role"
-                      >
-                        →
-                      </button>
-                    </div>
-                  )}
+        {/* MY ROLE */}
+        {detail.myRole?.length > 0 && (
+          <section className="page-section">
+            <div className={`page ${styles.section}`}>
+              <div className={styles.sectionLabel}>
+                <h2 className="text-style-h2">MY ROLE</h2>
+              </div>
+
+              <div className={styles.sectionContent}>
+                <div className={styles.roleGrid}>
+                  {detail.myRole.map((role) => (
+                    <article key={role.title} className={styles.infoBlock}>
+                      <h3 className="text-style-h3">{role.title}</h3>
+                      <p className="text-style-body-text">{role.text}</p>
+                    </article>
+                  ))}
                 </div>
- 
-                {roleImages.length > 0 && (
-                  <div className={styles.rolePolaroids}>
-                    <PolaroidCard
-                      images={roleImages}
-                      imageAlt={currentRoleData.title}
-                      title={currentRoleData.title}
-                      description={currentRoleData.text}
-                      size="large"
-                    />
-                  </div>
-                )}
               </div>
             </div>
           </section>
-        )} */}
+        )}
 
-        {/* WHAT I LEARNED / IF I DID IT AGAIN */}
+        {/* WHAT I LEARNED / NEXT STEPS & REFLECTIONS */}
         {(detail.whatILearned?.length > 0 ||
-          detail.ifIDidItAgain?.length > 0) && (
+          detail.nextStepReflections?.length > 0) && (
           <section className="page-section">
             <div className={`page ${styles.section} ${styles.learnedSection}`}>
               {detail.whatILearned?.length > 0 && (
@@ -411,12 +433,14 @@ export default function ProjectDetail() {
                 </div>
               )}
 
-              {detail.ifIDidItAgain?.length > 0 && (
+              {detail.nextStepReflections?.length > 0 && (
                 <div className={styles.learnedColumn}>
-                  <h2 className="text-style-h2">IF I DID IT AGAIN</h2>
+                  <h2 className="text-style-h2">
+                    NEXT STEPS &amp; REFLECTIONS
+                  </h2>
 
                   <ul className={styles.pointList}>
-                    {detail.ifIDidItAgain.map((item) => (
+                    {detail.nextStepReflections.map((item) => (
                       <li key={item}>
                         <p className="text-style-body-text">{item}</p>
                       </li>
@@ -452,7 +476,7 @@ export default function ProjectDetail() {
                                 : key === "figmaPrototype" ||
                                     key === "designFile"
                                   ? figmaLinkIcon
-                                  : key === "report"
+                                  : key === "report" || key === "brandDeck"
                                     ? reportIcon
                                     : undefined
                             }

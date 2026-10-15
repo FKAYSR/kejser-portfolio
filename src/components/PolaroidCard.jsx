@@ -12,10 +12,14 @@ function PolaroidCard({
   link,
 }) {
 
-  const polaroidImages =
+  const rawPolaroidImages =
     images ||
     project?.images ||
     (project?.thumbnail ? [project.thumbnail] : []);
+
+  const polaroidImages = rawPolaroidImages.map((image) =>
+    typeof image === "string" ? { src: image } : image,
+  );
 
   const polaroidTitle = title ?? project?.title;
   const polaroidDescription = description ?? project?.homeDescription;
@@ -23,6 +27,7 @@ function PolaroidCard({
 
   // Keep track of which image is currently shown
   const [currentImage, setCurrentImage] = useState(0);
+  const currentImageData = polaroidImages[currentImage];
 
   const [touchStartX, setTouchStartX] = useState(null);
 
@@ -88,9 +93,12 @@ function PolaroidCard({
       >
         {polaroidImages.length > 0 && (
           <img
-            src={polaroidImages[currentImage]}
-            alt={polaroidImageAlt}
+            src={polaroidImages[currentImage].src}
+            alt={polaroidImages[currentImage].alt || polaroidImageAlt}
             className={styles.polaroidImage}
+            style={{
+              objectFit: polaroidImages[currentImage].objectFit || "cover",
+            }}
           />
         )}
 
@@ -128,14 +136,16 @@ function PolaroidCard({
           </div>
         )}
 
-        {polaroidTitle && (
+        {(currentImageData?.title ?? polaroidTitle) && (
           <h3 className={`${styles.polaroidTitle} text-style-h3`}>
-            {polaroidTitle}
+            {currentImageData?.title ?? polaroidTitle}
           </h3>
         )}
 
-        {polaroidDescription && (
-          <p className={styles.polaroidDescription}>{polaroidDescription}</p>
+        {(currentImageData?.description ?? polaroidDescription) && (
+          <p className={styles.polaroidDescription}>
+            {currentImageData?.description ?? polaroidDescription}
+          </p>
         )}
       </figcaption>
     </>
