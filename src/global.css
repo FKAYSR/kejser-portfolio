@@ -43,6 +43,7 @@ html {
   --navbar-height: 5rem;
   --content-max-width: 95rem;
   --page-padding-x: clamp(2rem, 8vw, 8rem);
+  --hero-height: clamp(280px, min(36vw, 50svh), 520px);
 
   /* Font families */
   --font-heading: "Cinzel", serif;
