@@ -3,6 +3,7 @@ import LinkBtn from "../components/LinkBtn.jsx";
 import PolaroidCard from "../components/PolaroidCard.jsx";
 import figmaLinkIcon from "../assets/icons/figma-link.svg?raw";
 import githubLinkIcon from "../assets/icons/github-link.svg?raw";
+import globeIcon from "../assets/icons/globe-link.svg?raw";
 import reportIcon from "../assets/icons/report-link.svg?raw";
 import projects from "../data/projects.js";
 import styles from "./ProjectDetail.module.css";
@@ -131,7 +132,7 @@ export default function ProjectDetail() {
                     <LinkBtn
                       href={detail.links.live}
                       variant="external"
-                      icon={githubLinkIcon}
+                      icon={globeIcon}
                       className={styles.liveLinkBtn}
                     >
                       Visit live site
