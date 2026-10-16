@@ -126,6 +126,15 @@ export default function ProjectDetail() {
     designFile: "View design file",
     brandDeck: "View brand deck",
     report: "Read report",
+    audit: "View UX audit",
+  };
+
+  const linkIcons = {
+    repository: githubLinkIcon,
+    figmaPrototype: figmaLinkIcon,
+    designFile: figmaLinkIcon,
+    audit: reportIcon,
+    report: reportIcon,
   };
 
   const heroLabels = [
@@ -280,7 +289,9 @@ export default function ProjectDetail() {
           <div className={`page ${styles.section}`}>
             <div className={styles.solutionLayout}>
               <div className={styles.solutionText}>
-                <h2 className="text-style-h2">OUR SOLUTION</h2>
+                <h2 className="text-style-h2">
+                  {project.teamSize === 1 ? "MY SOLUTION" : "OUR SOLUTION"}
+                </h2>
                 <div className={styles.solutionIntro}>
                   {detail.solution?.created && (
                     <p className="text-style-body-text">
@@ -470,16 +481,7 @@ export default function ProjectDetail() {
                           <LinkBtn
                             href={url}
                             variant="external"
-                            icon={
-                              key === "repository"
-                                ? githubLinkIcon
-                                : key === "figmaPrototype" ||
-                                    key === "designFile"
-                                  ? figmaLinkIcon
-                                  : key === "report" || key === "brandDeck"
-                                    ? reportIcon
-                                    : undefined
-                            }
+                            icon={linkIcons[key]}
                           >
                             {linkLabels[key] || key}
                           </LinkBtn>
