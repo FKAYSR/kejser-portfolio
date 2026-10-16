@@ -126,7 +126,7 @@ export default function ProjectDetail() {
     designFile: "View design file",
     brandDeck: "View brand deck",
     report: "Read report",
-    audit: "View UX audit",
+    audit: "View audit",
   };
 
   const linkIcons = {
@@ -135,6 +135,7 @@ export default function ProjectDetail() {
     designFile: figmaLinkIcon,
     audit: reportIcon,
     report: reportIcon,
+    brandDeck: reportIcon,
   };
 
   const heroLabels = [

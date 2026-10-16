@@ -21,7 +21,7 @@ import hangerRoot from "../assets/projects/story-hangers/images/hanger-root.png"
 import hangerVariables from "../assets/projects/story-hangers/images/hanger-variables.png";
 
 // Go Rogue
-import rogueColor from "../assets/projects/go-rogue/rogue-colours.png";
+import rogueColour from "../assets/projects/go-rogue/rogue-colours.png";
 import rogueBe from "../assets/projects/go-rogue/rogue-be.png";
 import rogueLogoRed from "../assets/projects/go-rogue/rogue-logo-red.png";
 import rogueLogoVersions from "../assets/projects/go-rogue/rogue-logo-versions.png";
@@ -55,6 +55,7 @@ import mellemrumDataNew from "../assets/projects/mellemrum/mellemrum-database-ne
 import vuuhName from "../assets/projects/vuuh/vuuh-name.png";
 import vuuhLogo from "../assets/projects/vuuh/vuuh-logo.png";
 import vuuhChecklist from "../assets/projects/vuuh/vuuh-checklist.png";
+import vuuhSuccess from "../assets/projects/vuuh/vuuh-success.png";
 import vuuhDialogOri from "../assets/projects/vuuh/vuuh-dialog-ori.png";
 import vuuhDialogNew from "../assets/projects/vuuh/vuuh-dialog-new.png";
 import vuuhFrontOri from "../assets/projects/vuuh/vuuh-frontpage-ori.png";
@@ -129,7 +130,7 @@ const projects = [
           "Discover recipes - Find inspiration based on ingredients and preferences",
           "Compare prices - See where ingredients can be bought most affordably",
           "Build shopping lists - Add ingredients directly from recipes to a categorised shopping-list",
-          "Personalize - Set preferences and allergies during onboarding",
+          "Personalise - Set preferences and allergies during onboarding",
           "Save favorites - Save recipes for later",
         ],
         valueCreation: [
@@ -232,6 +233,8 @@ const projects = [
           "https://www.figma.com/proto/xJ147c7hA2Vpd1IKHds3Sg/La-Rouge---Go-Rogue?node-id=139-1495&p=f&viewport=25%2C116%2C0.09&t=kUT7eJuY8fWYBwpJ-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=139%3A1495&page-id=139%3A1494",
         designFile:
           "https://www.figma.com/design/xJ147c7hA2Vpd1IKHds3Sg/La-Rouge---Go-Rogue?node-id=1258-14783&t=0VD10BFPtjS8ICyn-1",
+        brandDeck:
+          "https://www.figma.com/design/xJ147c7hA2Vpd1IKHds3Sg/La-Rouge---Go-Rogue?node-id=43-58&t=qhZOm26uq3XttqLK-1",
       },
 
       overview: {
@@ -240,7 +243,7 @@ const projects = [
       },
 
       assignment: {
-        type: "To develop a concept for an independent subbrand under La Rouge, that can give the re-commerce initiative its own life, voice and digital presence. The subbrand should be able to stand alone but also draw from La Rouge’s DNA of timelessness, quality and responsibility.",
+        type: "To develop a concept for an independent subbrand under La Rouge that can give the re-commerce initiative its own life, voice and digital presence. The subbrand should be able to stand alone but also draw from La Rouge’s DNA of timelessness, quality and responsibility.",
         problem:
           "Today, La Rouge's re-commerce initiative lives in the shadow of the main brand, without its own visual identity, tone of voice or dedicated communication effort. This means the concept is far from reaching its full potential.",
         targetAudience:
@@ -264,7 +267,7 @@ const projects = [
         solutionImage1: { src: rogueLogoVersions, objectFit: "contain" },
         solutionImage2: rogueHangtag,
         solutionImage3: { src: rogueTypography, objectFit: "contain" },
-        solutionImage4: { src: rogueColor, objectFit: "contain" },
+        solutionImage4: { src: rogueColour, objectFit: "contain" },
       },
 
       beforeAfter: {
@@ -294,7 +297,7 @@ const projects = [
           imageAlt: "Original brand material",
           points: [
             "Re-commerce lived in the shadows of the main brand",
-            "Very few users knew how to send clothes back to La Rouge for re-use",
+            "It was unclear how to send clothes back to La Rouge for re-use",
             "No visual identity or tone of voice of its own",
             "Designed for one audience: La Rouge's existing customer",
           ],
@@ -338,14 +341,14 @@ const projects = [
       myRole: [
         {
           title: "Design System & Visual Identity",
-          text: "I worked on the project's design system, defining typography and color palettes to ensure visual consistency across the prototype.",
+          text: "I worked on the project's design system, defining typography and colour palettes to ensure visual consistency across the prototype.",
           bigImage: "",
           image2: "",
           image3: "",
         },
         {
           title: "UI Design & Detail Pages",
-          text: "I was responsible for designing the Project Detail page layout and the 404 page",
+          text: "I was responsible for designing the Project Detail page layout and the 404 page.",
           bigImage: "",
           image2: "",
           image3: "",
@@ -360,17 +363,17 @@ const projects = [
       ],
 
       whatILearned: [
-        "Creating a subbrand that has to stand alone but still feel like the original brand is a delicate balance",
-        "Exploring more than one visual direction before choosing made the process more interesting and made the final choice easier to argue for",
-        "Reusing default icons and other components from earlier projects can save a lot of time",
-        "My biggest takeaway is that changing visual direction mid-progress does not have to be as scary as it sounds",
+        "Creating a subbrand that has to stand alone but still feel like the original brand is a delicate balance.",
+        "Exploring more than one visual direction before choosing made the process more interesting and made the final choice easier to argue for.",
+        "Reusing default icons and other components from earlier projects can save a lot of time.",
+        "My biggest takeaway is that changing visual direction mid-process does not have to be as scary as it sounds.",
       ],
 
       nextStepReflections: [
-        "I would test the prototype with real users from both target groups",
-        "I would run some user interviews, so the personas rest on feedback and not only on assumptions",
-        "I would test whether the hangtag and QR code concept feels natural to someone who has never seen it",
-        "I would develop the hangtag and QR code idea further, for example how a scan connects to a customers profile",
+        "I would test the prototype with real users from both target groups.",
+        "I would run some user interviews, so the personas rest on feedback and not only on assumptions.",
+        "I would test whether the hangtag and QR code concept feels natural to someone who has never seen it.",
+        "I would develop the hangtag and QR code idea further, for example how a scan connects to a customers profile.",
       ],
     },
   },
@@ -418,7 +421,7 @@ const projects = [
       },
 
       assignment: {
-        type: "To optimize and refactor an existing React web application by prioritising the most important problems and improving them.",
+        type: "To optimise and refactor an existing React web application by prioritising the most important problems and improving them.",
         problem:
           "The prototype had a redundant data model, missing UI-states, insufficient navigation, the mobile experience fell short and the code was hard to develop further.",
         targetAudience:
@@ -431,7 +434,7 @@ const projects = [
         keyFeatures: [
           "Relational data model - Split data from two to three tables to remove redundancy and secure data integrity",
           "Dynamic payment logic - Conditional display of MobilePay-button, “Pay at the event” or default no button based on event data",
-          "Registration flow - Submitting a registration form saves the registration directly to Supabase, updates the public list and triggers a dynamic success state with personalized confirmation text and an option to register a friend as well",
+          "Registration flow - Submitting a registration form saves the registration directly to Supabase, updates the public list and triggers a dynamic success state with personalised confirmation text and an option to register a friend as well",
           "Accessibility - Restructured heading hierarchy, semantic HTML tags and form-label at the registration page so screen readers can accurately read the content",
         ],
         valueCreation: [
@@ -456,7 +459,7 @@ const projects = [
           ],
           imageAlt: "",
           points: [
-            "Spacing was way to small, whivh decreased the overall readability of the site",
+            "Spacing was way to small, which decreased the overall readability of the site",
             "Multiple venue names were used across one table",
             "E-mail addresses were visible to everyone",
             "Registrations were not saved in the database and there were no clear success state",
@@ -471,7 +474,7 @@ const projects = [
           ],
           imageAlt: "",
           points: [
-            "Better readability by increased spacing",
+            "Better readability through increased spacing",
             "Tables have relations and all venue info is in its own table",
             "E-mail addresses are hidden",
             "Registrations are saved in the database and can be seen at 'Se tilmeldinger' and there is a clear success state",
@@ -501,7 +504,7 @@ const projects = [
     id: "vuuh",
     title: "Vuuh",
     thumbnail: vuuhLogo,
-    thumbnailAlt: "",
+    thumbnailAlt: "The Vuuh logo",
     tags: ["Optimisation", "Onboarding"],
     teamSize: 3,
     semester: "3rd Semester",
@@ -510,7 +513,7 @@ const projects = [
 
     // Visibility
     showOnHome: false,
-    homeOrder: 1,
+    homeOrder: 0,
     showOnOverview: true,
 
     // Short descriptions
@@ -525,7 +528,7 @@ const projects = [
       heroImageAlt: "Vuuh logo and name",
       heroImagePosition: "center 50%",
 
-      toolsUsed: ["Figma", "Figjam"],
+      toolsUsed: ["Figma", "FigJam"],
 
       links: {
         designFile:
@@ -537,68 +540,86 @@ const projects = [
 
       overview: {
         pitch:
-          "An optimisation of Vuuh’s onboarding with focus on making an existing platform more manageable, intuitive and easier to get started with.",
+          "Vuuh's onboarding was built for a supported beta. We redesigned it as a clear self-service journey, so first-time users can connect Shopify and start testing the product on their own.",
       },
 
       assignment: {
         type: "To evaluate the current onboarding experience and propose an improved self-service solution.",
         problem:
-          "The platform was built for a supported beta - not designed as a self-service journey. There are no visual feedback, no next step suggestions and the visual elements were fighting for attention, which creates an unclear hierachy.",
+          "The platform was built for a supported beta, not as a self-service journey. There was no visual feedback and no suggested next step, and the visual elements fought for attention, which created an unclear hierarchy.",
         targetAudience:
-          "First time users of Vuuh, who are either store-first retailers or e-commerce-first retailers. The interface therefore needed to clearly communicate what to do next, help users connect their systems, and allow them to start testing the product quickly.",
+          "First-time users of Vuuh, who are either store-first retailers or e-commerce-first retailers. The interface therefore needed to clearly communicate what to do next, help users connect their systems, and allow them to start testing the product quickly.",
       },
 
       solution: {
-        created: "",
+        created:
+          "We started with a UX audit of the onboarding from a first-time user's perspective, using a heuristic evaluation and a cognitive walkthrough. Based on the findings and Vuuh's feedback we redesigned the onboarding in Figma.",
         keyFeatures: [
-          "Less friction - removed the need to manually move between the Vuuh platform and Shopify",
-          "Reduced visual noise - simplified the layout and reduced unnecessary text for an easier overview",
-          "Simplified flow - removed unnecessary page changes and made the process more continuous",
-          "More guidance - added a checklist to the front page",
-          "Feedback - added success feedback for better clarity of what is happening",
+          "Less friction - Removed the need to manually move between the Vuuh platform and Shopify",
+          "Simplified flow - Fewer page changes, so the process feels continuous",
+          "More guidance - A checklist on the front page shows what to do next",
+          "Reduced visual noise - A simpler layout with less text, for an easier overview",
+          "Feedback - Success messages that make it clear what is happening",
+          "Accessibility - Larger text and touch targets, and a red cost notice so the trial price is not overlooked",
         ],
         valueCreation: [
-          "Lower cognitive load when connecting Shopify and Vuuh",
-          "Less frustration and uncertainty during onboarding",
-          "Greater independence from support when setting up the product",
-          "Faster understanding of what to do next",
+          "Vuuh: users who can set up the product on their own need less support, and new customers can start testing faster",
+          "First-time users: less uncertainty and lower cognitive load when connecting Shopify and Vuuh",
         ],
         solutionImage1: vuuhChecklist,
-        solutionImage2: "",
+        solutionImage2: vuuhSuccess,
         solutionImage3: "",
       },
 
       beforeAfter: {
         before: {
-          image: "",
-          imageAlt: "",
-          points: ["What the problem was", "Pain point from testing"],
+          images: [
+            { src: vuuhFrontOri, objectFit: "contain" },
+            { src: vuuhTaskflowOri, objectFit: "contain" },
+            { src: vuuhDialogOri, objectFit: "contain" },
+          ],
+          imageAlt: "Vuuh's original onboarding",
+          points: [
+            "Visual elements competed for attention, so the hierarchy was unclear",
+            "11 steps, users had to move manually between the Vuuh platform and Shopify",
+            "Dialog text and touch targets were too small, and the green trial notice looked like part of the benefits on the left",
+          ],
         },
         after: {
-          image: "",
-          imageAlt: "",
-          points: ["What we changed", "Result or expected metric"],
+          images: [
+            { src: vuuhFrontNew, objectFit: "contain" },
+            { src: vuuhTaskflowNew, objectFit: "contain" },
+            { src: vuuhDialogNew, objectFit: "contain" },
+          ],
+          imageAlt: "Vuuh's redesigned onboarding",
+          points: [
+            "Hierachy made more clear by colours and added checklist",
+            "6 steps, with Shopify and Vuuh connected in one continuous flow",
+            "Larger text and touch targets, a red cost notice, and a progress dot that changes colour as required fields are filleds",
+          ],
         },
+        metric:
+          "Result: the flow went from 11 to 6 steps. Verification: Feedback from Vuuh was positive. The improvements have not been tested with real first-time users.",
       },
 
       myRole: [
         {
           title: "Component Building",
-          text: "Collaborated on building interactive Figma components",
+          text: "I redesigned the dialog and built the checklist component in Figma.",
           bigImage: "",
           image2: "",
           image3: "",
         },
         {
           title: "Prototyping",
-          text: "",
+          text: "I worked with the group to set up the interactive prototype.",
           bigImage: "",
           image2: "",
           image3: "",
         },
         {
           title: "Research",
-          text: "",
+          text: "Together we ran a cognitive walkthrough of the current onboarding, applied Norman's design principles, Jakob Nielsen's 10 usability-heuristics, and collected visual findings about the platform's shortcomings.",
           bigImage: "",
           image2: "",
           image3: "",
@@ -606,16 +627,16 @@ const projects = [
       ],
 
       whatILearned: [
-        "Theres a fine balance between listening to what a customer wants and making something the user can use",
-        "I learned that Figma slides existed and how to do more advanced Figma prototyping",
-        "During the process there were a lot of uncertainty about the scope of the assignment. As a group and with guidance from councelors we talked it through a lot and managed to figure it out",
-        "My biggest takeaway was learning that with a group effort it is possible to make a good solution, even when the task at hand feels overwhelming",
+        "Theres a fine balance between listening to what a customer wants and making something the users can use",
+        "How to present in Figma Slides, and how to build more advanced Figma prototypes",
+        "The scope of the assignment was unclear at first. By talking it through as a group and with our supervisors, we managed to define it more",
+        "My biggest takeaway was learning that with a group effort it is possible to make a good solution, even when the task feels overwhelming",
       ],
 
       nextStepReflections: [
         "I would improve the consistency between Vuuh the extension and Vuuh.com",
-        "I would approach the deconstructuring of the original task flow differently",
-        "In the future I would look at linking Shopify and Vuuh even more directly",
+        "I would test the redesigned onboarding with real first-time users",
+        "I would look at linking Shopify and Vuuh even more directly",
       ],
     },
   },
@@ -685,7 +706,7 @@ const projects = [
           "We created a webshop that makes online vintage shopping more reliable",
         keyFeatures: [
           "Product discovery - Browse products through a structured category system and search functionality",
-          "Product filtering - Filter products by relevant criteria such as size, condition, color, price and availability",
+          "Product filtering - Filter products by relevant criteria such as size, condition, colour, price and availability",
           "Product information - Access relevant details about each secondhand item before purchasing",
           "Favorites and shopping cart - Saving products to favorites and adding to a cart that shows the carts total price",
         ],
@@ -801,12 +822,12 @@ NEW PROJECT TEMPLATE
 
     beforeAfter: {
         before: {
-          image: "",
+          images: "",
           imageAlt: "",
           points: ["What the problem was", "Pain point from testing"],
         },
         after: {
-          image: "",
+          images: "",
           imageAlt: "",
           points: ["What we changed", "Result or expected metric"],
         },
