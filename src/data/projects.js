@@ -51,6 +51,16 @@ import mellemrumRegistrationNew from "../assets/projects/mellemrum/mellemrum-reg
 import mellemrumDataOri from "../assets/projects/mellemrum/mellemrum-database-ori.png";
 import mellemrumDataNew from "../assets/projects/mellemrum/mellemrum-database-new.png";
 
+// Vuuh
+import vuuhName from "../assets/projects/vuuh/vuuh-name.png";
+import vuuhChecklist from "../assets/projects/vuuh/vuuh-checklist.png";
+import vuuhDialogOri from "../assets/projects/vuuh/vuuh-dialog-ori.png";
+import vuuhDialogNew from "../assets/projects/vuuh/vuuh-dialog-new.png";
+import vuuhFrontOri from "../assets/projects/vuuh/vuuh-frontpage-ori.png";
+import vuuhFrontNew from "../assets/projects/vuuh/vuuh-frontpage-new.png";
+import vuuhTaskflowOri from "../assets/projects/vuuh/vuuh-taskflow-ori.png";
+import vuuhTaskflowNew from "../assets/projects/vuuh/vuuh-taskflow-new.png";
+
 const projects = [
   // MER' END TOAST
   {
@@ -383,9 +393,9 @@ const projects = [
 
     // Short descriptions
     homeDescription:
-      "A React prototype optimized with focus on database normalization, UI-states and increased accessibility",
+      "A React prototype optimised with focus on database normalisation, UI-states and increased accessibility",
     overviewDescription:
-      "A React prototype optimized with focus on database normalization, UI-states and increased accessibility",
+      "A React prototype optimised with focus on database normalisation, UI-states and increased accessibility",
 
     // Project detail page
     detail: {
@@ -482,6 +492,110 @@ const projects = [
         "I would approach other people more to bounce ideas off about possible optimisations",
         "In further development I would work through the remaining items from my technical audit",
       ],
+    },
+  },
+
+  // VUUH
+  {
+    id: "vuuh",
+    title: "Vuuh",
+    thumbnail: "",
+    thumbnailAlt: "",
+    tags: ["Optimisation", "Onboarding"],
+    teamSize: 3,
+    semester: "3rd Semester",
+    year: 2026,
+    role: "",
+
+    // Visibility
+    showOnHome: false,
+    homeOrder: 1,
+    showOnOverview: true,
+
+    // Short descriptions
+    homeDescription:
+      "Improved self-service solution for the onboarding process of setting up the Vuuh extension",
+    overviewDescription:
+      "An optimisation of Vuuh’s onboarding with focus on making an existing platform more manageable, intuitive and easier to get started with.",
+
+    // Project detail page
+    detail: {
+      heroImage: "",
+      heroImageAlt: "",
+      heroImagePosition: "center 30%",
+      heroImageHeight: "clamp(320px, 55svh, 600px)",
+
+      toolsUsed: [],
+
+      links: {
+        designFile:
+          "https://www.figma.com/design/L1UHBnCJkp9Y1IjsxPrgfm/Case-2--Vuuh-?node-id=129-129&t=GmShUN7ahY0cYLBw-1",
+        figmaPrototype:
+          "https://www.figma.com/proto/L1UHBnCJkp9Y1IjsxPrgfm/Case-2--Vuuh-?page-id=59%3A410&node-id=131-462&viewport=-478%2C1041%2C0.18&t=l3trjj59LlFbmCo5-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=131%3A462",
+        audit: "https://www.figma.com/deck/6oHSHnX0ypNLHZ16hPkeGv",
+      },
+
+      overview: {
+        pitch: "",
+      },
+
+      assignment: {
+        type: "",
+        problem: "",
+        targetAudience: "",
+      },
+
+      solution: {
+        created: "",
+        keyFeatures: [],
+        valueCreation: [],
+        solutionImage1: "",
+        solutionImage2: "",
+        solutionImage3: "",
+      },
+
+      beforeAfter: {
+        before: {
+          image: "",
+          imageAlt: "",
+          points: ["What the problem was", "Pain point from testing"],
+        },
+        after: {
+          image: "",
+          imageAlt: "",
+          points: ["What we changed", "Result or expected metric"],
+        },
+      },
+
+      myRole: [
+        {
+          title: "",
+          text: "",
+          bigImage: "",
+          image2: "",
+          image3: "",
+        },
+        {
+          title: "",
+          text: "",
+          bigImage: "",
+          image2: "",
+          image3: "",
+        },
+        {
+          title: "",
+          text: "",
+          bigImage: "",
+          image2: "",
+          image3: "",
+        },
+      ],
+
+      whatILearned: [],
+
+      nextStepReflections: [],
+
+      teamFeedback: "",
     },
   },
 
