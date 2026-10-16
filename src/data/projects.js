@@ -37,7 +37,17 @@ import rougePersona from "../assets/projects/go-rogue/rouge-persona.png";
 import roguePersona from "../assets/projects/go-rogue/rogue-persona.png";
 
 // Mellemrum
-
+import mellemrumName from "../assets/projects/mellemrum/mellemrum-name.png";
+import mellemrumSuccess from "../assets/projects/mellemrum/mellemrum-success.png";
+import mellemrumReserve from "../assets/projects/mellemrum/mellemrum-reserve.png";
+import mellemrumThnxReserved from "../assets/projects/mellemrum/mellemrum-thnx-reserved.png";
+import mellemrumHeroOri from "../assets/projects/mellemrum/mellemrum-home-hero-ori.png";
+import mellemrumHeroNew from "../assets/projects/mellemrum/mellemrum-home-hero-new.png";
+import mellemrumPayment from "../assets/projects/mellemrum/mellemrum-payment-method.png";
+import mellemrumRegistrationOri from "../assets/projects/mellemrum/mellemrum-registration-ori.png";
+import mellemrumRegistrationNew from "../assets/projects/mellemrum/mellemrum-registration-new.png";
+import mellemrumDataOri from "../assets/projects/mellemrum/mellemrum-database-ori.png";
+import mellemrumDataNew from "../assets/projects/mellemrum/mellemrum-database-new.png";
 
 const projects = [
   // MER' END TOAST
