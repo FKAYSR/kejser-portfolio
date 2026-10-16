@@ -289,6 +289,10 @@
   gap: clamp(1.5rem, 4vw, 4rem);
 }
 
+.roleGrid .infoBlock {
+  align-content: start;
+}
+
 /* WHAT I LEARNED AND NEXT STEPS LIST */
 .learnedSection {
   grid-template-columns: repeat(2, minmax(0, 1fr));
