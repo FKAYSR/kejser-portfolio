@@ -38,8 +38,10 @@ import roguePersona from "../assets/projects/go-rogue/rogue-persona.png";
 
 // Mellemrum
 import mellemrumName from "../assets/projects/mellemrum/mellemrum-name.png";
+import mellemrumLogo from "../assets/projects/mellemrum/mellemrum-logo.png";
 import mellemrumSuccess from "../assets/projects/mellemrum/mellemrum-success.png";
 import mellemrumReserve from "../assets/projects/mellemrum/mellemrum-reserve.png";
+import mellemrumReserveOri from "../assets/projects/mellemrum/mellemrum-reserve-ori.png";
 import mellemrumThnxReserved from "../assets/projects/mellemrum/mellemrum-thnx-reserved.png";
 import mellemrumHeroOri from "../assets/projects/mellemrum/mellemrum-home-hero-ori.png";
 import mellemrumHeroNew from "../assets/projects/mellemrum/mellemrum-home-hero-new.png";
@@ -366,8 +368,8 @@ const projects = [
   {
     id: "mellemrum",
     title: "Mellemrum",
-    thumbnail: "",
-    thumbnailAlt: "",
+    thumbnail: mellemrumLogo,
+    thumbnailAlt: "Mellemrum logo",
     tags: ["Optimisation", "Webapp", "Accessibility"],
     teamSize: 1,
     semester: "3rd Semester",
@@ -387,10 +389,8 @@ const projects = [
 
     // Project detail page
     detail: {
-      heroImage: "",
-      heroImageAlt: "",
-      heroImagePosition: "",
-      heroImageHeight: "",
+      heroImage: mellemrumName,
+      heroImageAlt: "Mellemrum",
 
       toolsUsed: ["React", "Supabase", "JavaScript", "CSS", "Lottie", "GitHub"],
 
@@ -430,28 +430,40 @@ const projects = [
           "Increased Accesibility by using proper HTML-semantics to make the text easier to understand for screen readers",
         ],
 
-        solutionImage1: "",
-        solutionImage2: "",
-        solutionImage3: "",
+        solutionImage1: { src: mellemrumPayment, objectFit: "contain" },
+        solutionImage2: { src: mellemrumReserve, objectFit: "contain" },
+        solutionImage3: { src: mellemrumSuccess, objectFit: "contain" },
       },
 
       beforeAfter: {
         before: {
-          images: "",
+          images: [
+            { src: mellemrumHeroOri, objectFit: "contain" },
+            { src: mellemrumDataOri, objectFit: "contain" },
+            { src: mellemrumRegistrationOri, objectFit: "contain" },
+            { src: mellemrumReserveOri, objectFit: "contain" },
+          ],
           imageAlt: "",
           points: [
-            "Registrations were not saved in the database",
-            "Venue names were repeated across two tables",
-            "E-mail addresses were visible to everyone, and the form field had no label",
+            "Spacing was way to small, whivh decreased the overall readability of the site",
+            "Multiple venue names were used across one table",
+            "E-mail addresses were visible to everyone",
+            "Registrations were not saved in the database and there were no clear success state",
           ],
         },
         after: {
-          images: "",
+          images: [
+            { src: mellemrumHeroNew, objectFit: "contain" },
+            { src: mellemrumDataNew, objectFit: "contain" },
+            { src: mellemrumRegistrationNew, objectFit: "contain" },
+            { src: mellemrumThnxReserved, objectFit: "contain" },
+          ],
           imageAlt: "",
           points: [
-            "Registrations are saved in the database and can be seen at 'Se tilmeldinger'",
-            "Venues are stored once in a related table",
-            "E-mail addresses are hidden, and the registration form has labels and a clear success state",
+            "Better readability by increased spacing",
+            "Tables have relations and all venue info is in its own table",
+            "E-mail addresses are hidden",
+            "Registrations are saved in the database and can be seen at 'Se tilmeldinger' and there is a clear success state",
           ],
         },
         metric:
