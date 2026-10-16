@@ -53,6 +53,7 @@ import mellemrumDataNew from "../assets/projects/mellemrum/mellemrum-database-ne
 
 // Vuuh
 import vuuhName from "../assets/projects/vuuh/vuuh-name.png";
+import vuuhLogo from "../assets/projects/vuuh/vuuh-logo.png";
 import vuuhChecklist from "../assets/projects/vuuh/vuuh-checklist.png";
 import vuuhDialogOri from "../assets/projects/vuuh/vuuh-dialog-ori.png";
 import vuuhDialogNew from "../assets/projects/vuuh/vuuh-dialog-new.png";
@@ -499,13 +500,13 @@ const projects = [
   {
     id: "vuuh",
     title: "Vuuh",
-    thumbnail: "",
+    thumbnail: vuuhLogo,
     thumbnailAlt: "",
     tags: ["Optimisation", "Onboarding"],
     teamSize: 3,
     semester: "3rd Semester",
     year: 2026,
-    role: "",
+    role: "Research, Checklist and Dialog components",
 
     // Visibility
     showOnHome: false,
@@ -520,12 +521,11 @@ const projects = [
 
     // Project detail page
     detail: {
-      heroImage: "",
-      heroImageAlt: "",
-      heroImagePosition: "center 30%",
-      heroImageHeight: "clamp(320px, 55svh, 600px)",
+      heroImage: vuuhName,
+      heroImageAlt: "Vuuh logo and name",
+      heroImagePosition: "center 50%",
 
-      toolsUsed: [],
+      toolsUsed: ["Figma", "Figjam"],
 
       links: {
         designFile:
@@ -536,20 +536,34 @@ const projects = [
       },
 
       overview: {
-        pitch: "",
+        pitch:
+          "An optimisation of Vuuh’s onboarding with focus on making an existing platform more manageable, intuitive and easier to get started with.",
       },
 
       assignment: {
-        type: "",
-        problem: "",
-        targetAudience: "",
+        type: "To evaluate the current onboarding experience and propose an improved self-service solution.",
+        problem:
+          "The platform was built for a supported beta - not designed as a self-service journey. There are no visual feedback, no next step suggestions and the visual elements were fighting for attention, which creates an unclear hierachy.",
+        targetAudience:
+          "First time users of Vuuh, who are either store-first retailers or e-commerce-first retailers. The interface therefore needed to clearly communicate what to do next, help users connect their systems, and allow them to start testing the product quickly.",
       },
 
       solution: {
         created: "",
-        keyFeatures: [],
-        valueCreation: [],
-        solutionImage1: "",
+        keyFeatures: [
+          "Less friction - removed the need to manually move between the Vuuh platform and Shopify",
+          "Reduced visual noise - simplified the layout and reduced unnecessary text for an easier overview",
+          "Simplified flow - removed unnecessary page changes and made the process more continuous",
+          "More guidance - added a checklist to the front page",
+          "Feedback - added success feedback for better clarity of what is happening",
+        ],
+        valueCreation: [
+          "Lower cognitive load when connecting Shopify and Vuuh",
+          "Less frustration and uncertainty during onboarding",
+          "Greater independence from support when setting up the product",
+          "Faster understanding of what to do next",
+        ],
+        solutionImage1: vuuhChecklist,
         solutionImage2: "",
         solutionImage3: "",
       },
@@ -569,21 +583,21 @@ const projects = [
 
       myRole: [
         {
-          title: "",
+          title: "Component Building",
+          text: "Collaborated on building interactive Figma components",
+          bigImage: "",
+          image2: "",
+          image3: "",
+        },
+        {
+          title: "Prototyping",
           text: "",
           bigImage: "",
           image2: "",
           image3: "",
         },
         {
-          title: "",
-          text: "",
-          bigImage: "",
-          image2: "",
-          image3: "",
-        },
-        {
-          title: "",
+          title: "Research",
           text: "",
           bigImage: "",
           image2: "",
@@ -591,11 +605,18 @@ const projects = [
         },
       ],
 
-      whatILearned: [],
+      whatILearned: [
+        "Theres a fine balance between listening to what a customer wants and making something the user can use",
+        "I learned that Figma slides existed and how to do more advanced Figma prototyping",
+        "During the process there were a lot of uncertainty about the scope of the assignment. As a group and with guidance from councelors we talked it through a lot and managed to figure it out",
+        "My biggest takeaway was learning that with a group effort it is possible to make a good solution, even when the task at hand feels overwhelming",
+      ],
 
-      nextStepReflections: [],
-
-      teamFeedback: "",
+      nextStepReflections: [
+        "I would improve the consistency between Vuuh the extension and Vuuh.com",
+        "I would approach the deconstructuring of the original task flow differently",
+        "In the future I would look at linking Shopify and Vuuh even more directly",
+      ],
     },
   },
 
