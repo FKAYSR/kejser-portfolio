@@ -232,7 +232,7 @@ const projects = [
         figmaPrototype:
           "https://www.figma.com/proto/xJ147c7hA2Vpd1IKHds3Sg/La-Rouge---Go-Rogue?node-id=139-1495&p=f&viewport=25%2C116%2C0.09&t=kUT7eJuY8fWYBwpJ-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=139%3A1495&page-id=139%3A1494",
         designFile:
-          "https://www.figma.com/design/xJ147c7hA2Vpd1IKHds3Sg/La-Rouge---Go-Rogue?node-id=1258-14783&t=0VD10BFPtjS8ICyn-1",
+          "https://www.figma.com/design/xJ147c7hA2Vpd1IKHds3Sg/La-Rouge---Go-Rogue?node-id=85-152&t=qhZOm26uq3XttqLK-1",
         brandDeck:
           "https://www.figma.com/design/xJ147c7hA2Vpd1IKHds3Sg/La-Rouge---Go-Rogue?node-id=43-58&t=qhZOm26uq3XttqLK-1",
       },
