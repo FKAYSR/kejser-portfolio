@@ -667,10 +667,10 @@ const projects = [
 
     // Project detail page
     detail: {
-      heroImage: hangerHero,
+      heroImage: hangerFooter,
       heroImageAlt: "Hero section of webshop Story Hangers",
-      heroImagePosition: "",
-      heroImageHeight: "",
+      heroImagePosition: "center 100%",
+      heroImageHeight: "clamp(400px, 80svh, 200px)",
       links: {
         live: "https://juliewboecher.github.io/customer-experience-exam/",
         repository: "https://github.com/juliewboecher/customer-experience-exam",
