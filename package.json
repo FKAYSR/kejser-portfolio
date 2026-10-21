@@ -1,6 +1,6 @@
 {
   "name": "kejser-portfolio",
-  "base": "/kejser-portfolio/",
+  "base": "/",
   "private": true,
   "version": "1.0.0",
   "type": "module",
