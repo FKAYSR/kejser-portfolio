@@ -5,7 +5,6 @@ import mandalaInitials from "../assets/icons/mandala-initials.svg";
 import projects from "../data/projects.js";
 import PolaroidCard from "../components/PolaroidCard.jsx";
 import styles from "./Home.module.css";
-import projectDetailStyles from "./ProjectDetail.module.css";
 import ToolItem from "../components/ToolItem.jsx";
 import toolIcons, { homeTools } from "../data/toolIcons.js";
 import LinkBtn from "../components/LinkBtn.jsx";
@@ -137,8 +136,8 @@ export default function Home() {
             <h2>TOOLKIT</h2>
           </div>
 
-          <div className={projectDetailStyles.sectionContent}>
-            <ul className={projectDetailStyles.toolsList}>
+          <div className={styles.sectionContent}>
+            <ul className={styles.toolsList}>
               {homeTools.map((tool) => (
                 <ToolItem key={tool} name={tool} icon={toolIcons[tool]} />
               ))}

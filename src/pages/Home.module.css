@@ -151,6 +151,20 @@
   font-size: var(--font-size-small);
 }
 
+.sectionContent {
+  min-width: 0;
+}
+
+.toolsList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .centeredHeader {
   margin-bottom: 3rem;
   text-align: center;
