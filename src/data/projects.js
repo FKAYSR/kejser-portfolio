@@ -348,7 +348,7 @@ const projects = [
         },
         {
           title: "UI Design & Detail Pages",
-          text: "I was responsible for designing the Project Detail page layout and the 404 page.",
+          text: "I was responsible for designing the product detail page layout and the 404 page.",
           bigImage: "",
           image2: "",
           image3: "",
