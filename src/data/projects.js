@@ -72,7 +72,7 @@ const projects = [
     thumbnailAlt: "Mer' end Toast's booth at a school EXPO",
     tags: ["Web application", "UX/UI Design", "Design System"],
     teamSize: 2,
-    semester: "3rd Semester",
+    semester: "2nd Semester",
     role: "UX Research, Design System",
 
     // Visibility
@@ -654,6 +654,9 @@ const projects = [
       "UX/UI Design",
     ],
     teamSize: 3,
+    semester: "2nd Semester",
+    year: 2026,
+    role: "Design system, Footer component",
 
     // Visibility
     showOnHome: false,
@@ -671,6 +674,7 @@ const projects = [
       heroImageAlt: "Hero section of webshop Story Hangers",
       heroImagePosition: "center 100%",
       heroImageHeight: "clamp(400px, 80svh, 200px)",
+
       links: {
         live: "https://juliewboecher.github.io/customer-experience-exam/",
         repository: "https://github.com/juliewboecher/customer-experience-exam",
@@ -682,15 +686,13 @@ const projects = [
           "https://docs.google.com/document/d/1_5hdSgq_ktAzklkl8htvJVVapUCflwM4t4e3O21gmJM/edit?usp=sharing",
       },
 
+      toolsUsed: ["Figma", "HTML", "CSS", "JavaScript", "GitHub", "React"],
+
       overview: {
-        pitch: "",
-        description:
+        pitch:
           "Story Hangers is a webshop designed to sell premium secondhand clothes. With the webshop we hope to portray a reliable, inclusive and inspiring picture, so the users can shop secondhand without any worries.",
-        description2:
+        description:
           "The project was developed as a group project taking the concept from initial ideation and research to a functional React prototype. During the process we came across UX research, UI design, Brand design, creation of a variable-based design system in Figma and Frontend Development with React.",
-        detailImage1: hangerLogo,
-        detailImage2: hangerAffinityMap,
-        detailImage3: "",
       },
 
       assignment: {
@@ -715,6 +717,9 @@ const projects = [
           "A unique brand experience that makes secondhand shopping feel premium and inspiring",
           "Less uncertainty around accessing items",
         ],
+        solutionImage1: hangerHero,
+        solutionImage2: hangerFilter,
+        solutionImage3: hangerAffinityMap,
       },
 
       myRole: [
@@ -741,8 +746,6 @@ const projects = [
         },
       ],
 
-      toolsUsed: ["Figma", "HTML", "CSS", "JavaScript", "GitHub", "React"],
-
       whatILearned: [
         "Designing a strong brand identity while keeping the interface user-focused and intuitive.",
         "Building reusable design tokens in Figma and translating them into CSS variables for development.",
@@ -755,8 +758,6 @@ const projects = [
         "I would approach testing earlier and identify usability issues before developing the final project.",
         "If we developed the project further, I would focus on completing the coded version of the webshop and refining the core functions.",
       ],
-
-      teamFeedback: "",
     },
   },
 ];
